@@ -38,9 +38,10 @@
       "naverMapUrl": "https://map.naver.com/p/directions/-/3zgsby,2AEF9b,%EC%97%90%EC%96%B4%EC%A6%88%EB%9D%BD%20%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EB%B2%94%EA%B3%84%EC%A0%90,1342684445,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "에어즈락%20클라이밍%20범계점,1342684445,PLACE_POI",
       "prices": [
-        { "name": "1개월", "price": 120000 },
-        { "name": "일일 이용", "price": 18000 },
-        { "name": "암벽화 1일 대여료", "price": 3000 }
+        { "name": "스타터패키지(1개월 자유이용권 + 7회 강습 + 암벽화 증정", "price": 250000 },
+        { "name": "일일 이용 (할인 이벤트)", "price": 25000 },
+        { "name": "1개월 자유이용 + 7회 강습", "price": 200000 },
+        { "name": "1일 체험 강습(40분 + 강습일 자유이용 + 암벽화 대여", "price": 30000 }
       ],
       "affiliatePrices": [
         { "name": "단체 이용(10인 이상)", "price": 15000 },
@@ -59,9 +60,17 @@
       "naverMapUrl": "https://map.naver.com/v5/directions/-/3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI",
       "prices": [
-        { "name": "1개월", "price": 120000 },
-        { "name": "일일 이용", "price": 18000 },
-        { "name": "암벽화 1일 대여료", "price": 3000 }
+        { "name": "1일 체험 강습(30분 + 자유이용 + 암벽화 대여", "price": 25000 },
+        { "name": "일일 이용", "price": 20000 },
+        { "name": "암벽화 1일 대여료", "price": 3000 },
+        { "name": "초크 1일 대여료", "price": 2000 },
+        { "name": "5회권", "price": 90000 },
+        { "name": "10회권", "price": 170000 },
+        { "name": "1개월", "price": 130000 },
+        { "name": "3개월", "price": 330000 },
+        { "name": "평일 주2회 4주 강습 + 1개월", "price": 220000 },
+        { "name": "주말 주1회 4주 강습 + 1개월", "price": 170000 }
+
       ],
       "affiliatePrices": [
         { "name": "단체 이용(10인 이상)", "price": 17000 },
@@ -78,6 +87,17 @@
       "isAffiliated": false,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
       "naverPlaceId": "3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI"
+    },
+    {
+      "id": "center_05",
+      "name": "락클라이밍",
+      "address": "경기도 군포시 광정로 60 우주타운빌딩 9층 (산본역 3번 출구에서 218m)",
+      "region": "수원",
+      "description": "단체 이용 없이도 저렴한 가격, 넓은 지구력존",
+      "images": ["center_05_main.jpg"],
+      "isAffiliated": false,
+      "naverMapUrl": "https://map.naver.com/p/directions/-/3zfGqb,2ADkst,락클라이밍%20산본,36624675,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
+      "naverPlaceId": "3zfGqb,2ADkst,락클라이밍%20산본,36624675,PLACE_POI"
     }
   ]
 }
