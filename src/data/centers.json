@@ -1,0 +1,83 @@
+{
+  "centers": [
+    {
+      "id": "center_01",
+      "name": "그래비티클라이밍 수원역점",
+      "address": "경기도 수원시 팔달구 갓매산로 31 홍익스포츠프라자 2층",
+      "region": "수원",
+      "description": "수원역 인근에 위치한 그래비티클라이밍 센터입니다. 사장님이 에리카 선배님이셔서 파격 할인",
+      "images": ["center_01_main.jpg"],
+      "isAffiliated": true,
+      "naverMapUrl": "https://map.naver.com/p/directions/-/3ziNUg,2AzuBI,%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EC%88%98%EC%9B%90%EC%97%AD%EC%A0%90,1774691117,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
+      "naverPlaceId": "3ziNUg,2AzuBI,그래비티클라이밍%20수원역점,1774691117,PLACE_POI",
+      "phone": "031-242-5014",
+      "prices": [
+        { "name": "주말이용권(8주)", "price": 130000 },
+        { "name": "3개월", "price": 330000 },
+        { "name": "1개월", "price": 130000 },
+        { "name": "일일 이용", "price": 20000 },
+        { "name": "1일 체험 강습 (예약 필수)", "price": 25000 },
+        { "name": "암벽화 1일 대여료", "price": 3000 },
+        { "name": "초크 1일 대여료", "price": 2000 }
+      ],
+      "affiliatePrices": [
+        { "name": "단체 이용(10인 이상)", "price": 14000 },
+        { "name": "동아리 회원 5회권", "price": 70000 },
+        { "name": "동아리 회원 1개월", "price": 100000 },
+        { "name": "동아리 회원 3개월", "price": 250000 }
+      ]
+    },
+    {
+      "id": "center_02",
+      "name": "에어즈락클라이밍 범계점",
+      "address": "경기도 안양시 동안구 시민대로 161 (범계역 8번 출구에서 67m)",
+      "region": "안양",
+      "description": "깔끔하고 쾌적한 암장 내부에 젤라또 아이스크림 판매",
+      "images": ["center_02_main.jpg"],
+      "isAffiliated": true,
+      "naverMapUrl": "https://map.naver.com/p/directions/-/3zgsby,2AEF9b,%EC%97%90%EC%96%B4%EC%A6%88%EB%9D%BD%20%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EB%B2%94%EA%B3%84%EC%A0%90,1342684445,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
+      "naverPlaceId": "에어즈락%20클라이밍%20범계점,1342684445,PLACE_POI",
+      "prices": [
+        { "name": "1개월", "price": 120000 },
+        { "name": "일일 이용", "price": 18000 },
+        { "name": "암벽화 1일 대여료", "price": 3000 }
+      ],
+      "affiliatePrices": [
+        { "name": "단체 이용(10인 이상)", "price": 15000 },
+        { "name": "동아리 회원 일일", "price": 20000 },
+        { "name": "암벽화 대여", "price": 3000 }
+      ]
+    },
+    {
+      "id": "center_03",
+      "name": "스파이시클라이밍",
+      "address": "경기도 군포시 엘에스로 153-8 (금정역 1번 출구에서 382m)",
+      "region": "군포",
+      "description": "문제 퀄리티 Good, 실력 향상에 도움",
+      "images": ["center_03_main.jpg"],
+      "isAffiliated": true,
+      "naverMapUrl": "https://map.naver.com/v5/directions/-/3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
+      "naverPlaceId": "3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI",
+      "prices": [
+        { "name": "1개월", "price": 120000 },
+        { "name": "일일 이용", "price": 18000 },
+        { "name": "암벽화 1일 대여료", "price": 3000 }
+      ],
+      "affiliatePrices": [
+        { "name": "단체 이용(10인 이상)", "price": 17000 },
+        { "name": "동아리 회원 1개월", "price": 120000 }
+      ]
+    },
+    {
+      "id": "center_04",
+      "name": "킨디클라이밍",
+      "address": "경기도 수원시 권선구 세화로 124 (수원역 3번 출구에서 578m)",
+      "region": "수원",
+      "description": "국내 최대 규모의 실내 암장, 천장이 높음, 없느거 빼고 다있음",
+      "images": ["center_04_main.jpg"],
+      "isAffiliated": false,
+      "naverMapUrl": "https://map.naver.com/p/directions/-/3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
+      "naverPlaceId": "3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI"
+    }
+  ]
+}
