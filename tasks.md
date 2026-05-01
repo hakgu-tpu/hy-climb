@@ -127,8 +127,8 @@
 @docs/tasks.md Phase 6 작업을 진행해줘
 ```
 
-- [ ] `npm run build` 빌드 성공 확인
-- [ ] `npm run preview` 로 빌드 결과 확인
+- [x] `npm run build` 빌드 성공 확인
+- [x] `npm run preview` 로 빌드 결과 확인
 - [ ] Cloudflare Pages 연결
   - [ ] GitHub 저장소 연결
   - [ ] 빌드 명령: `npm run build`
