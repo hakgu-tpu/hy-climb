@@ -1,8 +1,21 @@
-const CenterFilter = ({ centers, selected, onChange }) => {
+const CenterFilter = ({ centers, selected, onChange, affiliatedOnly, onAffiliatedChange }) => {
   const regions = ['전체', ...new Set(centers.map((c) => c.region))]
 
   return (
     <div className="flex gap-2 overflow-x-auto px-4 py-3 scrollbar-none">
+      <button
+        onClick={() => onAffiliatedChange(!affiliatedOnly)}
+        className={`
+          flex-shrink-0 px-[14px] py-[6px] rounded-full text-[12px] font-medium border
+          transition-colors duration-150
+          ${affiliatedOnly
+            ? 'bg-orange-600 text-white border-orange-600'
+            : 'bg-white text-zinc-500 border-zinc-200 hover:border-zinc-400'}
+        `}
+      >
+        제휴
+      </button>
+      <div className="w-px bg-zinc-200 flex-shrink-0 my-1" />
       {regions.map((region) => (
         <button
           key={region}

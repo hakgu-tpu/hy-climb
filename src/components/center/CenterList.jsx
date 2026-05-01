@@ -4,10 +4,13 @@ import CenterCard from '@/components/center/CenterCard'
 
 const CenterList = ({ centers, departure }) => {
   const [selectedRegion, setSelectedRegion] = useState('전체')
+  const [affiliatedOnly, setAffiliatedOnly] = useState(false)
 
-  const filtered = selectedRegion === '전체'
-    ? centers
-    : centers.filter((c) => c.region === selectedRegion)
+  const filtered = centers.filter((c) => {
+    const regionMatch = selectedRegion === '전체' || c.region === selectedRegion
+    const affiliatedMatch = !affiliatedOnly || c.isAffiliated
+    return regionMatch && affiliatedMatch
+  })
 
   return (
     <div>
@@ -15,6 +18,8 @@ const CenterList = ({ centers, departure }) => {
         centers={centers}
         selected={selectedRegion}
         onChange={setSelectedRegion}
+        affiliatedOnly={affiliatedOnly}
+        onAffiliatedChange={setAffiliatedOnly}
       />
       <div className="flex flex-col gap-3 px-4 pb-6">
         {filtered.map((center) => (
