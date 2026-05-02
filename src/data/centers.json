@@ -12,20 +12,35 @@
       "naverPlaceId": "3ziNUg,2AzuBI,그래비티클라이밍%20수원역점,1774691117,PLACE_POI",
       "phone": "031-242-5014",
       "prices": [
-        { "name": "주말이용권(8주)", "price": 130000 },
-        { "name": "3개월", "price": 330000 },
-        { "name": "1개월", "price": 130000 },
-        { "name": "일일 이용", "price": 20000 },
-        { "name": "1일 체험 강습 (예약 필수)", "price": 25000 },
-        { "name": "암벽화 1일 대여료", "price": 3000 },
-        { "name": "초크 1일 대여료", "price": 2000 }
+        { "name": "주말이용권(8주)", "nameEn": "Weekend Pass (8 weeks)", "price": 130000 },
+        { "name": "3개월", "nameEn": "3-Month Pass", "price": 330000 },
+        { "name": "1개월", "nameEn": "1-Month Pass", "price": 130000 },
+        { "name": "일일 이용", "nameEn": "Day Pass", "price": 20000 },
+        { "name": "1일 체험 강습 (예약 필수)", "nameEn": "Trial Lesson (Reservation Required)", "price": 25000 },
+        { "name": "암벽화 1일 대여료", "nameEn": "Climbing Shoes Rental (1 day)", "price": 3000 },
+        { "name": "초크 1일 대여료", "nameEn": "Chalk Rental (1 day)", "price": 2000 }
       ],
       "affiliatePrices": [
-        { "name": "단체 이용(10인 이상)", "price": 14000 },
-        { "name": "동아리 회원 5회권", "price": 70000 },
-        { "name": "동아리 회원 1개월", "price": 100000 },
-        { "name": "동아리 회원 3개월", "price": 250000 }
-      ]
+        { "name": "단체 이용(10인 이상)", "nameEn": "Group Entry (10+ people)", "price": 14000 },
+        { "name": "동아리 회원 5회권", "nameEn": "Club Member 5-Visit Pass", "price": 70000 },
+        { "name": "동아리 회원 1개월", "nameEn": "Club Member 1-Month Pass", "price": 100000 },
+        { "name": "동아리 회원 3개월", "nameEn": "Club Member 3-Month Pass", "price": 250000 }
+      ],
+      "snsLinks": [
+        { "type": "instagram", "url": "https://www.instagram.com/gravity_suwon_station/" }
+      ],
+      "parking": {
+        "type": "self",
+        "description": "주차 1시간 30분 무료, 볼링장에서 음료수 구입시 1시간 30분 추가 무료"
+      },
+      "i18n": {
+        "name": "Gravity Climbing Suwon Station",
+        "address": "2F Hongik Sports Plaza, 31 Gatmaesanro, Paldal-gu, Suwon-si, Gyeonggi-do",
+        "description": "Gravity Climbing center near Suwon Station. Special discounts available as the owner is our club's senior member Erica.",
+        "parking": {
+          "description": "Free 1 hour and 30 minutes of parking, 1 hour and 30 minutes of additional free when buying drinks at the bowling alley"
+        }
+      }
     },
     {
       "id": "center_02",
@@ -35,19 +50,33 @@
       "description": "깔끔하고 쾌적한 암장 내부에 젤라또 아이스크림 판매",
       "images": ["center_02_main.png"],
       "isAffiliated": true,
-      "naverMapUrl": "https://map.naver.com/p/directions/-/3zgsby,2AEF9b,%EC%97%90%EC%96%B4%EC%A6%88%EB%9D%BD%20%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EB%B2%94%EA%B3%84%EC%A0%90,1342684445,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
-      "naverPlaceId": "에어즈락%20클라이밍%20범계점,1342684445,PLACE_POI",
+      "naverMapUrl": "https://map.naver.com/p/directions/-/3zgsby,2AEF9b/%EC%97%90%EC%96%B4%EC%A6%88%EB%9D%BD%20%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EB%B2%94%EA%B3%84%EC%A0%90,1342684445,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
+      "naverPlaceId": "3zgsby,2AEF9b,에어즈락%20클라이밍%20범계점,1342684445,PLACE_POI",
       "prices": [
-        { "name": "스타터패키지(1개월 자유이용권 + 7회 강습 + 암벽화 증정)", "price": 250000 },
-        { "name": "일일 이용 (할인 이벤트)", "price": 25000 },
-        { "name": "1개월 자유이용 + 7회 강습", "price": 200000 },
-        { "name": "1일 체험 강습(40분 + 강습일 자유이용 + 암벽화 대여", "price": 30000 }
+        { "name": "스타터패키지(1개월 자유이용권 + 7회 강습 + 암벽화 증정)", "nameEn": "Starter Package (1-Month Pass + 7 Lessons + Shoes Gift)", "price": 250000 },
+        { "name": "일일 이용 (할인 이벤트)", "nameEn": "Day Pass (Discount Event)", "price": 25000 },
+        { "name": "1개월 자유이용 + 7회 강습", "nameEn": "1-Month Pass + 7 Lessons", "price": 200000 },
+        { "name": "1일 체험 강습(40분 + 강습일 자유이용 + 암벽화 대여", "nameEn": "Trial Lesson (40min + Free Climb + Shoe Rental)", "price": 30000 }
       ],
       "affiliatePrices": [
-        { "name": "단체 이용(10인 이상)", "price": 15000 },
-        { "name": "동아리 회원 일일", "price": 20000 },
-        { "name": "암벽화 대여", "price": 3000 }
-      ]
+        { "name": "단체 이용(10인 이상)", "nameEn": "Group Entry (10+ people)", "price": 15000 },
+        { "name": "동아리 회원 일일", "nameEn": "Club Member Day Pass", "price": 20000 },
+        { "name": "암벽화 대여", "nameEn": "Climbing Shoes Rental", "price": 3000 }
+      ],
+      "snsLinks": [
+        { "type": "instagram", "url": "https://www.instagram.com/ayersrock_beomgye" }
+      ],
+      "parking": {
+        "type": "self",
+        "description": "건물 내 주차 2시간 무료 (*추가 30분당 1,000원)"
+      },
+      "i18n": {
+        "name": "AyersRock Climbing Beomgye Station",
+        "address": "Room 201, 2F, 161, Citizens' Boulevard, Dongan-gu, Anyang-si, Gyeonggi-do",
+        "description": "Clean and comfortable climbing gym interior with gelato ice cream for sale.",
+        "parking": {
+          "description": "Free 2 hours of parking in the building (*KRW 1,000 per additional 30 minutes)"        }
+      }
     },
     {
       "id": "center_03",
@@ -60,22 +89,35 @@
       "naverMapUrl": "https://map.naver.com/v5/directions/-/3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI",
       "prices": [
-        { "name": "1일 체험 강습(30분 + 자유이용 + 암벽화 대여)", "price": 25000 },
-        { "name": "일일 이용", "price": 20000 },
-        { "name": "암벽화 1일 대여료", "price": 3000 },
-        { "name": "초크 1일 대여료", "price": 2000 },
-        { "name": "5회권", "price": 90000 },
-        { "name": "10회권", "price": 170000 },
-        { "name": "1개월", "price": 130000 },
-        { "name": "3개월", "price": 330000 },
-        { "name": "평일 주2회 4주 강습 + 1개월", "price": 220000 },
-        { "name": "주말 주1회 4주 강습 + 1개월", "price": 170000 }
-
+        { "name": "1일 체험 강습(30분 + 자유이용 + 암벽화 대여)", "nameEn": "Trial Lesson (30min + Free Climb + Shoe Rental)", "price": 25000 },
+        { "name": "일일 이용", "nameEn": "Day Pass", "price": 20000 },
+        { "name": "암벽화 1일 대여료", "nameEn": "Climbing Shoes Rental (1 day)", "price": 3000 },
+        { "name": "초크 1일 대여료", "nameEn": "Chalk Rental (1 day)", "price": 2000 },
+        { "name": "5회권", "nameEn": "5-Visit Pass", "price": 90000 },
+        { "name": "10회권", "nameEn": "10-Visit Pass", "price": 170000 },
+        { "name": "1개월", "nameEn": "1-Month Pass", "price": 130000 },
+        { "name": "3개월", "nameEn": "3-Month Pass", "price": 330000 },
+        { "name": "평일 주2회 4주 강습 + 1개월", "nameEn": "Weekday 2x/Week Lesson (4 weeks) + 1-Month Pass", "price": 220000 },
+        { "name": "주말 주1회 4주 강습 + 1개월", "nameEn": "Weekend 1x/Week Lesson (4 weeks) + 1-Month Pass", "price": 170000 }
       ],
       "affiliatePrices": [
-        { "name": "단체 이용(10인 이상)", "price": 17000 },
-        { "name": "동아리 회원 1개월", "price": 120000 }
-      ]
+        { "name": "단체 이용(10인 이상)", "nameEn": "Group Entry (10+ people)", "price": 17000 },
+        { "name": "동아리 회원 1개월", "nameEn": "Club Member 1-Month Pass", "price": 120000 }
+      ],
+      "snsLinks": [
+        { "type": "instagram", "url": "https://www.instagram.com/spicy_climbing/" }
+      ],
+      "parking": {
+        "type": "self",
+        "description": "최초 3시간 무료, 4시간: 2,000원, 4시간 30분: 2,500원, 5시간: 3,000원 이후 20분당 1,000원씩 추가요금 부과, 최대 25,000원"
+      },
+      "i18n": {
+        "name": "Spicy Climbing Center",
+        "address": "153-8, L-S Road, Gunpo-si, Gyeonggi-do",
+        "description": "Good quality problems that help improve your climbing skills.",
+        "parking": {
+          "description": "Initial 3 hours free, 4 hours: 2,000 won, 4 hours 30 minutes: 2,500 won, 5 hours: 3,000 won, subsequent 20 minutes: 1,000 won each, maximum 25,000 won"        }
+      }
     },
     {
       "id": "center_04",
@@ -86,7 +128,12 @@
       "images": ["center_04_main.jpg"],
       "isAffiliated": false,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
-      "naverPlaceId": "3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI"
+      "naverPlaceId": "3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI",
+      "i18n": {
+        "name": "Kindy Climbing",
+        "address": "124, Sehwa-ro, Gwonseon-gu, Suwon-si, Gyeonggi-do",
+        "description": "The largest indoor climbing gym in Korea with high ceilings and a wide variety of climbing routes."
+      }
     },
     {
       "id": "center_05",
@@ -94,10 +141,15 @@
       "address": "경기도 군포시 광정로 60 우주타운빌딩 9층 (산본역 3번 출구에서 218m)",
       "region": "군포",
       "description": "단체 이용 없이도 저렴한 가격, 넓은 지구력존",
-      "images": ["center_05_main.jpg"],
+      "images": ["center_05_main.png"],
       "isAffiliated": false,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3zfGqb,2ADkst,락클라이밍%20산본,36624675,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
-      "naverPlaceId": "3zfGqb,2ADkst,락클라이밍%20산본,36624675,PLACE_POI"
+      "naverPlaceId": "3zfGqb,2ADkst,락클라이밍%20산본,36624675,PLACE_POI",
+      "i18n": {
+        "name": "Rock Climbing Sanbon",
+        "address": "60, Gwangjeong-ro, Gunpo-si, Gyeonggi-do, 9th floor of Uju Town Building",
+        "description": "Affordable prices even without group entry and a spacious endurance zone."
+      }
     }
   ]
 }

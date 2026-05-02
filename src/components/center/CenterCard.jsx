@@ -1,9 +1,14 @@
 import { useNavigate } from 'react-router-dom'
+import { useLang } from '@/contexts/LangContext'
 import NaverMapButton from '@/components/center/NaverMapButton'
 import AffiliateBadge from '@/components/center/AffiliateBadge'
 
 const CenterCard = ({ center, departure }) => {
   const navigate = useNavigate()
+  const { lang } = useLang()
+
+  const name = lang === 'en' ? (center.i18n?.name ?? center.name) : center.name
+  const address = lang === 'en' ? (center.i18n?.address ?? center.address) : center.address
 
   return (
     <div
@@ -12,7 +17,7 @@ const CenterCard = ({ center, departure }) => {
     >
       <img
         src={`/images/centers/${center.images[0]}`}
-        alt={center.name}
+        alt={name}
         className="w-full h-[160px] object-cover bg-zinc-100"
         onError={(e) => {
           e.target.onerror = null
@@ -21,10 +26,10 @@ const CenterCard = ({ center, departure }) => {
       />
       <div className="p-[14px]">
         <div className="flex items-start justify-between gap-2 mb-[3px]">
-          <h3 className="text-[15px] font-bold text-zinc-900 leading-snug">{center.name}</h3>
+          <h3 className="text-[15px] font-bold text-zinc-900 leading-snug">{name}</h3>
           {center.isAffiliated && <AffiliateBadge />}
         </div>
-        <p className="text-[12px] text-zinc-500 mb-3">{center.address}</p>
+        <p className="text-[12px] text-zinc-500 mb-3">{address}</p>
         <div
           className="flex gap-[6px]"
           onClick={(e) => e.stopPropagation()}

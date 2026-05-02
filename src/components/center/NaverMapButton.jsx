@@ -1,12 +1,22 @@
+import { useLang } from '@/contexts/LangContext'
 import { getDefaultMapUrl, getMeetingMapUrl, isValidUrl } from '@/utils/naverMap'
 
 const NaverMapButton = ({ center, type, departure, className = '' }) => {
+  const { t, lang } = useLang()
+
   const url = type === 'meeting'
     ? (departure ? getMeetingMapUrl(center, departure) : null)
     : getDefaultMapUrl(center)
 
   const disabled = !isValidUrl(url)
-  const label = type === 'meeting' ? `${departure?.name ?? ''} 출발 길찾기` : '길찾기'
+
+  const departureName = departure
+    ? (lang === 'en' ? (departure.nameEn ?? departure.name) : departure.name)
+    : ''
+
+  const label = type === 'meeting'
+    ? t('detail.btnMeeting', { departure: departureName })
+    : t('detail.btnDirections')
 
   const handleClick = () => {
     window.open(url, '_blank', 'noopener,noreferrer')
@@ -18,7 +28,7 @@ const NaverMapButton = ({ center, type, departure, className = '' }) => {
         disabled
         className={`w-full py-[11px] rounded-xl text-[13px] font-semibold bg-zinc-100 text-zinc-400 border border-zinc-200 cursor-not-allowed ${className}`}
       >
-        {label} (준비 중)
+        {label} ({t('detail.btnUnavailable')})
       </button>
     )
   }

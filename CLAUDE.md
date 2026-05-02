@@ -26,10 +26,13 @@ npm run preview    # 빌드 결과 미리보기
 ```
 src/
   components/
-    layout/       # Navbar, Footer
+    layout/       # Navbar (LangToggle 포함), Footer (인스타 링크 포함)
     center/       # CenterCard, CenterList, CenterDetail, CenterFilter, NaverMapButton
+                  # ImageCarousel, SnsLinks, ParkingInfo
+  contexts/       # LangContext.jsx (언어 전환 전역 상태)
   pages/          # HomePage, CenterDetailPage
   data/           # centers.json, config.json
+  i18n/           # ko.json, en.json
   utils/          # naverMap.js
 public/
   images/centers/ # 센터 이미지
@@ -43,12 +46,13 @@ public/
 - JSON import는 `import data from '@/data/centers.json'` 형태
 - `@/` 는 `src/` 의 절대경로 alias (vite.config.js에 설정됨)
 - 외부 링크는 반드시 `window.open(url, '_blank', 'noopener,noreferrer')` 사용
+- naverPlaceId 유효성: `isValidPlaceId()` 사용 (PLACE_POI 포함 여부 검사)
 - 버튼 비활성화 시 disabled 속성 + 시각적 안내 표시
 
 ## 데이터 파일 요약
 
-- `centers.json` : 센터 목록 (id, name, address, region, description, images, isAffiliated, naverMapUrl, naverDestination, phone?, prices?, affiliatePrices?)
-- `config.json`  : 정기모임 출발지 (departure.name, departure.naverDeparture)
+- `centers.json` : 센터 목록 (id, name, address, region, description, images, isAffiliated, naverPlaceId, phone?, prices?, affiliatePrices?, snsLinks?, parking?, i18n?)
+- `config.json`  : 정기모임 출발지 (departure.name, departure.nameEn, departure.naverPlaceId) + instagram URL
 
 상세 스키마 → @docs/data-schema.md
 
@@ -60,6 +64,13 @@ public/
 - `CenterDetail`   : 상세 정보 + 사진 + 두 종류 길찾기 버튼
 
 컴포넌트 Props 상세 → @docs/component-spec.md
+
+## i18n 요약
+
+- `LangContext` : lang('ko'|'en'), setLang(), t(key, vars?) 제공
+- `src/i18n/ko.json` / `en.json` : UI 고정 텍스트
+- 센터 데이터 번역 : `center.i18n?.name ?? center.name` 패턴
+- localStorage key: `'lang'`
 
 ## UI 스펙 요약
 

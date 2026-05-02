@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "title": "Hy-Climb",
+    "back": "Back to list"
+  },
+  "home": {
+    "heading": "Affiliated Climbing Centers",
+    "totalCount": "{{count}} centers total",
+    "filterAll": "All"
+  },
+  "detail": {
+    "affiliated": "Affiliated",
+    "sectionPrice": "Pricing",
+    "sectionAffiliatePrice": "Club Member Pricing",
+    "sectionParking": "Parking",
+    "sectionSns": "SNS",
+    "sectionDirections": "Directions",
+    "btnDirections": "Get Directions",
+    "btnMeeting": "From {{departure}}",
+    "btnUnavailable": "Unavailable",
+    "parkingTypes": {
+      "self": "On-site Parking",
+      "nearby": "Nearby Parking",
+      "none": "No Parking"
+    }
+  },
+  "footer": {
+    "instagram": "Hy-Climb Instagram",
+    "copyright": "© 2026 Hy-Climb"
+  },
+  "langToggle": "KO"
+}

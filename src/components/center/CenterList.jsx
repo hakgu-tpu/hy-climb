@@ -3,11 +3,11 @@ import CenterFilter from '@/components/center/CenterFilter'
 import CenterCard from '@/components/center/CenterCard'
 
 const CenterList = ({ centers, departure }) => {
-  const [selectedRegion, setSelectedRegion] = useState('전체')
+  const [selectedRegion, setSelectedRegion] = useState(null)
   const [affiliatedOnly, setAffiliatedOnly] = useState(false)
 
   const filtered = centers.filter((c) => {
-    const regionMatch = selectedRegion === '전체' || c.region === selectedRegion
+    const regionMatch = !selectedRegion || c.region === selectedRegion
     const affiliatedMatch = !affiliatedOnly || c.isAffiliated
     return regionMatch && affiliatedMatch
   })

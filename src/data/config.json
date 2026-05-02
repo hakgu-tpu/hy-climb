@@ -1,6 +1,8 @@
 {
   "departure": {
     "name": "한대앞역",
+    "nameEn": "HanyangUniv at Ansan Station",
     "naverPlaceId": "3zcpZJ,2ABgcV,한대앞역2번출구,21404720,PLACE_POI"
-  }
+  },
+  "instagram": "https://www.instagram.com/hyc_hy_climb/"
 }

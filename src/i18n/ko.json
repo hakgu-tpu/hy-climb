@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "title": "Hy-Climb",
+    "back": "목록으로"
+  },
+  "home": {
+    "heading": "제휴 클라이밍 센터",
+    "totalCount": "총 {{count}}곳",
+    "filterAll": "전체"
+  },
+  "detail": {
+    "affiliated": "제휴",
+    "sectionPrice": "이용 가격",
+    "sectionAffiliatePrice": "동아리 회원 가격",
+    "sectionParking": "주차",
+    "sectionSns": "SNS",
+    "sectionDirections": "길찾기",
+    "btnDirections": "길찾기",
+    "btnMeeting": "{{departure}} 출발 길찾기",
+    "btnUnavailable": "준비 중",
+    "parkingTypes": {
+      "self": "자체 주차",
+      "nearby": "근처 주차",
+      "none": "주차 불가"
+    }
+  },
+  "footer": {
+    "instagram": "Hy-Climb 인스타그램",
+    "copyright": "© 2026 Hy-Climb 동아리"
+  },
+  "langToggle": "EN"
+}

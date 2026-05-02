@@ -280,3 +280,107 @@ export default {
 - 일반 가격 항목 구분선: `border-zinc-100` (은은하게)
 - 가격 포맷: `formatPrice()` 유틸 사용 (`130,000원` 형식)
 - 섹션 없을 때 미표시 (`?.length > 0` 조건부 렌더링)
+
+---
+
+### ImageCarousel (캐러셀)
+
+```jsx
+{/* 캐러셀 컨테이너 */}
+<div className="relative w-full h-[220px] overflow-hidden bg-zinc-100">
+  <img className="w-full h-full object-cover" />
+
+  {/* 좌우 버튼 — 사진 2장 이상일 때만 */}
+  <button className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/30 text-white flex items-center justify-center">
+    ‹
+  </button>
+  <button className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/30 text-white flex items-center justify-center">
+    ›
+  </button>
+
+  {/* 인디케이터 점 */}
+  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+    {/* 활성: w-2 h-2 rounded-full bg-white */}
+    {/* 비활성: w-2 h-2 rounded-full bg-white/50 */}
+  </div>
+</div>
+```
+
+---
+
+### SnsLinks (SNS 아이콘 버튼)
+
+```jsx
+{/* SNS 링크 그룹 — snsLinks 있을 때만 렌더링 */}
+{center.snsLinks?.length > 0 && (
+  <div className="flex gap-3 items-center mb-4">
+    {/* 각 링크 아이콘 버튼 */}
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 rounded-lg border border-zinc-200 flex items-center justify-center hover:border-zinc-400 transition-colors"
+    >
+      {/* 20×20 SVG 아이콘 */}
+    </a>
+  </div>
+)}
+```
+
+아이콘 크기: `width="20" height="20"` (SVG inline)
+버튼 크기: `w-8 h-8` (32×32px)
+
+---
+
+### ParkingInfo (주차 정보)
+
+```jsx
+{center.parking && (
+  <div className="flex items-start gap-2 py-3 border-b border-zinc-100">
+    {/* 주차 아이콘 (16×16 SVG) */}
+    <div>
+      <span className="text-[12px] font-medium text-zinc-700">
+        {t(`detail.parkingTypes.${center.parking.type}`)}
+      </span>
+      {center.parking.description && (
+        <p className="text-[11px] text-zinc-500 mt-[2px]">
+          {lang === 'en' ? center.i18n?.parking?.description : center.parking.description}
+        </p>
+      )}
+    </div>
+  </div>
+)}
+```
+
+---
+
+### LangToggle (Navbar 내 언어 전환 버튼)
+
+```jsx
+{/* Navbar 우측에 배치 */}
+<button
+  onClick={() => setLang(lang === 'ko' ? 'en' : 'ko')}
+  className="px-2 py-[2px] rounded text-[11px] font-semibold border border-zinc-200 text-zinc-500 hover:border-zinc-400 transition-colors"
+>
+  {lang === 'ko' ? 'EN' : 'KO'}
+</button>
+```
+
+---
+
+### Footer — 인스타그램 링크
+
+```jsx
+<footer className="border-t border-zinc-100 px-4 py-6 text-center">
+  <a
+    href={config.instagram}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 text-[12px] text-zinc-400 hover:text-zinc-600 transition-colors"
+  >
+    {/* 인스타그램 SVG 아이콘 16×16, fill="#E1306C" */}
+    <span>@hyclimb</span>
+  </a>
+  <p className="text-[11px] text-zinc-300 mt-2">© 2025 Hy-Climb</p>
+</footer>
+```
