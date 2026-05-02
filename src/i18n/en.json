@@ -28,5 +28,10 @@
     "instagram": "Hy-Climb Instagram",
     "copyright": "© 2026 Hy-Climb"
   },
-  "langToggle": "KO"
+  "langToggle": "KO",
+  "regions": {
+    "수원": "Suwon",
+    "안양": "Anyang",
+    "군포": "Gunpo"
+  }
 }

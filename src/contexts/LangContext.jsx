@@ -24,8 +24,8 @@ export const LangProvider = ({ children }) => {
     setLangState(next);
   };
 
-  const t = (key, vars) => {
-    const str = resolve(messages[lang], key) ?? key;
+  const t = (key, vars, fallback) => {
+    const str = resolve(messages[lang], key) ?? fallback ?? key;
     if (!vars) return str;
     return Object.entries(vars).reduce(
       (acc, [k, v]) => acc.replace(new RegExp(`\\{\\{${k}\\}\\}`, 'g'), v),

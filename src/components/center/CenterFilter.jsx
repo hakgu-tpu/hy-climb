@@ -43,7 +43,7 @@ const CenterFilter = ({ centers, selected, onChange, affiliatedOnly, onAffiliate
               : 'bg-white text-zinc-500 border-zinc-200 hover:border-zinc-400'}
           `}
         >
-          {region}
+          {t('regions.' + region, null, region)}
         </button>
       ))}
     </div>

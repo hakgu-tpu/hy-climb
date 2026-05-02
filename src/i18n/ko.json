@@ -28,5 +28,10 @@
     "instagram": "Hy-Climb 인스타그램",
     "copyright": "© 2026 Hy-Climb 동아리"
   },
-  "langToggle": "EN"
+  "langToggle": "EN",
+  "regions": {
+    "수원": "수원",
+    "안양": "안양",
+    "군포": "군포"
+  }
 }
