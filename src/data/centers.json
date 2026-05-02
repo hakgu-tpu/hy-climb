@@ -12,13 +12,13 @@
       "naverPlaceId": "3ziNUg,2AzuBI,그래비티클라이밍%20수원역점,1774691117,PLACE_POI",
       "phone": "031-242-5014",
       "prices": [
-        { "name": "주말이용권(8주)", "nameEn": "Weekend Pass (8 weeks)", "price": 130000 },
-        { "name": "3개월", "nameEn": "3-Month Pass", "price": 330000 },
-        { "name": "1개월", "nameEn": "1-Month Pass", "price": 130000 },
         { "name": "일일 이용", "nameEn": "Day Pass", "price": 20000 },
-        { "name": "1일 체험 강습 (예약 필수)", "nameEn": "Trial Lesson (Reservation Required)", "price": 25000 },
         { "name": "암벽화 1일 대여료", "nameEn": "Climbing Shoes Rental (1 day)", "price": 3000 },
-        { "name": "초크 1일 대여료", "nameEn": "Chalk Rental (1 day)", "price": 2000 }
+        { "name": "초크 1일 대여료", "nameEn": "Chalk Rental (1 day)", "price": 2000 },
+        { "name": "주말이용권(8주)", "nameEn": "Weekend Pass (8 weeks)", "price": 130000 },
+        { "name": "1개월", "nameEn": "1-Month Pass", "price": 130000 },
+        { "name": "3개월", "nameEn": "3-Month Pass", "price": 330000 },
+        { "name": "1일 체험 강습 (예약 필수)", "nameEn": "Trial Lesson (Reservation Required)", "price": 25000 }
       ],
       "affiliatePrices": [
         { "name": "단체 이용(10인 이상)", "nameEn": "Group Entry (10+ people)", "price": 14000 },
@@ -89,10 +89,10 @@
       "naverMapUrl": "https://map.naver.com/v5/directions/-/3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI",
       "prices": [
-        { "name": "1일 체험 강습(30분 + 자유이용 + 암벽화 대여)", "nameEn": "Trial Lesson (30min + Free Climb + Shoe Rental)", "price": 25000 },
         { "name": "일일 이용", "nameEn": "Day Pass", "price": 20000 },
         { "name": "암벽화 1일 대여료", "nameEn": "Climbing Shoes Rental (1 day)", "price": 3000 },
         { "name": "초크 1일 대여료", "nameEn": "Chalk Rental (1 day)", "price": 2000 },
+        { "name": "1일 체험 강습(30분 + 자유이용 + 암벽화 대여)", "nameEn": "Trial Lesson (30min + Free Climb + Shoe Rental)", "price": 25000 },
         { "name": "5회권", "nameEn": "5-Visit Pass", "price": 90000 },
         { "name": "10회권", "nameEn": "10-Visit Pass", "price": 170000 },
         { "name": "1개월", "nameEn": "1-Month Pass", "price": 130000 },
