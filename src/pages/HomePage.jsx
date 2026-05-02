@@ -1,6 +1,7 @@
 import centersData from '@/data/centers.json'
 import configData from '@/data/config.json'
 import CenterList from '@/components/center/CenterList'
+import EventBanner from '@/components/EventBanner'
 import { useLang } from '@/contexts/LangContext'
 
 const { centers } = centersData
@@ -18,6 +19,7 @@ const HomePage = () => {
           {t('home.totalCount', { count: centers.length })}
         </p>
       </div>
+      <EventBanner event={configData.event} />
       <CenterList centers={centers} departure={configData.departure} />
     </div>
   )

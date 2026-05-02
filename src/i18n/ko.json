@@ -29,6 +29,9 @@
     "copyright": "© 2026 Hy-Climb 동아리"
   },
   "langToggle": "EN",
+  "event": {
+    "linkLabel": "자세히 보기"
+  },
   "regions": {
     "수원": "수원",
     "안양": "안양",

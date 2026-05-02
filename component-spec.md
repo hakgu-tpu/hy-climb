@@ -319,3 +319,52 @@ const affiliatedMatch = !affiliatedOnly || c.isAffiliated
   - 전체: `t('home.filterAll')`
   - 제휴: `t('detail.affiliated')`
   - 지역: `t('regions.' + region, null, region)` — 미등록 지역은 한국어 원문 폴백
+
+---
+
+## EventBanner.jsx (신규 — UC14)
+
+### Props
+
+| prop | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| `event` | object \| undefined | ❌ | config.event 객체. 없으면 null 반환 |
+
+### 렌더링 조건 (컴포넌트 내부에서 판단)
+
+```js
+if (!event) return null;
+if (!event.active) return null;
+if (event.endDate && new Date(event.endDate) < new Date(today)) return null;
+```
+
+세 조건 중 하나라도 해당되면 컴포넌트 전체 미렌더링. 나머지 HomePage UI는 정상 표시.
+
+### 렌더링 구조
+
+```
+EventBanner
+├── 아이콘 (별 모양 SVG) + title         ← i18n 적용
+├── description (있을 때만)              ← i18n 적용
+├── date (있을 때만)                     ← "MM월 DD일" 포맷
+└── linkUrl 있을 때
+    └── linkLabel 버튼 → 새 탭 오픈     ← i18n 적용
+```
+
+### i18n 처리
+
+```js
+const title       = lang === 'en' ? (event.i18n?.title       ?? event.title)       : event.title
+const description = lang === 'en' ? (event.i18n?.description ?? event.description) : event.description
+const linkLabel   = lang === 'en' ? (event.i18n?.linkLabel   ?? event.linkLabel)   : event.linkLabel
+```
+
+### 위치
+
+HomePage에서 CenterFilter 위, 최상단에 렌더링.
+
+```jsx
+<EventBanner event={configData.event} />
+<CenterFilter ... />
+<CenterList ... />
+```

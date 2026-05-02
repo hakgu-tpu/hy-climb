@@ -29,9 +29,13 @@
     "copyright": "© 2026 Hy-Climb"
   },
   "langToggle": "KO",
+  "event": {
+    "linkLabel": "Learn More"
+  },
   "regions": {
     "수원": "Suwon",
     "안양": "Anyang",
-    "군포": "Gunpo"
+    "군포": "Gunpo",
+    "서울": "Seoul"
   }
 }

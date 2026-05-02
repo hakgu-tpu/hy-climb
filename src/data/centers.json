@@ -6,7 +6,7 @@
       "address": "경기도 수원시 팔달구 갓매산로 31 홍익스포츠프라자 2층",
       "region": "수원",
       "description": "수원역 인근에 위치한 그래비티클라이밍 센터입니다. 사장님이 에리카 선배님이셔서 파격 할인",
-      "images": ["center_01_main.jpg", "center_01_01.jpg", "center_01_02.jpg", "center_01_03.jpg", "center_01_04.jpg"],
+      "images": ["center_01_main.png", "center_01_01.jpg", "center_01_02.jpg", "center_01_03.jpg", "center_01_04.jpg"],
       "isAffiliated": true,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3ziNUg,2AzuBI,%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EC%88%98%EC%9B%90%EC%97%AD%EC%A0%90,1774691117,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "3ziNUg,2AzuBI,그래비티클라이밍%20수원역점,1774691117,PLACE_POI",
@@ -125,8 +125,8 @@
       "name": "킨디클라이밍",
       "address": "경기도 수원시 권선구 세화로 124 (수원역 3번 출구에서 578m)",
       "region": "수원",
-      "description": "국내 최대 규모의 실내 암장, 천장이 높음, 없느거 빼고 다있음",
-      "images": ["center_04_main.jpg"],
+      "description": "국내 최대 규모의 실내 암장, 천장이 높음, 없는거 빼고 다있음",
+      "images": ["center_04_main.png"],
       "isAffiliated": false,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
       "naverPlaceId": "3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI",
@@ -150,6 +150,36 @@
         "name": "Rock Climbing Sanbon",
         "address": "60, Gwangjeong-ro, Gunpo-si, Gyeonggi-do, 9th floor of Uju Town Building",
         "description": "Affordable prices even without group entry and a spacious endurance zone."
+      }
+    },
+    {
+      "id": "center_06",
+      "name": "슈퍼비클라이밍",
+      "address": "경기 수원시 영통구 청명남로 40 3층 (영통역 1번 출구에서 527m, 도보 5분)",
+      "region": "수원",
+      "description": "볼더링 파티 장소",
+      "images": ["center_06_main.jpg"],
+      "isAffiliated": false,
+      "naverPlaceId": "3zlMRH,2AyTgv,슈퍼비클라이밍,1319993236,PLACE_POI",
+      "i18n": {
+        "name": "Super B Climbing",
+        "address": "3rd floor, 40 Cheongmyeongnam-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do",
+        "description": "Venue for our bouldering parties."
+      }
+    },
+    {
+      "id": "center_07",
+      "name": "서울숲클라이밍 영등포점",
+      "address": "서울 영등포구 문래로 164 1층 (문래역 5번 출구 400m)",
+      "region": "서울",
+      "description": "서울 영등포에 있는 클라이밍 센터입니다.",
+      "images": ["center_07_main.png"],
+      "isAffiliated": false,
+      "naverPlaceId": "3zennQ,2AJZyQ,서울숲클라이밍%20영등포점,1013096161,PLACE_POI",
+      "i18n": {
+        "name": "Seoul Forest Climbing Yeongdeungpo",
+        "address": "1st floor, 164 Munrae-ro, Yeongdeungpo-gu, Seoul",
+        "description": "Climbing center located in Yeongdeungpo, Seoul."
       }
     }
   ]

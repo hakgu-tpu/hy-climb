@@ -384,3 +384,67 @@ export default {
   <p className="text-[11px] text-zinc-300 mt-2">© 2025 Hy-Climb</p>
 </footer>
 ```
+
+---
+
+### EventBanner (이벤트 배너 — UC14)
+
+색상: Violet 계열. 기존 zinc-900(버튼), orange(제휴 배지)와 명확히 구분.
+
+```jsx
+{/* 배너 컨테이너 */}
+<div className="bg-violet-50 border border-violet-200 rounded-xl p-3 mb-3">
+
+  {/* 헤더 — 아이콘 + 제목 */}
+  <div className="flex items-center gap-2 mb-[5px]">
+    <div className="w-5 h-5 rounded-[5px] bg-violet-700 flex items-center justify-center flex-shrink-0">
+      {/* 별 아이콘 SVG 12×12 fill="white" */}
+    </div>
+    <span className="text-[12px] font-bold text-violet-900">{title}</span>
+  </div>
+
+  {/* 설명 — 있을 때만 */}
+  {description && (
+    <p className="text-[10px] text-violet-700 mb-[6px]">{description}</p>
+  )}
+
+  {/* 날짜 — 있을 때만, 설명 없으면 제목 바로 아래 */}
+  {event.date && (
+    <p className="text-[10px] text-violet-600 mb-[6px]">{formatEventDate(event.date)}</p>
+  )}
+
+  {/* 링크 버튼 — linkUrl 있을 때만 */}
+  {event.linkUrl && (
+    <button
+      onClick={() => window.open(event.linkUrl, '_blank', 'noopener,noreferrer')}
+      className="text-[10px] font-bold px-[10px] py-1 rounded-md bg-violet-700 text-white"
+    >
+      {linkLabel}
+    </button>
+  )}
+</div>
+```
+
+**날짜 포맷 유틸 (`src/utils/formatEventDate.js`)**
+
+```js
+// "2026-04-30" → ko: "4월 30일" / en: "April 30"
+export function formatEventDate(dateStr, lang = 'ko') {
+  const d = new Date(dateStr);
+  return lang === 'en'
+    ? d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })
+    : d.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+}
+```
+
+**색상 토큰 요약**
+
+| 요소 | Tailwind 클래스 |
+|---|---|
+| 배너 배경 | `bg-violet-50` |
+| 배너 테두리 | `border-violet-200` |
+| 아이콘 배경 | `bg-violet-700` |
+| 제목 | `text-violet-900 font-bold` |
+| 설명·날짜 | `text-violet-700` / `text-violet-600` |
+| 버튼 배경 | `bg-violet-700` |
+| 버튼 텍스트 | `text-white` |
