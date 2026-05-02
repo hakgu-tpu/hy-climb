@@ -38,10 +38,13 @@ const App = () => (
 // 제공 값
 const { lang, setLang, t } = useLang();
 
-// lang     : 'ko' | 'en'
-// setLang  : (lang) => void — 변경 + localStorage 저장
-// t(key)   : 번역 문자열 반환, 없으면 key 그대로 반환
-// t(key, vars) : {{varName}} 템플릿 치환
+// lang              : 'ko' | 'en'
+// setLang(lang)     : 언어 변경 + localStorage 저장
+// t(key)            : 번역 문자열 반환, 없으면 key 그대로 반환
+// t(key, vars)      : {{varName}} 템플릿 치환
+// t(key, vars, fallback) : 키 없을 때 key 대신 fallback 반환
+//                     vars 없이 fallback만 쓸 때는 null 전달
+//                     예) t('regions.수원', null, '수원')
 ```
 
 - 초기 언어 감지 순서: `localStorage` → `navigator.language` (ko → 'ko', 그 외 → 'en')
@@ -312,4 +315,7 @@ const affiliatedMatch = !affiliatedOnly || c.isAffiliated
 - "전체" 칩: `onChange(null)` 호출, `selected === null`이면 활성 스타일
 - 지역 칩: `onChange(region)` 호출, `selected === region`이면 활성 스타일
 - "제휴" 칩: 활성 시 오렌지 배경
-- 칩 라벨: `t('home.filterAll')`, `t('detail.affiliated')` 사용
+- 칩 라벨:
+  - 전체: `t('home.filterAll')`
+  - 제휴: `t('detail.affiliated')`
+  - 지역: `t('regions.' + region, null, region)` — 미등록 지역은 한국어 원문 폴백

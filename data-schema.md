@@ -251,7 +251,7 @@ src/i18n/
     "back": "목록으로"
   },
   "home": {
-    "heading": "제휴 클라이밍 센터",
+    "heading": "클라이밍 센터",
     "totalCount": "총 {{count}}곳",
     "filterAll": "전체"
   },
@@ -275,9 +275,16 @@ src/i18n/
     "instagram": "Hy-Climb 인스타그램",
     "copyright": "© 2026 Hy-Climb 동아리"
   },
-  "langToggle": "EN"
+  "langToggle": "EN",
+  "regions": {
+    "수원": "수원",
+    "안양": "안양",
+    "군포": "군포"
+  }
 }
 ```
+
+> `regions` 키: `center.region` 값을 표시 라벨로 변환. en.json에서는 `"수원": "Suwon"` 등 영문 매핑. 미등록 지역은 `t('regions.신규지역', null, '신규지역')` 패턴으로 원문 폴백.
 
 ### 언어 전환 전략
 
@@ -295,14 +302,17 @@ src/i18n/
 | 가격 항목명 | `lang === 'en' ? (item.nameEn ?? item.name) : item.name` |
 | 주차 설명 | `lang === 'en' && i18nParking?.description ? i18nParking.description : parking.description` |
 | 길찾기 버튼 출발지명 | `lang === 'en' ? (departure.nameEn ?? departure.name) : departure.name` |
+| 지역 필터 칩 라벨 | `t('regions.' + center.region, null, center.region)` |
 
 ### 사용 예시
 
 ```js
 const { t, lang, setLang } = useLang();
 
-t('home.heading')                              // "제휴 클라이밍 센터"
-t('home.totalCount', { count: 5 })             // "총 5곳"
-t('detail.btnMeeting', { departure: '한대앞역' }) // "한대앞역 출발 길찾기"
-t('detail.parkingTypes.self')                  // "자체 주차"
+t('home.heading')                                    // "클라이밍 센터"
+t('home.totalCount', { count: 5 })                   // "총 5곳"
+t('detail.btnMeeting', { departure: '한대앞역' })      // "한대앞역 출발 길찾기"
+t('detail.parkingTypes.self')                        // "자체 주차"
+t('regions.수원', null, '수원')                       // ko: "수원" / en: "Suwon"
+t('regions.미등록지역', null, '미등록지역')            // 미등록 시 원문 폴백
 ```

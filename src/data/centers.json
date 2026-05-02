@@ -6,7 +6,7 @@
       "address": "경기도 수원시 팔달구 갓매산로 31 홍익스포츠프라자 2층",
       "region": "수원",
       "description": "수원역 인근에 위치한 그래비티클라이밍 센터입니다. 사장님이 에리카 선배님이셔서 파격 할인",
-      "images": ["center_01_main.jpg"],
+      "images": ["center_01_main.jpg", "center_01_01.jpg", "center_01_02.jpg", "center_01_03.jpg", "center_01_04.jpg"],
       "isAffiliated": true,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3ziNUg,2AzuBI,%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EC%88%98%EC%9B%90%EC%97%AD%EC%A0%90,1774691117,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "3ziNUg,2AzuBI,그래비티클라이밍%20수원역점,1774691117,PLACE_POI",
@@ -48,7 +48,7 @@
       "address": "경기도 안양시 동안구 시민대로 161 (범계역 8번 출구에서 67m)",
       "region": "안양",
       "description": "깔끔하고 쾌적한 암장 내부에 젤라또 아이스크림 판매",
-      "images": ["center_02_main.png"],
+      "images": ["center_02_main.png", "center_02_01.png", "center_02_02.png", "center_02_03.png", "center_02_04.jpg"],
       "isAffiliated": true,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3zgsby,2AEF9b/%EC%97%90%EC%96%B4%EC%A6%88%EB%9D%BD%20%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EB%B2%94%EA%B3%84%EC%A0%90,1342684445,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "3zgsby,2AEF9b,에어즈락%20클라이밍%20범계점,1342684445,PLACE_POI",
@@ -56,7 +56,7 @@
         { "name": "스타터패키지(1개월 자유이용권 + 7회 강습 + 암벽화 증정)", "nameEn": "Starter Package (1-Month Pass + 7 Lessons + Shoes Gift)", "price": 250000 },
         { "name": "일일 이용 (할인 이벤트)", "nameEn": "Day Pass (Discount Event)", "price": 25000 },
         { "name": "1개월 자유이용 + 7회 강습", "nameEn": "1-Month Pass + 7 Lessons", "price": 200000 },
-        { "name": "1일 체험 강습(40분 + 강습일 자유이용 + 암벽화 대여", "nameEn": "Trial Lesson (40min + Free Climb + Shoe Rental)", "price": 30000 }
+        { "name": "1일 체험 강습(40분 + 강습일 자유이용 + 암벽화 대여)", "nameEn": "Trial Lesson (40min + Free Climb + Shoe Rental)", "price": 30000 }
       ],
       "affiliatePrices": [
         { "name": "단체 이용(10인 이상)", "nameEn": "Group Entry (10+ people)", "price": 15000 },
@@ -64,7 +64,8 @@
         { "name": "암벽화 대여", "nameEn": "Climbing Shoes Rental", "price": 3000 }
       ],
       "snsLinks": [
-        { "type": "instagram", "url": "https://www.instagram.com/ayersrock_beomgye" }
+        { "type": "instagram", "url": "https://www.instagram.com/ayersrock_beomgye" },
+        { "type": "blog", "url": "https://blog.naver.com/ayersrockclimbing" }
       ],
       "parking": {
         "type": "self",
@@ -84,7 +85,7 @@
       "address": "경기도 군포시 엘에스로 153-8 (금정역 1번 출구에서 382m)",
       "region": "군포",
       "description": "문제 퀄리티 Good, 실력 향상에 도움",
-      "images": ["center_03_main.png", "center_03_01.jpg"],
+      "images": ["center_03_main.png", "center_03_01.jpg", "center_03_02.jpg", "center_03_03.jpg", "center_03_04.jpg"],
       "isAffiliated": true,
       "naverMapUrl": "https://map.naver.com/v5/directions/-/3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
       "naverPlaceId": "3zgh3j,2ADYGc,스파이시클라이밍,2050009656,PLACE_POI",
