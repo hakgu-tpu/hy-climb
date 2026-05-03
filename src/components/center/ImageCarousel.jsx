@@ -30,8 +30,8 @@ const ImageCarousel = ({ images, centerName, current, onChange }) => {
 
   const handleTouchEnd = () => {
     const w = containerRef.current?.offsetWidth ?? 390
-    if (dragX > w * 0.3) prev()
-    else if (dragX < -(w * 0.3)) next()
+    if (dragX > w * 0.15) prev()
+    else if (dragX < -(w * 0.15)) next()
     setDragX(0)
     setDragging(false)
     touchStartX.current = null
