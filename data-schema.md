@@ -169,8 +169,29 @@ lang === 'en' ? (item.nameEn ?? item.name) : item.name  // 가격 항목명
     "nameEn": "Handaefront Station",
     "naverPlaceId": "3zcpZJ,2ABgcV,한대앞역2번출구,21404720,PLACE_POI"
   },
-  "instagram": "https://www.instagram.com/hy_climb/"
+  "instagram": "https://www.instagram.com/hy_climb/",
+  "event": {
+    "active": true,
+    "title": "볼더링 파티 🎉",
+    "description": "4월 30일 오후 5시, 한대앞역에서 같이 출발해요!",
+    "date": "2026-04-30",
+    "endDate": "2026-04-30",
+    "linkUrl": "https://forms.gle/xxxx",
+    "linkLabel": "신청하기",
+    "i18n": {
+      "title": "Bouldering Party 🎉",
+      "description": "April 30th, 5PM. Let's go together from Handaap Station!",
+      "linkLabel": "Apply"
+    }
+  },
+  "meeting": {
+    "active": true,
+    "centerId": "center_01",
+    "date": "2026-05-07",
+    "time": "17:00"
+  }
 }
+
 ```
 
 ### departure 객체
@@ -184,6 +205,17 @@ lang === 'en' ? (item.nameEn ?? item.name) : item.name  // 가격 항목명
 | 필드 | 타입 | 필수 | 설명 |
 |---|---|---|---|
 | `instagram` | string | ✅ | 동아리 공식 Instagram URL. Footer 링크에 사용 |
+| `event` | Event | ❌ | 이벤트 정보, 없거나 active: false면 EventBanner 미표시 |
+| `meeting` | Meeting | ❌ | 이번 정기모임 정보. 없거나 active: false면 MeetingBanner 미표시 |
+
+### meeting 객체
+ 
+| 필드 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| `active` | boolean | ✅ | false면 MeetingBanner 미표시 |
+| `centerId` | string | ✅ | 이번 정기모임 목적지. centers.json의 id 참조 |
+| `date` | string | ✅ | 정기모임 날짜 (YYYY-MM-DD) |
+| `time` | string | ✅ | 정기모임 시간 ("17:00" 형식) |
 
 ### naverPlaceId 추출 방법
 
@@ -193,6 +225,19 @@ lang === 'en' ? (item.nameEn ?? item.name) : item.name  // 가격 항목명
 https://map.naver.com/p/directions/{departure.naverPlaceId}/{목적지}/-/transit
                                     ↑ 이 부분을 복사해서 저장
 ```
+
+### event 객체
+
+| 필드 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| `active` | boolean | ✅ | false면 무조건 미표시. 빠른 온/오프 스위치 |
+| `title` | string | ✅ | 이벤트 제목 |
+| `description` | string | ❌| 부연 설명 |
+| `date` | string| ❌ | 이벤트 날짜 (YYYY-MM-DD). 배너에 날짜 표시용 |
+| `endDate` | string | ❌ | 이 날짜 이후엔 자동 숨김. 없으면 active로만 제어 |
+| `linkUrl` | string | ❌ | 클릭 시 이동할 URL (신청 폼, 인스타 등). 없으면 배너만 표시 |
+| `linkLabel` | string | ❌ | 링크 버튼 라벨 |
+| `i18n` | object | ❌ | 영문 번역 |
 
 ---
 

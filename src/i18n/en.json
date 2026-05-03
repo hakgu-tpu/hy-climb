@@ -30,7 +30,12 @@
   },
   "langToggle": "KO",
   "event": {
-    "linkLabel": "Learn More"
+    "linkLabel": "Learn More",
+    "expand": "Show more",
+    "collapse": "Close"
+  },
+  "meeting": {
+    "badge": "Regular Meeting"
   },
   "regions": {
     "수원": "Suwon",

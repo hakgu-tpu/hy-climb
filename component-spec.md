@@ -322,7 +322,7 @@ const affiliatedMatch = !affiliatedOnly || c.isAffiliated
 
 ---
 
-## EventBanner.jsx (신규 — UC14)
+## EventBanner.jsx (UC14)
 
 ### Props
 
@@ -340,15 +340,57 @@ if (event.endDate && new Date(event.endDate) < new Date(today)) return null;
 
 세 조건 중 하나라도 해당되면 컴포넌트 전체 미렌더링. 나머지 HomePage UI는 정상 표시.
 
+### 내부 상태
+
+- `isExpanded` : boolean
+
+### 초기 상태 결정 로직
+
+```js
+const STORAGE_KEY = 'collapsedEventTitle';
+
+const getInitialExpanded = (eventTitle) => {
+  const collapsed = localStorage.getItem(STORAGE_KEY);
+  return collapsed !== eventTitle;  // 저장된 title과 다르면 펼침 (새 이벤트)
+};
+
+const [isExpanded, setIsExpanded] = useState(() => getInitialExpanded(event.title));
+```
+
+### 접기/펼치기 동작
+
+```js
+const handleToggle = () => {
+  if (isExpanded) {
+    // 접기 → localStorage에 현재 이벤트 title 저장
+    localStorage.setItem(STORAGE_KEY, event.title);
+  } else {
+    // 펼치기 → localStorage 초기화
+    localStorage.removeItem(STORAGE_KEY);
+  }
+  setIsExpanded(prev => !prev);
+};
+```
+
+### 토글 표시 조건
+
+- `event.description`이 존재하면 → 확장 영역 하단에 "펼치기" / "닫기" 텍스트 버튼 표시
+- `event.description`이 없으면 → 토글 기능 없음, 버튼 미표시
+
 ### 렌더링 구조
 
 ```
 EventBanner
-├── 아이콘 (별 모양 SVG) + title         ← i18n 적용
-├── description (있을 때만)              ← i18n 적용
-├── date (있을 때만)                     ← "MM월 DD일" 포맷
-└── linkUrl 있을 때
-    └── linkLabel 버튼 → 새 탭 오픈     ← i18n 적용
+├── 헤더 행 (항상 표시)
+│   ├── [EVENT 배지] + title             ← i18n 적용
+│   └── date (있을 때만)                 ← "MM월 DD일" 포맷
+└── 확장 영역 (isExpanded && description 있을 때만)
+    ├── description                      ← i18n 적용
+    └── linkUrl 있을 때
+        └── linkLabel 버튼 → 새 탭 오픈 ← i18n 적용
+└── 토글 버튼 (description 있을 때만, 항상 표시)
+    ├── 펼침 상태: t('event.collapse') → "닫기"
+    └── 접힘 상태: t('event.expand')  → "펼치기"
 ```
 
 ### i18n 처리
@@ -361,10 +403,55 @@ const linkLabel   = lang === 'en' ? (event.i18n?.linkLabel   ?? event.linkLabel)
 
 ### 위치
 
-HomePage에서 CenterFilter 위, 최상단에 렌더링.
+HomePage에서 MeetingBanner 위, 최상단에 렌더링.
 
 ```jsx
 <EventBanner event={configData.event} />
+<MeetingBanner meeting={configData.meeting} centers={centersData.centers} />
 <CenterFilter ... />
 <CenterList ... />
 ```
+
+---
+
+## MeetingBanner.jsx (신규 — UC15)
+
+항상 compact한 한 줄. 토글 없음. 배너 전체 클릭 시 해당 센터 상세 페이지로 이동.
+
+### Props
+
+| prop | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| `meeting` | object \| undefined | ❌ | config.meeting 객체. 없으면 null 반환 |
+| `centers` | Center[] | ✅ | 전체 센터 목록. meeting.centerId로 센터명 조회 |
+
+### 렌더링 조건
+
+```js
+if (!meeting) return null;
+if (!meeting.active) return null;
+
+const meetingCenter = centers.find(c => c.id === meeting.centerId);
+if (!meetingCenter) return null;
+```
+
+### 클릭 동작
+
+```js
+// 배너 전체가 클릭 가능 → /center/:id 로 이동
+navigate(`/center/${meetingCenter.id}`)
+```
+
+### 렌더링 구조
+
+```
+MeetingBanner (cursor-pointer, 전체 클릭 → /center/:id)
+├── [정기모임 배지]
+├── 날짜·시간 ("5월 7일 오후 5시")
+├── 센터명 (centerId로 centers에서 조회)  ← i18n 적용
+└── → 화살표 아이콘                       ← 클릭 가능함을 시각적으로 표시
+```
+
+### 위치
+
+EventBanner 아래, CenterFilter 위.

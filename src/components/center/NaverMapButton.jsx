@@ -1,7 +1,7 @@
 import { useLang } from '@/contexts/LangContext'
 import { getDefaultMapUrl, getMeetingMapUrl, isValidUrl } from '@/utils/naverMap'
 
-const NaverMapButton = ({ center, type, departure, className = '' }) => {
+const NaverMapButton = ({ center, type, departure, className = '', compact = false }) => {
   const { t, lang } = useLang()
 
   const url = type === 'meeting'
@@ -23,12 +23,24 @@ const NaverMapButton = ({ center, type, departure, className = '' }) => {
   }
 
   if (disabled) {
-    return (
+    return compact ? (
+      <button disabled className={`opacity-50 cursor-not-allowed ${className}`}>
+        {label} ({t('detail.btnUnavailable')})
+      </button>
+    ) : (
       <button
         disabled
         className={`w-full py-[11px] rounded-xl text-[13px] font-semibold bg-zinc-100 text-zinc-400 border border-zinc-200 cursor-not-allowed ${className}`}
       >
         {label} ({t('detail.btnUnavailable')})
+      </button>
+    )
+  }
+
+  if (compact) {
+    return (
+      <button onClick={handleClick} className={className}>
+        {label}
       </button>
     )
   }

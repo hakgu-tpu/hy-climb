@@ -448,3 +448,57 @@ export function formatEventDate(dateStr, lang = 'ko') {
 | 설명·날짜 | `text-violet-700` / `text-violet-600` |
 | 버튼 배경 | `bg-violet-700` |
 | 버튼 텍스트 | `text-white` |
+
+---
+
+### MeetingBanner (정기모임 배너 — UC15)
+
+항상 compact한 한 줄. 토글 없음. EventBanner 아래, CenterFilter 위에 위치.
+zinc-900 배경으로 EventBanner(violet), CenterCard(white)와 시각적으로 명확히 구분.
+
+```jsx
+{/* 배너 전체가 클릭 가능 → /center/:id 이동 */}
+<div
+  onClick={() => navigate(`/center/${meetingCenter.id}`)}
+  className="flex items-center justify-between gap-2 bg-zinc-900 rounded-xl px-[14px] py-[10px] mb-3 cursor-pointer hover:bg-zinc-800 transition-colors"
+>
+  <div className="flex items-center gap-2 min-w-0">
+    {/* 정기모임 배지 */}
+    <span className="flex-shrink-0 text-[10px] font-bold px-2 py-[2px] rounded-full bg-white text-zinc-900">
+      {t('meeting.badge')}
+    </span>
+    {/* 날짜·시간 */}
+    <span className="text-[12px] text-zinc-400 flex-shrink-0">
+      {formatEventDate(meeting.date, lang)} {meeting.time}
+    </span>
+    {/* 센터명 */}
+    <span className="text-[13px] font-bold text-white truncate">
+      {centerName}
+    </span>
+  </div>
+
+  {/* 우측 화살표 — 클릭 가능함을 시각적으로 표시 */}
+  <span className="text-zinc-500 flex-shrink-0">›</span>
+</div>
+```
+
+**색상 토큰 요약**
+
+| 요소 | Tailwind 클래스 |
+|---|---|
+| 배너 배경 | `bg-zinc-900` |
+| 배너 패딩 | `px-[14px] py-[10px]` — EventBanner와 수평 여백 통일 |
+| 정기모임 배지 | `bg-white text-zinc-900 rounded-full text-[10px] font-bold` |
+| 날짜·시간 | `text-[12px] text-zinc-400` |
+| 센터명 | `text-[13px] font-bold text-white` |
+| 버튼 | `bg-white text-zinc-900 text-[11px] font-semibold rounded-lg` |
+
+**i18n 키**
+
+```json
+// ko.json
+"meeting": { "badge": "정기모임" }
+
+// en.json
+"meeting": { "badge": "Regular Meeting" }
+```

@@ -2,6 +2,7 @@ import centersData from '@/data/centers.json'
 import configData from '@/data/config.json'
 import CenterList from '@/components/center/CenterList'
 import EventBanner from '@/components/EventBanner'
+import MeetingBanner from '@/components/MeetingBanner'
 import { useLang } from '@/contexts/LangContext'
 
 const { centers } = centersData
@@ -20,6 +21,7 @@ const HomePage = () => {
         </p>
       </div>
       <EventBanner event={configData.event} />
+      <MeetingBanner meeting={configData.meeting} centers={centers} />
       <CenterList centers={centers} departure={configData.departure} />
     </div>
   )

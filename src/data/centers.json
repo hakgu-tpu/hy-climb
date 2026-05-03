@@ -55,13 +55,19 @@
       "prices": [
         { "name": "스타터패키지(1개월 자유이용권 + 7회 강습 + 암벽화 증정)", "nameEn": "Starter Package (1-Month Pass + 7 Lessons + Shoes Gift)", "price": 250000 },
         { "name": "일일 이용 (할인 이벤트)", "nameEn": "Day Pass (Discount Event)", "price": 25000 },
+        { "name": "암벽화 1일 대여료", "nameEn": "Climbing Shoes Rental (1 day)", "price": 3000 },
+        { "name": "초크 1일 대여료", "nameEn": "Chalk Rental (1 day)", "price": 2000 },
         { "name": "1개월 자유이용 + 7회 강습", "nameEn": "1-Month Pass + 7 Lessons", "price": 200000 },
+        { "name": "1개월 자유이용", "nameEn": "1-Month Pass", "price": 130000 },
+        { "name": "3개월 자유이용", "nameEn": "3-Month Pass", "price": 330000 },
+        { "name": "6개월 자유이용", "nameEn": "6-Month Pass", "price": 600000 },
+        { "name": "5회권" , "nameEn": "5-Visit Pass", "price": 90000 },
+        { "name": "10회권", "nameEn": "10-Visit Pass", "price": 170000 },
         { "name": "1일 체험 강습(40분 + 강습일 자유이용 + 암벽화 대여)", "nameEn": "Trial Lesson (40min + Free Climb + Shoe Rental)", "price": 30000 }
       ],
       "affiliatePrices": [
         { "name": "단체 이용(10인 이상)", "nameEn": "Group Entry (10+ people)", "price": 15000 },
-        { "name": "동아리 회원 일일", "nameEn": "Club Member Day Pass", "price": 20000 },
-        { "name": "암벽화 대여", "nameEn": "Climbing Shoes Rental", "price": 3000 }
+        { "name": "동아리 회원 일일", "nameEn": "Club Member Day Pass", "price": 20000 }
       ],
       "snsLinks": [
         { "type": "instagram", "url": "https://www.instagram.com/ayersrock_beomgye" },
@@ -181,6 +187,54 @@
         "address": "1st floor, 164 Munrae-ro, Yeongdeungpo-gu, Seoul",
         "description": "Climbing center located in Yeongdeungpo, Seoul."
       }
+    },
+    {
+      "id": "center_08",
+      "name": "그래비티클라이밍 영통구청점",
+      "address": "경기 수원시 영통구 효원로 400 탑프라자 7층(매탄권선역 4번 출구에서 968m)",
+      "region": "수원",
+      "description": "Hy-Climb 2025년 1학기 볼더링파티 장소",
+      "images": ["center_08_main.png"],
+      "isAffiliated": false,
+      "naverPlaceId": "3zkupy,2Az6AF,그래비티%20클라이밍%20영통구청점,35807313,PLACE_POI",
+      "snsLinks": [
+        { "type": "instagram", "url": "https://www.instagram.com/gravity_yeongtong/" }
+      ],
+      "i18n": {
+        "name": "Gravity Climbing Yeongtong-gu Office",
+        "address": "7th floor, Top Plaza, 400 Hyowon-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do",
+        "description": "Venue for our bouldering party in the first semester of 2025."
+      }
+    },
+    {
+      "id": "center_09",
+      "name": "더클라임 사당점",
+      "address": "서울 관악구 과천대로 939 지층 B201호(사당역 4호선 4번출구 도보 1분거리)",
+      "region": "서울",
+      "description": "사당에 위치한 클라이밍 센터입니다.",
+      "images": ["center_09_main.png"],
+      "isAffiliated": false,
+      "naverPlaceId": "3zhO9b,2AIbnA,클라이밍%20더클라임%20사당점,1542945259,PLACE_POI",
+      "i18n": {
+        "name": "The Climb Sadang",
+        "address": "B201, Basement floor, 939 Gwacheon-daero, Gwanak-gu, Seoul",
+        "description": "Climbing center located in Sadang."
+      }
+    },
+    {
+      "id": "center_10",
+      "name": "클라임투게더 수원점",
+      "address": "경기 수원시 영통구 덕영대로 1566 3층(망포역 1번 출구 306m)",
+      "region": "수원",
+      "description": "수원 영통에 위치한 클라이밍 센터입니다.",
+      "images": ["center_10_main.png"],
+      "isAffiliated": false,
+      "naverPlaceId": "3zlbbz,2AyyXu,클라임투게더%20수원점,2074248499,PLACE_POI",
+      "i18n": {
+        "name": "Climb Together Suwon",
+        "address": "3rd floor, 1566 Deogyang-daero, Yeongtong-gu, Suwon-si, Gyeonggi-do",
+        "description": "Climbing center located in Yeongtong, Suwon."
+      } 
     }
   ]
 }

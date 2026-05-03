@@ -30,7 +30,12 @@
   },
   "langToggle": "EN",
   "event": {
-    "linkLabel": "자세히 보기"
+    "linkLabel": "자세히 보기",
+    "expand": "펼치기",
+    "collapse": "닫기"
+  },
+  "meeting": {
+    "badge": "정기모임"
   },
   "regions": {
     "수원": "수원",
