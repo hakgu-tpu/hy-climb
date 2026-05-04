@@ -39,7 +39,7 @@ const MeetingBanner = ({ meeting, centers }) => {
           {formatEventDate(meeting.date, lang)} {formatMeetingTime(meeting.time, lang)}
         </span>
       </div>
-      <span className={`text-[13px] font-bold truncate text-right ml-2 ${hasCenterInfo ? 'text-white' : 'text-zinc-500'}`}>
+      <span className={`text-[12px] font-medium truncate text-right ml-2 ${hasCenterInfo ? 'text-white' : 'text-zinc-500'}`}>
         {centerName}
       </span>
     </div>
