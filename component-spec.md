@@ -425,6 +425,7 @@ HomePage에서 MeetingBanner 위, 최상단에 렌더링.
 | `meeting` | object \| undefined | ❌ | config.meeting 객체. 없으면 null 반환 |
 | `centers` | Center[] | ✅ | 전체 센터 목록. meeting.centerId로 센터명 조회 |
 
+
 ### 렌더링 조건
 
 ```js
@@ -438,8 +439,9 @@ if (!meetingCenter) return null;
 ### 클릭 동작
 
 ```js
+// event.centerId에 값이 존재하는 경우에만 클릭 동작
 // 배너 전체가 클릭 가능 → /center/:id 로 이동
-navigate(`/center/${meetingCenter.id}`)
+hasCenterInfo ? () => navigate(`/center/${meetingCenter.id}`) : undefined
 ```
 
 ### 렌더링 구조
@@ -448,8 +450,8 @@ navigate(`/center/${meetingCenter.id}`)
 MeetingBanner (cursor-pointer, 전체 클릭 → /center/:id)
 ├── [정기모임 배지]
 ├── 날짜·시간 ("5월 7일 오후 5시")
-├── 센터명 (centerId로 centers에서 조회)  ← i18n 적용
-└── → 화살표 아이콘                       ← 클릭 가능함을 시각적으로 표시
+└── 센터명 (centerId로 centers에서 조회)  ← i18n 적용
+
 ```
 
 ### 위치

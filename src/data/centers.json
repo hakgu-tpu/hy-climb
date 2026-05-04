@@ -137,14 +137,14 @@
       "naverMapUrl": "https://map.naver.com/p/directions/-/3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
       "naverPlaceId": "3ziyEU,2Azm9k,킨디클라이밍,1254904566,PLACE_POI",
       "prices": [
-        { "name": "단체할인(5인이상)-최소1시간전 예약필수", "nameEn": "Group Discount (5+ people) - Reservation Required at least 1 hour in advance", "price": 20000 },
-        { "name": "단체할인(10인이상)-최소1시간전예약필수", "nameEn": "Group Discount (10+ people) - Reservation Required at least 1 hour in advance", "price": 18000 },
+        { "name": "단체할인(5인이상)-최소1시간전 예약필수", "nameEn": "Group Discount (5+ people) - Reservation Required", "price": 20000 },
+        { "name": "단체할인(10인이상)-최소1시간전예약필수", "nameEn": "Group Discount (10+ people) - Reservation Required", "price": 18000 },
         { "name": "일일 이용", "nameEn": "Day Pass", "price": 22000 },
         { "name": "암벽화 1일 대여료", "nameEn": "Climbing Shoes Rental (1 day)", "price": 3000 },
         { "name": "초크 1일 대여료", "nameEn": "Chalk Rental (1 day)", "price": 2000 }
       ],
       "i18n": {
-        "name": "Kindy Climbing",
+        "name": "KIN:D Climbing",
         "address": "124, Sehwa-ro, Gwonseon-gu, Suwon-si, Gyeonggi-do",
         "description": "The largest indoor climbing gym in Korea with high ceilings and a wide variety of climbing routes."
       }
@@ -161,7 +161,7 @@
       "naverPlaceId": "3zfGqb,2ADkst,락클라이밍%20산본,36624675,PLACE_POI",
       "prices": [
         { "name": "일일 이용", "nameEn": "Day Pass", "price": 15000 },
-        { "name": "단체할인(10인이상)-최소1시간전 예약필수", "nameEn": "Group Discount (5+ people) - Reservation Required at least 1 hour in advance", "price": 13000 },
+        { "name": "단체할인(10인이상)-최소1시간전 예약필수", "nameEn": "Group Discount (10+ people) - Reservation Required", "price": 13000 },
         { "name": "암벽화 1일 대여료", "nameEn": "Climbing Shoes Rental (1 day)", "price": 3000 }
       ],
       "i18n": {
