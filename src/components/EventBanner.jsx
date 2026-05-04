@@ -22,7 +22,7 @@ const EventBanner = ({ event }) => {
 
   const title       = lang === 'en' ? (event.titleEn       ?? event.title)       : event.title
   const description = lang === 'en' ? (event.descriptionEn ?? event.description) : event.description
-  const linkLabel   = event.linkLabel ?? t('event.linkLabel')
+  const linkLabel   = lang === 'en' ? (event.linkLabelEn ?? event.linkLabel) : event.linkLabel
 
   const handleToggle = () => {
     if (isExpanded) {

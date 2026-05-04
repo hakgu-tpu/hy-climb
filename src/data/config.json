@@ -14,7 +14,8 @@
     "date": "2026-05-16",
     "endDate": "2026-05-16",
     "linkUrl": "https://hy-climb.fithub.life/center/center_06",
-    "linkLabel": "대회 장소"
+    "linkLabel": "파티 장소",
+    "linkLabelEn": "Party Location"
   },
   "meeting": {
     "active": true,
