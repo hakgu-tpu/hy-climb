@@ -20,15 +20,16 @@ const MeetingBanner = ({ meeting, centers }) => {
 
   if (!meeting?.active) return null
 
-  const meetingCenter = centers.find(c => c.id === meeting.centerId)
-  if (!meetingCenter) return null
-
-  const centerName = lang === 'en' ? (meetingCenter.i18n?.name ?? meetingCenter.name) : meetingCenter.name
+  const meetingCenter = meeting.centerId ? centers.find(c => c.id === meeting.centerId) : null
+  const hasCenterInfo = !!meetingCenter
+  const centerName = hasCenterInfo
+    ? (lang === 'en' ? (meetingCenter.i18n?.name ?? meetingCenter.name) : meetingCenter.name)
+    : t('meeting.tbd')
 
   return (
     <div
-      className="flex items-center justify-between gap-2 bg-zinc-900 hover:bg-zinc-800 rounded-xl px-[14px] py-[10px] mx-4 mb-3 cursor-pointer transition-colors"
-      onClick={() => navigate(`/center/${meetingCenter.id}`)}
+      className={`flex items-center justify-between gap-2 bg-zinc-900 rounded-xl px-[14px] py-[10px] mx-4 mb-3 transition-colors ${hasCenterInfo ? 'hover:bg-zinc-800 cursor-pointer' : 'cursor-default'}`}
+      onClick={hasCenterInfo ? () => navigate(`/center/${meetingCenter.id}`) : undefined}
     >
       <div className="flex items-center gap-2 flex-shrink-0">
         <span className="text-[10px] font-bold px-2 py-[2px] rounded-full bg-white text-zinc-900">
@@ -38,7 +39,7 @@ const MeetingBanner = ({ meeting, centers }) => {
           {formatEventDate(meeting.date, lang)} {formatMeetingTime(meeting.time, lang)}
         </span>
       </div>
-      <span className="text-[13px] font-bold text-white truncate text-right ml-2">
+      <span className={`text-[13px] font-bold truncate text-right ml-2 ${hasCenterInfo ? 'text-white' : 'text-zinc-500'}`}>
         {centerName}
       </span>
     </div>

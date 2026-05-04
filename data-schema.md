@@ -213,7 +213,7 @@ lang === 'en' ? (item.nameEn ?? item.name) : item.name  // 가격 항목명
 | 필드 | 타입 | 필수 | 설명 |
 |---|---|---|---|
 | `active` | boolean | ✅ | false면 MeetingBanner 미표시 |
-| `centerId` | string | ✅ | 이번 정기모임 목적지. centers.json의 id 참조 |
+| `centerId` | string | ❌ | 이번 정기모임 목적지. centers.json의 id 참조 |
 | `date` | string | ✅ | 정기모임 날짜 (YYYY-MM-DD) |
 | `time` | string | ✅ | 정기모임 시간 ("17:00" 형식) |
 

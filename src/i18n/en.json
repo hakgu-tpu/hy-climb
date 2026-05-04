@@ -35,7 +35,8 @@
     "collapse": "Close"
   },
   "meeting": {
-    "badge": "Regular Meeting"
+    "badge": "Regular Meeting",
+    "tbd": "Venue TBD"
   },
   "regions": {
     "수원": "Suwon",

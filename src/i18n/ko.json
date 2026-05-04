@@ -35,7 +35,8 @@
     "collapse": "닫기"
   },
   "meeting": {
-    "badge": "정기모임"
+    "badge": "정기모임",
+    "tbd": "장소 미정"
   },
   "regions": {
     "수원": "수원",
