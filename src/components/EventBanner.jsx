@@ -64,12 +64,14 @@ const EventBanner = ({ event }) => {
         <div className="mt-2">
           <p className="text-[12px] text-violet-700 leading-relaxed whitespace-pre-line mb-2">{description}</p>
           {event.linkUrl && (
-            <button
-              onClick={() => window.open(event.linkUrl, '_blank', 'noopener,noreferrer')}
-              className="text-[12px] font-semibold px-3 py-[6px] rounded-lg bg-violet-700 text-white hover:bg-violet-800 transition-colors"
-            >
-              {linkLabel}
-            </button>
+            <div className="flex justify-end">
+              <button
+                onClick={() => window.open(event.linkUrl, '_blank', 'noopener,noreferrer')}
+                className="text-[11px] font-semibold px-3 py-[5px] rounded-lg bg-violet-700 text-white hover:bg-violet-800 transition-colors"
+              >
+                {linkLabel}
+              </button>
+            </div>
           )}
         </div>
       )}
