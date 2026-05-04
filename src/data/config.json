@@ -11,12 +11,13 @@
     "titleEn": "Bouldering Party",
     "description": "5월 16일 토요일 수퍼비 클라이밍장에서\n동아리원들만을 위한 클라이밍 대회를 진행합니다!!!\n\n암장을 통째로 대여해 자유롭게 즐기는 하이클라임 대표 이벤트입니다\n대회라고 해서 부담 가질 필요 전혀 없고,\n초보자부터 실력자까지 모두 재밌게 참여할 수 있게 준비했으니\n편하게 참여해주세요😊",
     "descriptionEn": "On Saturday, May 16\nwe will be hosting a climbing competition\nexclusively for our club members at Superbee Climbing Gym!\n\nWe’ve rented out the entire gym,\nso it’s a signature HY-Climb event\nwhere everyone can freely enjoy climbing together.\n\nEven though it’s called a “competition,”\nthere’s absolutely no pressure—\nit's designed so that everyone from beginners to advanced climbers can have fun and participate comfortably 😊",
+    "Date": "2026-05-16",
     "endDate": "2026-05-16"
   },
   "meeting": {
     "active": true,
-    "centerId": "center_01",
-    "date": "2026-04-30",
+    "centerId": "",
+    "date": "2026-05-06",
     "time": "17:00"
   }
 }
