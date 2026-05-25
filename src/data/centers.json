@@ -128,7 +128,7 @@
     },
     {
       "id": "center_04",
-      "name": "킨디클라이밍",
+      "name": "KIN:D 클라이밍",
       "address": "경기도 수원시 권선구 세화로 124 (수원역 3번 출구에서 578m)",
       "region": "수원",
       "description": "국내 최대 규모의 실내 암장, 천장이 높음, 없는거 빼고 다있음",
@@ -261,6 +261,21 @@
         "name": "Climb Together Suwon",
         "address": "3rd floor, 1566 Deogyang-daero, Yeongtong-gu, Suwon-si, Gyeonggi-do",
         "description": "Climbing center located in Yeongtong, Suwon."
+      } 
+    },
+    {
+      "id": "center_11",
+      "name": "피크닉 클라이밍 수원점",
+      "address": "경기 수원시 팔달구 효원로 278 지하1층 101호",
+      "region": "수원",
+      "description": "2026년 5월에 오픈한 신규 클라이밍 센터입니다. 킨디 클라이밍과 횟수권 통합되어있습니다",
+      "images": ["center_11_main.png"],
+      "isAffiliated": false,
+      "naverPlaceId": "3zjWF8,2Azeqv,피크닉클라이밍,2074634645,PLACE_POI",
+      "i18n": {
+        "name": "Picnic Climbing Suwon",
+        "address": "B1F 101, 278 Hyowon-ro, Paldal-gu, Suwon-si, Gyeonggi-do",
+        "description": "Newly opened climbing center in Suwon. Integrated with Kin:d Climbing and class packages."
       } 
     }
   ]
