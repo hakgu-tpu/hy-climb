@@ -18,9 +18,9 @@
     "linkLabelEn": "Party Location"
   },
   "meeting": {
-    "active": false,
+    "active": true,
     "centerId": "",
-    "date": "2026-05-26",
+    "date": "2026-05-29",
     "time": "17:00"
   }
 }
