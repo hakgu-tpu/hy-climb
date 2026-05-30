@@ -2,10 +2,10 @@
   "centers": [
     {
       "id": "center_01",
-      "name": "그래비티클라이밍 수원역점 (~06.31)",
+      "name": "그래비티클라이밍 수원역점 (~06.30)",
       "address": "경기도 수원시 팔달구 갓매산로 31 홍익스포츠프라자 2층",
       "region": "수원",
-      "description": "수원역 인근에 위치한 그래비티클라이밍 센터입니다. 사장님이 에리카 선배님이셔서 파격 할인. 6월 31일까지 영업 😢",
+      "description": "수원역 인근에 위치한 그래비티클라이밍 센터입니다. 사장님이 에리카 선배님이셔서 파격 할인. 6월 30일까지 영업 😢",
       "images": ["center_01_main.png", "center_01_00.png", "center_01_01.jpg", "center_01_02.jpg", "center_01_03.jpg", "center_01_04.jpg"],
       "isAffiliated": true,
       "naverMapUrl": "https://map.naver.com/p/directions/-/3ziNUg,2AzuBI,%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B0%8D%20%EC%88%98%EC%9B%90%EC%97%AD%EC%A0%90,1774691117,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
@@ -34,7 +34,7 @@
         "description": "주차 1시간 30분 무료, 볼링장에서 음료수 구입시 1시간 30분 추가 무료"
       },
       "i18n": {
-        "name": "Gravity Climbing Suwon Station (until 06.31)",
+        "name": "Gravity Climbing Suwon Station (until 06.30)",
         "address": "2F Hongik Sports Plaza, 31 Gatmaesanro, Paldal-gu, Suwon-si, Gyeonggi-do",
         "description": "Gravity Climbing center near Suwon Station. Special discounts available as the owner is our club's senior member Erica. Closing on June 31st 😢",
         "parking": {
