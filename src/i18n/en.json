@@ -1,4 +1,8 @@
 {
+  "common": {
+    "loading": "Loading...",
+    "error": "Couldn't load data. Please try again shortly."
+  },
   "nav": {
     "title": "Hy-Climb",
     "back": "Back to list"

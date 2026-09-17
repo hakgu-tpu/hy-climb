@@ -1,14 +1,20 @@
-import centersData from '@/data/centers.json'
-import configData from '@/data/config.json'
 import CenterList from '@/components/center/CenterList'
 import EventBanner from '@/components/EventBanner'
 import MeetingBanner from '@/components/MeetingBanner'
 import { useLang } from '@/contexts/LangContext'
-
-const { centers } = centersData
+import { useAppData } from '@/contexts/DataContext'
 
 const HomePage = () => {
   const { t } = useLang()
+  const { centers, config, loading, error } = useAppData()
+
+  if (loading) {
+    return <p className="px-4 pt-5 text-[13px] text-zinc-400">{t('common.loading')}</p>
+  }
+
+  if (error) {
+    return <p className="px-4 pt-5 text-[13px] text-red-500">{t('common.error')}</p>
+  }
 
   return (
     <div>
@@ -20,9 +26,9 @@ const HomePage = () => {
           {t('home.totalCount', { count: centers.length })}
         </p>
       </div>
-      <EventBanner event={configData.event} />
-      <MeetingBanner meeting={configData.meeting} centers={centers} />
-      <CenterList centers={centers} departure={configData.departure} />
+      <EventBanner event={config.event} />
+      <MeetingBanner meeting={config.meeting} centers={centers} />
+      <CenterList centers={centers} departure={config.departure} />
     </div>
   )
 }

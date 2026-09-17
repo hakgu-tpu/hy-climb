@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LangProvider } from '@/contexts/LangContext'
+import { DataProvider } from '@/contexts/DataContext'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import HomePage from '@/pages/HomePage'
@@ -8,6 +9,7 @@ import NotFoundPage from '@/pages/NotFoundPage'
 
 const App = () => (
   <LangProvider>
+  <DataProvider>
   <BrowserRouter>
     <div className="min-h-screen bg-zinc-50">
       <div className="max-w-sm mx-auto bg-white min-h-screen flex flex-col">
@@ -23,6 +25,7 @@ const App = () => (
       </div>
     </div>
   </BrowserRouter>
+  </DataProvider>
   </LangProvider>
 )
 

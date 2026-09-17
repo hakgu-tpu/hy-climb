@@ -1,5 +1,5 @@
-import configData from '@/data/config.json'
 import { useLang } from '@/contexts/LangContext'
+import { useAppData } from '@/contexts/DataContext'
 
 const InstagramIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="#E1306C">
@@ -9,12 +9,13 @@ const InstagramIcon = () => (
 
 const Footer = () => {
   const { t } = useLang()
+  const { config } = useAppData()
 
   return (
     <footer className="border-t border-zinc-100 px-4 py-6 mt-auto text-center">
-      {configData.instagram && (
+      {config?.instagram && (
         <a
-          href={configData.instagram}
+          href={config.instagram}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-[6px] text-[12px] text-zinc-400 hover:text-zinc-600 transition-colors mb-3"
