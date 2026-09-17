@@ -1,0 +1,152 @@
+{
+  "task": "cms-content-authority-baseline",
+  "scope_notes": {
+    "proposed_cms_is_not_current_implementation": true,
+    "public_static_spa_has_no_runtime_auth_or_rbac": true,
+    "target_edits_are_docs_only": true
+  },
+  "source_docs": [
+    {
+      "path": "docs/wiki/03-product.md",
+      "sha256": "83029cc7804017be1351af9ba174d50be26219b26089174f3c910b97359b2c74"
+    },
+    {
+      "path": "docs/wiki/04-features.md",
+      "sha256": "b4cf47574771570335c24463ac22ccde56e759cf9d2949ac3c45e059262fb252"
+    }
+  ],
+  "stable_ids": {
+    "docs/wiki/03-product.md": {
+      "canonical_ids": {
+        "stakeholders": ["STK-001", "STK-002", "STK-003", "STK-004", "STK-005"],
+        "goals": ["GOAL-001", "GOAL-002", "GOAL-003", "GOAL-004", "GOAL-005", "GOAL-006"],
+        "requirements": [
+          "REQ-001",
+          "REQ-002",
+          "REQ-003",
+          "REQ-004",
+          "REQ-005",
+          "REQ-006",
+          "REQ-007",
+          "REQ-008",
+          "REQ-009",
+          "REQ-010",
+          "REQ-011",
+          "REQ-012",
+          "REQ-013",
+          "REQ-014",
+          "REQ-015",
+          "REQ-016",
+          "REQ-017",
+          "REQ-018",
+          "REQ-019",
+          "REQ-020",
+          "REQ-021",
+          "REQ-022",
+          "REQ-023"
+        ],
+        "use_cases": ["UC-001", "UC-002", "UC-003", "UC-004", "UC-012", "UC-013", "UC-014", "UC-015"],
+        "features": ["FEAT-001", "FEAT-002", "FEAT-003", "FEAT-004", "FEAT-005", "FEAT-006", "FEAT-007", "FEAT-008", "FEAT-009", "FEAT-010"]
+      },
+      "aliases": {
+        "UC01": "UC-001",
+        "UC02": "UC-002",
+        "UC03": "UC-003",
+        "UC04": "UC-004",
+        "UC12": "UC-012",
+        "UC13": "UC-013",
+        "UC14": "UC-014",
+        "UC15": "UC-015"
+      }
+    },
+    "docs/wiki/04-features.md": {
+      "canonical_ids": {
+        "stakeholders": ["STK-001", "STK-002", "STK-003", "STK-004", "STK-005"],
+        "goals": ["GOAL-001", "GOAL-002", "GOAL-003", "GOAL-004", "GOAL-005", "GOAL-006"],
+        "requirements": [
+          "REQ-001",
+          "REQ-002",
+          "REQ-003",
+          "REQ-004",
+          "REQ-005",
+          "REQ-006",
+          "REQ-007",
+          "REQ-008",
+          "REQ-009",
+          "REQ-010",
+          "REQ-011",
+          "REQ-012",
+          "REQ-013",
+          "REQ-014",
+          "REQ-015",
+          "REQ-016",
+          "REQ-017",
+          "REQ-018",
+          "REQ-019",
+          "REQ-020",
+          "REQ-021",
+          "REQ-022",
+          "REQ-023"
+        ],
+        "use_cases": ["UC-001", "UC-002", "UC-003", "UC-004", "UC-012", "UC-013", "UC-014", "UC-015"],
+        "features": ["FEAT-001", "FEAT-002", "FEAT-003", "FEAT-004", "FEAT-005", "FEAT-006", "FEAT-007", "FEAT-008", "FEAT-009", "FEAT-010"]
+      },
+      "aliases": {
+        "UC01": "UC-001",
+        "UC02": "UC-002",
+        "UC03": "UC-003",
+        "UC04": "UC-004",
+        "UC12": "UC-012",
+        "UC13": "UC-013",
+        "UC14": "UC-014",
+        "UC15": "UC-015"
+      }
+    }
+  },
+  "dirty_worktree_snapshot": {
+    "branch": "main",
+    "git_status_short": [
+      "D  .claude/settings.local.json",
+      " M .gitignore",
+      " M CLAUDE.md",
+      " M README.md",
+      " M component-spec.md",
+      " M data-schema.md",
+      " M tasks.md",
+      " M ui-spec.md",
+      "?? .claude/",
+      "?? .obsidian/",
+      "?? .omo/",
+      "?? docs/"
+    ],
+    "git_diff_stat": [
+      ".gitignore        |   1 +",
+      "CLAUDE.md         |  97 ++---------",
+      "README.md         |  31 +++-",
+      "component-spec.md | 460 +------------------------------------------------",
+      "data-schema.md    | 364 +--------------------------------------",
+      "tasks.md          | 148 +---------------",
+      "ui-spec.md        | 505 +-----------------------------------------------------",
+      "7 files changed, 44 insertions(+), 1562 deletions(-)"
+    ]
+  },
+  "existing_evidence_lint_build_status": {
+    "source": "docs/wiki/06-tdd-qa.md",
+    "recorded_status": "not run in this baseline capture",
+    "evidence": [
+      "package.json has scripts only: dev, build, lint, preview",
+      "package.json and package-lock.json list React, Vite, Tailwind, ESLint, and React Router packages",
+      "there is no test script and no Vitest, Jest, Testing Library, Playwright, or Cypress dependency"
+    ]
+  },
+  "missing_wording_probes": [
+    { "phrase": "센터 카탈로그", "expected_present_in_current_docs": false },
+    { "phrase": "운영 이벤트·정기모임", "expected_present_in_current_docs": false },
+    { "phrase": "다국어 콘텐츠", "expected_present_in_current_docs": false },
+    { "phrase": "미디어 자산", "expected_present_in_current_docs": false },
+    { "phrase": "공통 운영·외부 연동 설정", "expected_present_in_current_docs": false },
+    { "phrase": "게시·검증 메타데이터", "expected_present_in_current_docs": false },
+    { "phrase": "인증된 콘텐츠 게시 승인자", "expected_present_in_current_docs": false },
+    { "phrase": "독립적으로 게시", "expected_present_in_current_docs": false }
+  ]
+}

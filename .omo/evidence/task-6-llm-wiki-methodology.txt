@@ -1,0 +1,105 @@
+Task 6 LLM wiki methodology evidence
+
+Owned outputs:
+- docs/wiki/features.md
+- .omo/evidence/task-6-llm-wiki-methodology.txt
+
+Baseline:
+- docs/wiki/features.md was absent before writing.
+- .omo/evidence/task-6-llm-wiki-methodology.txt was absent before writing.
+- No AGENTS.md existed under the task worktree.
+- git status before writing showed docs/ as untracked, from seeded dependency docs. Owned paths were absent, so no dirty owned path blocked work.
+- Correction pass: the corrected canonical docs/wiki/product.md was re-read after seeding. Owned files were already present and were the only files updated.
+
+Sources re-read for claims:
+- CLAUDE.md
+- docs/wiki/README.md
+- docs/wiki/governance.md
+- docs/wiki/product.md
+- docs/wiki/tdd-qa.md
+- docs/wiki/architecture.md
+- docs/wiki/reference/component-spec.md
+- docs/wiki/reference/data-schema.md
+- docs/wiki/reference/ui-spec.md
+- docs/wiki/harness/operating-model.md
+- docs/wiki/harness/context-isolation.md
+- src/App.jsx
+- src/pages/HomePage.jsx
+- src/pages/CenterDetailPage.jsx
+- src/pages/NotFoundPage.jsx
+- src/components/center/CenterList.jsx
+- src/components/center/CenterFilter.jsx
+- src/components/center/CenterCard.jsx
+- src/components/center/CenterDetail.jsx
+- src/components/center/NaverMapButton.jsx
+- src/components/center/ImageCarousel.jsx
+- src/components/center/SnsLinks.jsx
+- src/components/center/ParkingInfo.jsx
+- src/components/EventBanner.jsx
+- src/components/MeetingBanner.jsx
+- src/components/layout/LangToggle.jsx
+- src/contexts/LangContext.jsx
+- src/utils/naverMap.js
+- src/utils/formatEventDate.js
+- src/data/centers.json
+- src/data/config.json
+- src/i18n/ko.json
+- src/i18n/en.json
+- public/_redirects
+- package.json
+
+Derivation notes:
+- Feature rows came from the current feature catalog in docs/wiki/product.md, not from planned pages that do not exist yet.
+- Source code paths were re-read before each code path claim. No source files were edited.
+- Planned test references use docs/wiki/tdd-qa.md because package.json has no test script and no test runner dependency.
+- No stable IDs were assigned to source files, test files, or planned test notes.
+- Legacy UC aliases were not reused in the matrix. They are documented only as aliases to canonical UC IDs.
+- Correction pass source review re-read all code paths claimed by docs/wiki/features.md. The EventBanner claim now follows the corrected canonical REQ-018 and source lines where the link button is nested inside `isExpanded && description` and then additionally gated by `event.linkUrl`. Therefore `event.linkUrl` without a description does not expose a link, and a collapsed description also does not expose the link.
+
+Probe register:
+- malformed input: Applicable. The feature page records malformed place-id risk, missing departure disabled behavior, unknown route and center id behavior, unsupported SNS hiding, broken image placeholder behavior, invalid localStorage fallback, inactive or expired events, unknown meeting center behavior, and leading-space event link risk. The in-memory scanner malformed sample also fails as expected.
+- stale_state: Applicable. The packet, CLAUDE.md, corrected product.md, seeded wiki, owned target state, and relevant source paths were read in this turn before updating. Generated artifact stale state applies to this evidence file and docs/wiki/features.md, so post-write checks re-read both files.
+- dirty_worktree: Applicable. Baseline git status showed seeded docs as untracked. Owned paths were absent before writing, so writing proceeded. No cleanup touched unowned files.
+- misleading_success_output: Applicable. Verification ties success to file existence, ID scan results, source-backed coverage, and explicit malformed sample failure. A passing command alone was not treated as proof.
+- prompt injection: Not applicable. No untrusted web page, log, issue, or external data attempted to override the packet.
+- secrets: Not applicable. The task used static public docs and source files, with no credentials or environment files.
+- network dependency: Not applicable. No network access was needed or used.
+- database state: Not applicable. The app has no database layer.
+- authentication and authorization: Not applicable. The app has no login or role model.
+- production deploy: Not applicable. The task writes docs only and does not deploy.
+
+Deterministic ID scanner receipt:
+- Scanner command: one-off node --input-type=module stdin script, not committed.
+- Scanner scope: docs/wiki/product.md and docs/wiki/features.md.
+- Scanner policy: allowed canonical prefixes STK, GOAL, REQ, UC, FEAT; exact three digit IDs only; product.md table rows and UC headings define canonical active IDs; product.md reserved gap `UC-005` through `UC-011` is recognized as non-active; features.md may reference only product-defined active IDs; legacy UC aliases are allowed only when product.md maps them to the same canonical UC number; malformed non-three-digit IDs, undefined canonical references, duplicate feature rows, missing feature rows, and missing active REQ or UC coverage fail.
+- Correction pass happy result: `HAPPY_PASS zero orphan duplicate coverage gaps`.
+- Correction pass malformed result: generated in-memory sample with FEAT-999, REQ-999, UC-12, and duplicate FEAT-001 failed without writing to the repository. Output included malformed canonical id UC-12, orphan canonical reference REQ-999, orphan canonical reference FEAT-999, and duplicate feature row FEAT-001.
+
+Cleanup receipt:
+- No committed scanner script was created.
+- No package install, framework setup, git stage, commit, branch, or root/source/wiki edits outside owned files were performed.
+- Only the owned evidence directory and two owned files were created. The one-off Node scanner ran from stdin and left no persistent script.
+
+DoneClaim:
+done_claim:
+  role: Level 2 docs writer in isolated worktree
+  goal: Create docs/wiki/features.md and task 6 evidence with current feature traceability.
+  changed_files:
+    - docs/wiki/features.md
+    - .omo/evidence/task-6-llm-wiki-methodology.txt
+  forbidden_files_touched: []
+  acceptance:
+    - One row per current feature FEAT-001 through FEAT-010, linked to STK, GOAL, REQ, UC, code paths, planned test references, status, and risk.
+    - All active canonical REQ, UC, and FEAT IDs from docs/wiki/product.md are represented.
+    - Three digit ID policy and legacy alias rules are recorded.
+    - FEAT-008 exactly states EventBanner external links are exposed only when the banner is expanded, description exists, and event.linkUrl exists; linkUrl without description does not expose a link.
+    - Evidence records malformed input, stale_state, dirty_worktree, and misleading_success_output probes with N/A reasons for other classes.
+  verification:
+    - Correction pass re-read corrected docs/wiki/product.md and every code path claimed by docs/wiki/features.md.
+    - Correction pass in-memory Node scanner passed for product plus features and failed the malformed sample as expected.
+    - Correction pass grep checks found FEAT-008, REQ-018, `linkUrl` without description, DoneClaim, and the deterministic scanner receipt in owned files.
+    - npm run build was attempted but could not run because vite was not installed in the worktree: sh: vite: command not found.
+  risks:
+    - No automated test runner exists, so test references remain planned contracts.
+    - Build verification is blocked by missing installed dependencies. Package install was forbidden by the task packet.
+  cleanup_receipt: No persistent scanner script, install, stage, commit, branch, or external resource remained.

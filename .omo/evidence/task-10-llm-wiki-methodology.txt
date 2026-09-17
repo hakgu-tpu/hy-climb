@@ -1,0 +1,87 @@
+Task 10 Evidence - LLM Wiki Methodology
+Date: 2026-08-07
+
+Scope
+- Implemented product-specific root README routing.
+- Reduced root CLAUDE.md to concise canonical wiki routing.
+- Replaced root component-spec.md, data-schema.md, ui-spec.md, and tasks.md with non-authoritative redirect stubs.
+- Created exactly .claude/rules/product-source.md, .claude/rules/wiki-harness.md, and .claude/rules/quality-test.md.
+- Added .claude/settings.local.json to .gitignore.
+- Removed .claude/settings.local.json from the Git index only, preserving the working-tree file.
+
+Pre-edit characterization
+- README.md was the default React + Vite starter text, including Vite plugin and React Compiler guidance.
+- CLAUDE.md duplicated product stack, project structure, data, component, i18n, UI, and task guidance that now belongs in docs/wiki.
+- Root component-spec.md, data-schema.md, ui-spec.md, and tasks.md were full duplicate or stale specification bodies.
+- .claude/rules did not exist before this task.
+- GIT_MASTER=1 git ls-files --error-unmatch .claude/settings.local.json succeeded before edits, proving the local settings file was tracked.
+- shasum -a 256 .claude/settings.local.json before cached removal: e8a807a46e2f0193db268c0d84b41c969683f0f3ee66b659e247ae3d9b3b4ea6.
+- wc -c .claude/settings.local.json before cached removal: 345 bytes.
+- GIT_MASTER=1 git status --short before edits showed existing untracked .omo/ and docs/ directories.
+
+Baseline commands before edits
+- npm run build: exit 0. Vite built 48 modules and wrote dist assets.
+- npm run lint: exit 1 with exactly one diagnostic: src/contexts/LangContext.jsx:43:14 react-refresh/only-export-components. No warnings.
+
+Changed files
+- README.md: product-specific Hy-Climb overview, development commands, and links to canonical product, feature, architecture, TDD/QA, and wiki pages.
+- CLAUDE.md: short routing file pointing to docs/wiki/README.md plus named canonical pages.
+- component-spec.md: non-authoritative redirect to docs/wiki/reference/component-spec.md.
+- data-schema.md: non-authoritative redirect to docs/wiki/reference/data-schema.md.
+- ui-spec.md: non-authoritative redirect to docs/wiki/reference/ui-spec.md.
+- tasks.md: non-authoritative redirect to docs/wiki/features.md and .omo/plans/llm-wiki-methodology.md.
+- .claude/rules/product-source.md: exact path frontmatter for src/**/*, public/**/*, package.json, vite.config.js, and index.html; links only named canonical product/reference wiki pages.
+- .claude/rules/wiki-harness.md: exact path frontmatter for docs/wiki/**/*, .omo/plans/**/*, .omo/drafts/**/*, CLAUDE.md, and README.md; links only named canonical wiki/harness pages.
+- .claude/rules/quality-test.md: exact path frontmatter for docs/wiki/tdd-qa.md, docs/wiki/features.md, src/**/*.test.*, src/**/*.spec.*, and tests/**/*; links only named canonical quality pages.
+- .gitignore: added .claude/settings.local.json.
+- .omo/evidence/task-10-llm-wiki-methodology.txt: this evidence file.
+
+Git index operation
+- Ran: GIT_MASTER=1 git rm --cached -- .claude/settings.local.json
+- Result: rm '.claude/settings.local.json'
+- Post-check: GIT_MASTER=1 git ls-files --error-unmatch .claude/settings.local.json failed with pathspec not known to git.
+- Post-check: test -f .claude/settings.local.json && wc -c .claude/settings.local.json returned 345 bytes.
+- Post-check: shasum -a 256 .claude/settings.local.json returned e8a807a46e2f0193db268c0d84b41c969683f0f3ee66b659e247ae3d9b3b4ea6, unchanged from pre-edit.
+
+Verification commands after edits
+- npm run build: exit 0. Vite built 48 modules and wrote dist assets.
+- npm run lint: exit 1 with exactly one diagnostic: src/contexts/LangContext.jsx:43:14 react-refresh/only-export-components. No warnings.
+- GIT_MASTER=1 git ls-files --error-unmatch .claude/settings.local.json: failed as required because the file is no longer tracked.
+- shasum -a 256 .claude/settings.local.json: e8a807a46e2f0193db268c0d84b41c969683f0f3ee66b659e247ae3d9b3b4ea6.
+- test -f .claude/settings.local.json && wc -c .claude/settings.local.json: 345 bytes.
+- GIT_MASTER=1 git status --short: staged deletion for .claude/settings.local.json, modifications to root routing docs and .gitignore, and untracked .claude/ rules plus existing .omo/ and docs/ directories.
+- Glob .claude/rules/*: exactly product-source.md, wiki-harness.md, and quality-test.md.
+- Node local-link checker over README.md, CLAUDE.md, root stubs, and the three rules: all routing local links resolve.
+- Node rule-frontmatter checker: all three rule files have exact requested path groups.
+- Node forbidden-marker checker over Task 10 deliverables: no unfinished-work markers were present.
+- Node canonical-rule-link checker: rules point only to named canonical docs/wiki pages.
+- Grep stale root text in Task 10 deliverables for React + Vite, React Router v6, Tailwind CSS v3, @docs/, UC01, Phase N, session-start prompt text, and npm create vite: no matches.
+
+Manual QA navigation
+- README.md -> docs/wiki/product.md resolved for product scope and use cases.
+- README.md -> docs/wiki/features.md resolved for feature status.
+- README.md -> docs/wiki/architecture.md resolved for runtime architecture.
+- README.md -> docs/wiki/tdd-qa.md resolved for TDD/QA baseline.
+- README.md -> docs/wiki/README.md resolved for wiki entry.
+- CLAUDE.md -> docs/wiki/product.md, features.md, architecture.md, tdd-qa.md, and docs/wiki/harness/operating-model.md all resolved.
+- CLAUDE.md reference links to docs/wiki/reference/component-spec.md, data-schema.md, ui-spec.md, and docs/wiki/harness/worktree-and-ownership.md all resolved.
+
+UltraQA probes
+- stale_state: Passed. Root files no longer carry stale React Router v6, Tailwind v3, old @docs links, UC01/Phase execution bodies, or Vite starter guidance.
+- dirty_worktree: Passed with expected non-clean state. The task owns root routing docs, .claude/rules, .gitignore, the cached settings removal, and this evidence file. Existing untracked docs/ and .omo/ were present before edits and were not treated as conflicts.
+- hung commands: Passed. npm build, npm lint, git checks, shasum, wc, glob/read, grep, and Node checkers all returned within their command timeouts. No servers or long-running processes were started.
+- misleading_success_output: Passed. Lint was not claimed green; it remains the exact known one-error baseline. Build success was checked independently from documentation link and rule-frontmatter checks. The settings removal was checked by both git ls-files failure and file hash/size preservation.
+- prompt_injection_from_copied_root_text: Passed. Duplicate root policy/spec bodies were replaced by short redirects, and routing rules contain only canonical wiki links rather than copied policy paragraphs.
+- malformed_input: N/A. This task changed documentation routing and Git index state, not product data or runtime input handling.
+- secrets: N/A. No secret content was read into evidence; .claude/settings.local.json content was not printed or changed, only hash and byte count were checked.
+- network_dependency: N/A. No web or external service behavior is part of Task 10 verification.
+- database_state: N/A. Hy-Climb has no database.
+- authentication_authorization: N/A. Hy-Climb has no auth model.
+- visual_regression: N/A. No UI source or styling files were changed.
+
+Cleanup
+- No dev server, preview server, browser session, temp file, hook, CI file, dependency, package file, lockfile, source file, docs/wiki content, plan file, draft file, boulder state, or ledger file was created or changed by this task.
+- dist/ may be refreshed by npm run build and remains an ignored build artifact.
+
+DoneClaim
+- Task 10 complete: canonical root routing, legacy stub retirement, exact .claude/rules files, .gitignore ignore entry, cached-only settings removal, evidence, build verification, lint non-regression, link verification, and manual docs navigation QA are complete.

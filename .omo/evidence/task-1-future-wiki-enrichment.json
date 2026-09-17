@@ -1,0 +1,3974 @@
+{
+  "schema": "task-1-future-wiki-enrichment-evidence.v1",
+  "generatedAt": "2026-08-08T14:15:31.949Z",
+  "repositoryRoot": "/Users/idealjin/Desktop/Project/Climb",
+  "task": "Task 1, lock immutable baseline and enrichment vocabulary",
+  "evidencePath": {
+    "path": ".omo/evidence/task-1-future-wiki-enrichment.json",
+    "baselineExisting": false,
+    "expectedNewBeforeContentEdits": true
+  },
+  "exclusions": [
+    ".git/",
+    "node_modules/",
+    "dist/"
+  ],
+  "baselineBeforeContentEdits": {
+    "evidenceAbsent": true,
+    "pagesDoNotYetSatisfyNewStatusContract": true,
+    "pageStatusContractBaseline": [
+      {
+        "path": "docs/wiki/01-index.md",
+        "sha256": "32e3319c0afa0ea61809ab47fdc510737a2d1144e78be4fc03075292aaf96b36",
+        "h1": "Hy-Climb 위키",
+        "satisfiesObjectiveStatusContractBeforeEdit": false
+      },
+      {
+        "path": "docs/wiki/02-governance.md",
+        "sha256": "583bd46db22cceebf9c7330c9ac166ec89dfa07132249ce29d85e1239099aad6",
+        "h1": "위키 거버넌스",
+        "satisfiesObjectiveStatusContractBeforeEdit": false
+      }
+    ]
+  },
+  "mutableGroups": {
+    "A_exactWikiFiles": [
+      "docs/wiki/01-index.md",
+      "docs/wiki/02-governance.md",
+      "docs/wiki/03-product.md",
+      "docs/wiki/04-features.md",
+      "docs/wiki/05-architecture.md",
+      "docs/wiki/06-tdd-qa.md",
+      "docs/wiki/07-reference/01-component-spec.md",
+      "docs/wiki/07-reference/02-data-schema.md",
+      "docs/wiki/07-reference/03-ui-spec.md",
+      "docs/wiki/08-harness/01-index.md",
+      "docs/wiki/08-harness/02-operating-model.md",
+      "docs/wiki/08-harness/03-context-isolation.md",
+      "docs/wiki/08-harness/04-agent-contracts.md",
+      "docs/wiki/08-harness/05-worktree-and-ownership.md",
+      "docs/wiki/08-harness/06-quality-and-evolution.md",
+      "docs/wiki/09-decisions.md"
+    ],
+    "B_exactFutureEnrichmentEvidenceFiles": [
+      ".omo/evidence/task-1-future-wiki-enrichment.json",
+      ".omo/evidence/task-2-future-wiki-enrichment.md",
+      ".omo/evidence/task-3-future-wiki-enrichment.md",
+      ".omo/evidence/task-4-future-wiki-enrichment.md",
+      ".omo/evidence/task-5-future-wiki-enrichment.md",
+      ".omo/evidence/task-6-future-wiki-enrichment.md",
+      ".omo/evidence/task-7-future-wiki-enrichment.md",
+      ".omo/evidence/task-8-future-wiki-enrichment.md",
+      ".omo/evidence/task-9-future-wiki-enrichment.md",
+      ".omo/evidence/task-10-future-wiki-enrichment.md",
+      ".omo/evidence/task-11-future-wiki-enrichment.md",
+      ".omo/evidence/task-12-future-wiki-enrichment.md",
+      ".omo/evidence/task-13-future-wiki-enrichment.json",
+      ".omo/evidence/final-F1-future-wiki-enrichment.md",
+      ".omo/evidence/final-F2-future-wiki-enrichment.md",
+      ".omo/evidence/final-F3-future-wiki-enrichment.txt",
+      ".omo/evidence/final-F4-future-wiki-enrichment.md"
+    ],
+    "C_orchestratorOnlyFilesAndRuntimePrefix": {
+      "fixedPaths": [
+        ".omo/plans/future-wiki-enrichment.md",
+        ".omo/boulder.json",
+        ".omo/start-work/ledger.jsonl"
+      ],
+      "currentRuntimeEntries": [
+        ".omo/run-continuation/ses_01e4b16f9ffes9c7mX1yonb69b.json",
+        ".omo/run-continuation/ses_01e4b1753ffegIgxZUvX43U7vx.json",
+        ".omo/run-continuation/ses_01e4dd8c5ffeD7lOwiHbE0QzQr.json",
+        ".omo/run-continuation/ses_01e4dd955ffeIlDQyO7aSH2Kmz.json",
+        ".omo/run-continuation/ses_01e52087dffe861OawiffIEWpF.json",
+        ".omo/run-continuation/ses_01e5208d2ffdhl6aYAJXpA7cFc.json",
+        ".omo/run-continuation/ses_01e55934bffet4eDpYThVX78CF.json",
+        ".omo/run-continuation/ses_01e5593a7ffdOHWvEramCktvTR.json",
+        ".omo/run-continuation/ses_01e58bd6effeXa2i49gTKf3bBt.json",
+        ".omo/run-continuation/ses_01e58bdc8ffe33noYH5kllfqLu.json",
+        ".omo/run-continuation/ses_01e5f3d7fffe5vvbb7YJzwThN1.json",
+        ".omo/run-continuation/ses_01e5f3d99ffefCqxBbpo6jasvh.json",
+        ".omo/run-continuation/ses_01e5f3da0ffe40JJuEiR7MUAjJ.json",
+        ".omo/run-continuation/ses_01e5fabceffeUcjTZU74dwALnC.json",
+        ".omo/run-continuation/ses_01e630082ffeRmwPC4yF4wNMT0.json",
+        ".omo/run-continuation/ses_01e675f7effeKxp6IuluhIeB6w.json",
+        ".omo/run-continuation/ses_01e67cec6ffec7LEXEXEdmn7vY.json",
+        ".omo/run-continuation/ses_01e68f8e4ffdMyqje4wzFMSugR.json",
+        ".omo/run-continuation/ses_01e693f82ffedlHeO5o5Ny6HsL.json",
+        ".omo/run-continuation/ses_01e693f97ffelxGIQLPvODZzRD.json",
+        ".omo/run-continuation/ses_01e693fbcffe3Rz4dncLOOh03C.json",
+        ".omo/run-continuation/ses_01e694006ffeEi6oteMpXahmVz.json",
+        ".omo/run-continuation/ses_01e694106ffeu7qu0e9gdO02sV.json",
+        ".omo/run-continuation/ses_01eef15d0ffeKpxUwjjaYjLvB6.json",
+        ".omo/run-continuation/ses_01ef3eed0ffeTL7K31mI6Or6gH.json",
+        ".omo/run-continuation/ses_01ef8d2f9ffeBEC2qjAg5JtCW8.json",
+        ".omo/run-continuation/ses_01ef8e435ffeL5lE534XMoy9Dp.json",
+        ".omo/run-continuation/ses_01ef92378ffeIm5iu547u5chRT.json",
+        ".omo/run-continuation/ses_01ef92381ffecLAfczLnMVfl77.json",
+        ".omo/run-continuation/ses_01ef9241dffefuU5XHaJmbBlW5.json",
+        ".omo/run-continuation/ses_023883eb9ffee8VMcz6yAt2OcB.json",
+        ".omo/run-continuation/ses_02392f63fffe3ncEIjKEo3PzDF.json",
+        ".omo/run-continuation/ses_02396b2b7ffefeRV56fjsiegnC.json",
+        ".omo/run-continuation/ses_023975a90ffeLfwGb5V9qsKyfh.json",
+        ".omo/run-continuation/ses_0239e0945ffexeeQzUgGtFwSLp.json",
+        ".omo/run-continuation/ses_023a15b6fffeGEK82tO01OOspD.json",
+        ".omo/run-continuation/ses_023a1d7f2ffeHNeAXRM7K394H1.json",
+        ".omo/run-continuation/ses_023a1d7f7ffeKrrsWMG42QOQJJ.json",
+        ".omo/run-continuation/ses_023a1d887ffeyd51o9tkN6fqup.json",
+        ".omo/run-continuation/ses_023aa3ee1ffeYygdrFmAd4Uoz1.json",
+        ".omo/run-continuation/ses_023af6dbfffeIuBjVXwkgx2UmO.json",
+        ".omo/run-continuation/ses_023af6dc4ffeNcTvvExw9mg83V.json",
+        ".omo/run-continuation/ses_023af6de1ffezVoBqgOddDwKfY.json",
+        ".omo/run-continuation/ses_023af6e42ffe0EPFbcMkUrsx91.json",
+        ".omo/run-continuation/ses_023b3b080ffebjlLIDT8vqd2v7.json",
+        ".omo/run-continuation/ses_023b8482cffepeRR9foHuDvaTE.json",
+        ".omo/run-continuation/ses_023bc8650ffe9FP1ine5g55zL8.json",
+        ".omo/run-continuation/ses_023c44cfeffebrmQPli185T5FD.json",
+        ".omo/run-continuation/ses_023c4a3c9ffeSvaOK3V40i7PQW.json",
+        ".omo/run-continuation/ses_023cb0199ffeJ7y3Ux0a1IfvNk.json",
+        ".omo/run-continuation/ses_023cea35dffedrFEcqRfE3Ox2f.json",
+        ".omo/run-continuation/ses_023cea385ffe4bvxsKhfpPWxxP.json",
+        ".omo/run-continuation/ses_023cea388ffeIN5WfYIFHl1jFq.json",
+        ".omo/run-continuation/ses_023cea3c7ffe3c9sRozNmiSE45.json",
+        ".omo/run-continuation/ses_023d447b3ffelE2gq0SaGxYrbV.json",
+        ".omo/run-continuation/ses_023d447cfffeFhqvNNaJz1Wr91.json",
+        ".omo/run-continuation/ses_023d447ecffeendspa7K1Cu2vK.json",
+        ".omo/run-continuation/ses_023d4480affee3F0NaVNYohL8T.json",
+        ".omo/run-continuation/ses_023d6161cffemAqcrRtHq5BToh.json",
+        ".omo/run-continuation/ses_023d6f592ffe71Y2uE16yb45TS.json",
+        ".omo/run-continuation/ses_023dbc586ffej0ffwBfZMKntCM.json",
+        ".omo/run-continuation/ses_023e5fda2ffeZOxFFf3YtoXSFL.json",
+        ".omo/run-continuation/ses_023e6acdeffeu6hdsYKzNkebL1.json",
+        ".omo/run-continuation/ses_023e6ace1ffe9tRIh7v2cjKhln.json",
+        ".omo/run-continuation/ses_023e6acf2ffe3wYpskC1J2DOlk.json",
+        ".omo/run-continuation/ses_023e6ad17ffes7e0iHPww5Vvm3.json",
+        ".omo/run-continuation/ses_023e6ad56ffesPwTRtJoJrGnmI.json",
+        ".omo/run-continuation/ses_023edd0e2ffe4d5BysrnF0KsnK.json",
+        ".omo/run-continuation/ses_023edd0e6ffeI5TBbZFNYcBTWo.json",
+        ".omo/run-continuation/ses_023edd0f8ffeOwhRxQz7RU8jB7.json",
+        ".omo/run-continuation/ses_023edd111ffeLkF6hi6sqCDoYE.json",
+        ".omo/run-continuation/ses_023edd14cffe0voFzjqyagAxTR.json",
+        ".omo/run-continuation/ses_023ef7443ffek7gV95WDB716ZR.json",
+        ".omo/run-continuation/ses_023f7c933ffeOifA77Fn8ORn3c.json",
+        ".omo/run-continuation/ses_023f7c939ffe0NzG6d24GfAmfO.json",
+        ".omo/run-continuation/ses_023fb5008ffdEmnaZpBw4cxWHH.json",
+        ".omo/run-continuation/ses_023fb5026ffeaFmyrD8RAlkREi.json",
+        ".omo/run-continuation/ses_0240043b7ffd5ZAS6uWIwFaLYX.json",
+        ".omo/run-continuation/ses_02400761effeuNE88J78Vs33x8.json",
+        ".omo/run-continuation/ses_02405a88bffenRcbm0EjEcaACG.json",
+        ".omo/run-continuation/ses_024089ed1ffeLlgodUPZH3QI7I.json",
+        ".omo/run-continuation/ses_02408cb17ffe38jS4DT4jMv2tt.json",
+        ".omo/run-continuation/ses_02408cb23ffeOclnM3dJid4evM.json",
+        ".omo/run-continuation/ses_024117f0dffecHFQbIRw9mrSZ3.json",
+        ".omo/run-continuation/ses_024140461ffe0hwJiTpxcOBfYN.json",
+        ".omo/run-continuation/ses_024140468ffeLcEK4nazBagH3h.json",
+        ".omo/run-continuation/ses_024140484ffemMx3L1AT4kLKze.json",
+        ".omo/run-continuation/ses_02414a11effe8eTQnkMr7JMero.json",
+        ".omo/run-continuation/ses_0f518ce66ffePn1wHYHfNNeLY3.json",
+        ".omo/run-continuation/ses_0f51ea361ffe56ob5cfCiSYHT9.json"
+      ],
+      "futureRuntimePrefix": ".omo/run-continuation/"
+    },
+    "immutableRule": "Every project-controlled path outside exact groups A, B, and C is immutable for this plan. Enumeration patterns grant no ownership."
+  },
+  "stableIdAndLegacyAliasBaseline": {
+    "stableIdsSorted": [
+      "FEAT-001",
+      "FEAT-002",
+      "FEAT-003",
+      "FEAT-004",
+      "FEAT-005",
+      "FEAT-006",
+      "FEAT-007",
+      "FEAT-008",
+      "FEAT-009",
+      "FEAT-010",
+      "GOAL-001",
+      "GOAL-002",
+      "GOAL-003",
+      "GOAL-004",
+      "GOAL-005",
+      "GOAL-006",
+      "REQ-001",
+      "REQ-002",
+      "REQ-003",
+      "REQ-004",
+      "REQ-005",
+      "REQ-006",
+      "REQ-007",
+      "REQ-008",
+      "REQ-009",
+      "REQ-010",
+      "REQ-011",
+      "REQ-012",
+      "REQ-013",
+      "REQ-014",
+      "REQ-015",
+      "REQ-016",
+      "REQ-017",
+      "REQ-018",
+      "REQ-019",
+      "REQ-020",
+      "REQ-021",
+      "REQ-022",
+      "REQ-023",
+      "STK-001",
+      "STK-002",
+      "STK-003",
+      "STK-004",
+      "STK-005",
+      "UC-001",
+      "UC-002",
+      "UC-003",
+      "UC-004",
+      "UC-005",
+      "UC-011",
+      "UC-012",
+      "UC-013",
+      "UC-014",
+      "UC-015",
+      "WIKI-DEC-001",
+      "WIKI-DEC-002",
+      "WIKI-DEC-003",
+      "WIKI-DEC-004"
+    ],
+    "stableIdLocations": {
+      "FEAT-001": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 38
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 61
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 7
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        }
+      ],
+      "FEAT-002": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 62
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        }
+      ],
+      "FEAT-003": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 63
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        }
+      ],
+      "FEAT-004": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 64
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        }
+      ],
+      "FEAT-005": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 65
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 19
+        }
+      ],
+      "FEAT-006": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 66
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        }
+      ],
+      "FEAT-007": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 67
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        }
+      ],
+      "FEAT-008": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 68
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        }
+      ],
+      "FEAT-009": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 69
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        }
+      ],
+      "FEAT-010": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 70
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        }
+      ],
+      "GOAL-001": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 35
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 14
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 50
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 76
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 78
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 79
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 96
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 107
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 7
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        }
+      ],
+      "GOAL-002": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 51
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 81
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 82
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 90
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 121
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 199
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 19
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        }
+      ],
+      "GOAL-003": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 52
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 83
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 85
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 134
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 160
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        }
+      ],
+      "GOAL-004": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 53
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 87
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 88
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 89
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 173
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        }
+      ],
+      "GOAL-005": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 54
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 91
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 93
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 95
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 186
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 199
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        }
+      ],
+      "GOAL-006": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 55
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 96
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 97
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 147
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        }
+      ],
+      "REQ-001": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 36
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 76
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 108
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 7
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 108
+        }
+      ],
+      "REQ-002": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 108
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 135
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 161
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        }
+      ],
+      "REQ-003": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 78
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 108
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 108
+        }
+      ],
+      "REQ-004": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 79
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 108
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 84
+        }
+      ],
+      "REQ-005": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 122
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 135
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 161
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 100
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 108
+        }
+      ],
+      "REQ-006": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 81
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 122
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 19
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 76
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 100
+        }
+      ],
+      "REQ-007": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 82
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 122
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 19
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 94
+        }
+      ],
+      "REQ-008": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 83
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 135
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 34
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 66
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 108
+        }
+      ],
+      "REQ-009": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 161
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 68
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 110
+        }
+      ],
+      "REQ-010": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 85
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 135
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 161
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 72
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 88
+        }
+      ],
+      "REQ-011": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 135
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 161
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 62
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 70
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 72
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 88
+        }
+      ],
+      "REQ-012": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 87
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 174
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 60
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 112
+        }
+      ],
+      "REQ-013": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 88
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 174
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 60
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 112
+        }
+      ],
+      "REQ-014": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 89
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 122
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 174
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 60
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 82
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 112
+        }
+      ],
+      "REQ-015": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 90
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 122
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 94
+        }
+      ],
+      "REQ-016": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 91
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 187
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 74
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 90
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 98
+        }
+      ],
+      "REQ-017": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 187
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 90
+        }
+      ],
+      "REQ-018": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 93
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 187
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 90
+        }
+      ],
+      "REQ-019": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 122
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 200
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 74
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 110
+        }
+      ],
+      "REQ-020": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 95
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 200
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 110
+        }
+      ],
+      "REQ-021": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 96
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 148
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 102
+        }
+      ],
+      "REQ-022": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 97
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 148
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 104
+        }
+      ],
+      "REQ-023": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 148
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 104
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 114
+        }
+      ],
+      "STK-001": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 34
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 13
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 40
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 50
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 51
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 52
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 53
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 76
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 78
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 79
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 81
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 82
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 83
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 85
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 87
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 88
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 89
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 90
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 91
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 93
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 95
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 96
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 97
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 106
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 120
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 133
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 146
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 159
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 172
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 185
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 198
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 7
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 19
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        }
+      ],
+      "STK-002": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 41
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 50
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 51
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 52
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 53
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 76
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 78
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 79
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 81
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 82
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 83
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 85
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 87
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 88
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 89
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 90
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 96
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 97
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 106
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 120
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 133
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 146
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 159
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 172
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 19
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        }
+      ],
+      "STK-003": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 42
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 54
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 78
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 81
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 89
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 91
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 93
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 95
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 185
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 198
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        }
+      ],
+      "STK-004": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 43
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 55
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 96
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 97
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 146
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        }
+      ],
+      "STK-005": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 44
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 52
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 83
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 133
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 159
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        }
+      ],
+      "UC-001": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 37
+        },
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 42
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 64
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 66
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 25
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 61
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 62
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 76
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 78
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 79
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 102
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 7
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 16
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 108
+        }
+      ],
+      "UC-002": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 26
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 63
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 65
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 66
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 81
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 82
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 89
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 90
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 116
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 19
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 76
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 100
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 108
+        }
+      ],
+      "UC-003": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 27
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 64
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 83
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 85
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 129
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 34
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 62
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 66
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 70
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 72
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 88
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 108
+        }
+      ],
+      "UC-004": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 63
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 70
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 96
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 97
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 142
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 24
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 102
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 104
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 114
+        }
+      ],
+      "UC-005": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 34
+        }
+      ],
+      "UC-011": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 34
+        }
+      ],
+      "UC-012": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 29
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 64
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 77
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 84
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 85
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 155
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 15
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 18
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 56
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 62
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 68
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 70
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 72
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 86
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 88
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 110
+        }
+      ],
+      "UC-013": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 30
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 67
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 87
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 88
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 89
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 168
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 20
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 21
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 60
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 80
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 82
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 112
+        }
+      ],
+      "UC-014": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 31
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 68
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 91
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 93
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 181
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 22
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 74
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 90
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 98
+        }
+      ],
+      "UC-015": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 32
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 69
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 94
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 95
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 194
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 17
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 23
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 58
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 74
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 92
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 98
+        },
+        {
+          "path": "docs/wiki/06-tdd-qa.md",
+          "line": 110
+        }
+      ],
+      "WIKI-DEC-001": [
+        {
+          "path": "docs/wiki/09-decisions.md",
+          "line": 23
+        },
+        {
+          "path": "docs/wiki/09-decisions.md",
+          "line": 25
+        }
+      ],
+      "WIKI-DEC-002": [
+        {
+          "path": "docs/wiki/09-decisions.md",
+          "line": 48
+        }
+      ],
+      "WIKI-DEC-003": [
+        {
+          "path": "docs/wiki/09-decisions.md",
+          "line": 71
+        }
+      ],
+      "WIKI-DEC-004": [
+        {
+          "path": "docs/wiki/09-decisions.md",
+          "line": 23
+        },
+        {
+          "path": "docs/wiki/09-decisions.md",
+          "line": 95
+        }
+      ]
+    },
+    "legacyAliasesSorted": [
+      "UC01",
+      "UC02",
+      "UC03",
+      "UC04",
+      "UC12",
+      "UC13",
+      "UC14",
+      "UC15"
+    ],
+    "legacyAliasLocations": {
+      "UC01": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 42
+        },
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 42
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 64
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 64
+        },
+        {
+          "path": "docs/wiki/02-governance.md",
+          "line": 66
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 25
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 25
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 102
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 213
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ],
+      "UC02": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 42
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 26
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 116
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ],
+      "UC03": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 42
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 27
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 129
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ],
+      "UC04": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 28
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 142
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ],
+      "UC12": [
+        {
+          "path": "docs/wiki/01-index.md",
+          "line": 42
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 29
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 34
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 155
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ],
+      "UC13": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 30
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 168
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ],
+      "UC14": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 31
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 181
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ],
+      "UC15": [
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 32
+        },
+        {
+          "path": "docs/wiki/03-product.md",
+          "line": 194
+        },
+        {
+          "path": "docs/wiki/04-features.md",
+          "line": 9
+        }
+      ]
+    }
+  },
+  "numberedWikiManifest": [
+    {
+      "order": 1,
+      "path": "docs/wiki/01-index.md",
+      "h1": "Hy-Climb 위키",
+      "localLinks": [
+        "02-governance.md",
+        "03-product.md",
+        "04-features.md",
+        "05-architecture.md",
+        "06-tdd-qa.md",
+        "07-reference/01-component-spec.md",
+        "07-reference/02-data-schema.md",
+        "07-reference/03-ui-spec.md",
+        "08-harness/02-operating-model.md",
+        "08-harness/03-context-isolation.md",
+        "08-harness/04-agent-contracts.md",
+        "08-harness/05-worktree-and-ownership.md",
+        "08-harness/06-quality-and-evolution.md",
+        "09-decisions.md"
+      ],
+      "sha256": "32e3319c0afa0ea61809ab47fdc510737a2d1144e78be4fc03075292aaf96b36"
+    },
+    {
+      "order": 2,
+      "path": "docs/wiki/02-governance.md",
+      "h1": "위키 거버넌스",
+      "localLinks": [],
+      "sha256": "583bd46db22cceebf9c7330c9ac166ec89dfa07132249ce29d85e1239099aad6"
+    },
+    {
+      "order": 3,
+      "path": "docs/wiki/03-product.md",
+      "h1": "Hy-Climb 제품 위키",
+      "localLinks": [],
+      "sha256": "2a785e199357ced1b69c7298e2f0138ddd4fb0fa8f9977215c744804cc50d416"
+    },
+    {
+      "order": 4,
+      "path": "docs/wiki/04-features.md",
+      "h1": "Features",
+      "localLinks": [],
+      "sha256": "b4cf47574771570335c24463ac22ccde56e759cf9d2949ac3c45e059262fb252"
+    },
+    {
+      "order": 5,
+      "path": "docs/wiki/05-architecture.md",
+      "h1": "Architecture",
+      "localLinks": [
+        "../../CLAUDE.md",
+        "../../index.html",
+        "../../package.json",
+        "../../public/_redirects",
+        "../../src/App.jsx",
+        "../../src/components/EventBanner.jsx",
+        "../../src/components/MeetingBanner.jsx",
+        "../../src/components/center/CenterList.jsx",
+        "../../src/components/center/NaverMapButton.jsx",
+        "../../src/components/center/SnsLinks.jsx",
+        "../../src/components/layout/Footer.jsx",
+        "../../src/components/layout/Navbar.jsx",
+        "../../src/contexts/LangContext.jsx",
+        "../../src/data/centers.json",
+        "../../src/data/config.json",
+        "../../src/i18n/en.json",
+        "../../src/i18n/ko.json",
+        "../../src/index.css",
+        "../../src/main.jsx",
+        "../../src/utils/naverMap.js",
+        "../../tailwind.config.js",
+        "../../vite.config.js"
+      ],
+      "sha256": "74d64505725ebf592890f3136862d0f81b90df711e0dec8f163748d54fd29952"
+    },
+    {
+      "order": 6,
+      "path": "docs/wiki/06-tdd-qa.md",
+      "h1": "TDD and QA Contract",
+      "localLinks": [],
+      "sha256": "f3c992a44611da5e7a9102687d08359d144b6eaf3a2fea4af500796446bac129"
+    },
+    {
+      "order": 7,
+      "path": "docs/wiki/07-reference/01-component-spec.md",
+      "h1": "Component Specification",
+      "localLinks": [
+        "../../../src",
+        "../../../src/App.jsx",
+        "../../../src/components/EventBanner.jsx",
+        "../../../src/components/MeetingBanner.jsx",
+        "../../../src/components/center",
+        "../../../src/components/center/CenterCard.jsx",
+        "../../../src/components/center/CenterDetail.jsx",
+        "../../../src/components/center/CenterFilter.jsx",
+        "../../../src/components/center/CenterList.jsx",
+        "../../../src/components/center/ImageCarousel.jsx",
+        "../../../src/components/center/NaverMapButton.jsx",
+        "../../../src/components/center/ParkingInfo.jsx",
+        "../../../src/components/center/SnsLinks.jsx",
+        "../../../src/components/layout",
+        "../../../src/contexts/LangContext.jsx",
+        "../../../src/pages/CenterDetailPage.jsx",
+        "../../../src/pages/HomePage.jsx",
+        "../../../src/pages/NotFoundPage.jsx"
+      ],
+      "sha256": "a294fac1f1ad35a5459fc234543750e78390431c5595f256570c45e01d92cb61"
+    },
+    {
+      "order": 8,
+      "path": "docs/wiki/07-reference/02-data-schema.md",
+      "h1": "Data Schema",
+      "localLinks": [
+        "../../../public/images/centers",
+        "../../../src/components/EventBanner.jsx",
+        "../../../src/components/MeetingBanner.jsx",
+        "../../../src/components/center",
+        "../../../src/contexts/LangContext.jsx",
+        "../../../src/data/centers.json",
+        "../../../src/data/config.json",
+        "../../../src/i18n/en.json",
+        "../../../src/i18n/ko.json",
+        "../../../src/utils/naverMap.js"
+      ],
+      "sha256": "b7300a19d5146fdfb719c9a74755d408db0a59357cf6978baca0e87ea630eac5"
+    },
+    {
+      "order": 9,
+      "path": "docs/wiki/07-reference/03-ui-spec.md",
+      "h1": "UI Specification",
+      "localLinks": [
+        "../../../index.html",
+        "../../../package.json",
+        "../../../src/App.jsx",
+        "../../../src/components/EventBanner.jsx",
+        "../../../src/components/MeetingBanner.jsx",
+        "../../../src/components/center/AffiliateBadge.jsx",
+        "../../../src/components/center/CenterCard.jsx",
+        "../../../src/components/center/CenterDetail.jsx",
+        "../../../src/components/center/CenterFilter.jsx",
+        "../../../src/components/center/ImageCarousel.jsx",
+        "../../../src/components/center/NaverMapButton.jsx",
+        "../../../src/components/center/ParkingInfo.jsx",
+        "../../../src/components/center/SnsLinks.jsx",
+        "../../../src/components/layout/Footer.jsx",
+        "../../../src/components/layout/LangToggle.jsx",
+        "../../../src/components/layout/Navbar.jsx",
+        "../../../src/index.css",
+        "../../../tailwind.config.js",
+        "../../../vite.config.js"
+      ],
+      "sha256": "1078ff0e935e451ca89ead200ef50dc28ef19f0f976a71b41e1dfee4a4dd72e9"
+    },
+    {
+      "order": 10,
+      "path": "docs/wiki/08-harness/01-index.md",
+      "h1": "Harness Index",
+      "localLinks": [
+        "02-operating-model.md",
+        "03-context-isolation.md",
+        "04-agent-contracts.md",
+        "05-worktree-and-ownership.md",
+        "06-quality-and-evolution.md"
+      ],
+      "sha256": "ff67c59e7463e2f96eda885aa0bffc8210846f08bc3b8686fe2f05595ab67bef"
+    },
+    {
+      "order": 11,
+      "path": "docs/wiki/08-harness/02-operating-model.md",
+      "h1": "LLM Harness Operating Model",
+      "localLinks": [],
+      "sha256": "eaaba0c4dc5afeee9c2b47ddb237d22bf5e635d9bc90f4fa4ec4d12881fdc5ef"
+    },
+    {
+      "order": 12,
+      "path": "docs/wiki/08-harness/03-context-isolation.md",
+      "h1": "Context Isolation",
+      "localLinks": [],
+      "sha256": "1755408b2e1cfcdf06a5bbb487ca842577ced67adbf6a3037fc5be8bb200098c"
+    },
+    {
+      "order": 13,
+      "path": "docs/wiki/08-harness/04-agent-contracts.md",
+      "h1": "Agent Contracts",
+      "localLinks": [
+        "02-operating-model.md",
+        "03-context-isolation.md"
+      ],
+      "sha256": "eba38d9d446d8c2dc423562496a51bf4ccfe5f1e369d9232419ed6b884c35340"
+    },
+    {
+      "order": 14,
+      "path": "docs/wiki/08-harness/05-worktree-and-ownership.md",
+      "h1": "Worktree And Ownership Protocol",
+      "localLinks": [
+        "02-operating-model.md"
+      ],
+      "sha256": "337ee6f644bd37294d1269b0df43f537821ae84d89640292f7af0778b49d6c30"
+    },
+    {
+      "order": 15,
+      "path": "docs/wiki/08-harness/06-quality-and-evolution.md",
+      "h1": "Harness Quality And Evolution",
+      "localLinks": [],
+      "sha256": "663697d7a1f6285d7a6d1ca0ec2f7a50bfa9198c5676ec0ba758bf929e0a8205"
+    },
+    {
+      "order": 16,
+      "path": "docs/wiki/09-decisions.md",
+      "h1": "Wiki Decisions",
+      "localLinks": [],
+      "sha256": "f2c3a3a2938c0f88499eb38c6f7ddae8e3696a4a8625179e563b7244f0095bca"
+    }
+  ],
+  "projectControlledPathManifest": [
+    {
+      "path": ".claude/rules/product-source.md",
+      "sha256": "fe7a05c8b5b1cb39cf4ac4c0ab6cc13ab6d4a70f65d41cb41d51072723698c63",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".claude/rules/quality-test.md",
+      "sha256": "1459458f8b44f977932fefe765ddd9f7076ad8375bd6758803455c1cf0534712",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".claude/rules/wiki-harness.md",
+      "sha256": "d1075d2d984305f468f9c4b4d20c9bb383a2adf2dd9da40a23d20ddc1babdab1",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "sha256": "e8a807a46e2f0193db268c0d84b41c969683f0f3ee66b659e247ae3d9b3b4ea6",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "0d73650e5d73185bee56067b9831a38d0751aea9ac20376d07207a030d971765",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".obsidian/app.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".obsidian/appearance.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".obsidian/core-plugins.json",
+      "sha256": "763cf20a921fd9955735b278006820b90b207b2fc04d9e79ca648279c7c14276",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".obsidian/workspace.json",
+      "sha256": "6928e0ea1943abad7311911d1b4af2ae36d03850b8f4ced923f5a0417b597bc1",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/boulder.json",
+      "sha256": "9d1d74944b048929f313776dbb5d7086faf42cdbe44ad34bca1bd8cbfca2f1dc",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/drafts/future-wiki-enrichment.md",
+      "sha256": "15c5835334b6b47790f29c8a86252a14fed08244e560de6b087c22ccb52ce862",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/drafts/llm-wiki-methodology.md",
+      "sha256": "38857f8c3c85d7ba0d9f485824b93e84a3d433af400354b5725d6bb94d52324d",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/final-cleanup-remediation-llm-wiki-methodology.md",
+      "sha256": "fd823ceb227061411317c5fda9b34d3abaef2521231cbec3ce98410adef05a1c",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/final-F1-llm-wiki-methodology.md",
+      "sha256": "f1c7f41799611e81595313ad5c3389ab3ad92c10028384ad7aa6f3dc1191801c",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/final-F2-llm-wiki-methodology.md",
+      "sha256": "16fdb4570f6acbc1c9f1bff61392d6670a5947cbafc9fa455267bfd386677938",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/final-F3-llm-wiki-methodology.txt",
+      "sha256": "e4b1ed4d8a6abee539a83f184e84a7896ab24a66fccc17af8f55beed3c5b9b4b",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/final-F4-llm-wiki-methodology.md",
+      "sha256": "ac41a39c308d3d24f69ccea9e78461f214a35d6256ab033f7e2b8f33257cf0a6",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/final-remediation-llm-wiki-methodology.md",
+      "sha256": "25dfc50fbb3ad93212d41ba5ee2efd3d39983e333c0f1e4305dddb6af8c9457d",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/final-worktree-cleanup-llm-wiki-methodology.md",
+      "sha256": "205a74c00a8afdb679384d0ec6ddc1b4c618a71c6c0e779eea655d12b5fea105",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-1-llm-wiki-methodology.md",
+      "sha256": "27f49bfd963222267784417c17a953940939a7ca73027f14462f43e54fc9d155",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-10-llm-wiki-methodology.txt",
+      "sha256": "724e95ad2fd97ba3d89dfc72d86f4b0d5561ebbb6d304d75ce407137f9f08a51",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-2-llm-wiki-methodology.md",
+      "sha256": "7de839d005946b1b9c9cbf570cf0555c2d69af61a2533d747c710c31e9883aa4",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-3-llm-wiki-methodology.md",
+      "sha256": "41128568a38eef508a96d18fbab9663c94f06f9cfeed53aa78128810eb49872b",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-4-llm-wiki-methodology.md",
+      "sha256": "c10dac6bd28288a7588eee7f27ab8b4cea93bf9d464b3803cc552f07741776cc",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-5-llm-wiki-methodology.md",
+      "sha256": "4a96c31b89d99f048b3e2fbb0f2f2944f5778e708c7c7a5c97eff4283b6627e7",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-6-llm-wiki-methodology.txt",
+      "sha256": "492f7d053e4b8b4aafa3f4e3510a863b82e6cf3a27002748d89c9d19f00f8e54",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-7-llm-wiki-methodology.md",
+      "sha256": "f42a1904ed78fea29fb678de345c3afd0108ccb4008b2790d363d6785a583ac9",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-8-llm-wiki-methodology.md",
+      "sha256": "f820d39fa1fcb5f402378c5ef7db5cc3d63eb0b6f3affecf3ada1b3aeda4f27d",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/evidence/task-9-llm-wiki-methodology.md",
+      "sha256": "a83583af5e01be05920d1c7d5a033783a76f68574bc6ff928a5a92de3bb05ecc",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/plans/future-wiki-enrichment.md",
+      "sha256": "86b7a5d1035c3ee51de72b2ec017b75c696857eac2712ed04f726ee1a33fd596",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/plans/llm-wiki-methodology.md",
+      "sha256": "8957c35d6710f60db26d8cb5531f43bba5a562e9fdd641586b06d60ad2189dc6",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e4b16f9ffes9c7mX1yonb69b.json",
+      "sha256": "1dc60555eb04d56ee5436c38b8189005f0a8324321c423f7fb0d10c2b5e94c28",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e4b1753ffegIgxZUvX43U7vx.json",
+      "sha256": "a5d8bf61ad5a050ddad660c2d9bc54aa90abb9fe277e349a25609549d547b946",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e4dd8c5ffeD7lOwiHbE0QzQr.json",
+      "sha256": "e526e8c83ce170371a656de1b779fa040df7c5502acd29c820276c209e1ee6ef",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e4dd955ffeIlDQyO7aSH2Kmz.json",
+      "sha256": "0e348684ebb7fbf35724eea001bc3870cf9ac8a760183092d4afd25533d1f3ba",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e52087dffe861OawiffIEWpF.json",
+      "sha256": "11eaddfbfbcd4a50b8493c31255f6d63d59b28d08d2521a79e1b8a9830a59f9b",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e5208d2ffdhl6aYAJXpA7cFc.json",
+      "sha256": "56574fe432b7a0e2c371f46bdb5c4616af683038cd4dba59551f5e3496fe4461",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e55934bffet4eDpYThVX78CF.json",
+      "sha256": "0aba98d9411f56d1baa9c82f91086d59552a5e1bac69b7abf5468563344314f5",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e5593a7ffdOHWvEramCktvTR.json",
+      "sha256": "51ebadf3a829c5821d8b640f0649f4855b18914eb2dab52be9f5b62d61226427",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e58bd6effeXa2i49gTKf3bBt.json",
+      "sha256": "c852a72d8931b4b569a640a884fe381bf6ac483381677471d21ded83d741c062",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e58bdc8ffe33noYH5kllfqLu.json",
+      "sha256": "4ba90107eab4b7e5c6481ba727d306c7e29dfd97c5052b5d1f794eb632a01c4f",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e5f3d7fffe5vvbb7YJzwThN1.json",
+      "sha256": "087b240571288f8eb61ed236558fa849ee3bf97315d5718eaaf8965387eca50b",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e5f3d99ffefCqxBbpo6jasvh.json",
+      "sha256": "0bd5d43b63afa2a764544ba9e621b012b945da47884766b96220f3b9fcf392a9",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e5f3da0ffe40JJuEiR7MUAjJ.json",
+      "sha256": "f73d102467f00d4383053a04f9a8f6676dd9555d23338261d26a330d320e38e8",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e5fabceffeUcjTZU74dwALnC.json",
+      "sha256": "7334cf4baaacd44dc754ce1641cbd3347b82a25523d19b3c1284963dbbbe57f3",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e630082ffeRmwPC4yF4wNMT0.json",
+      "sha256": "5ad1ab051594da137748b4d60b5fbc93ba982edf2728b602f6548d68b78d7e74",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e675f7effeKxp6IuluhIeB6w.json",
+      "sha256": "d2d80733ed0c5fd567adc233e00ae2962100dabc03786b6df5d14f838412d4f6",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e67cec6ffec7LEXEXEdmn7vY.json",
+      "sha256": "e73e9331031d263e12fe3832c77711713f7200c74b39a43474626826a9ee764f",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e68f8e4ffdMyqje4wzFMSugR.json",
+      "sha256": "72b80b1cb07cff61ab051b9f565f9781683a2dffa82746495f0a50e7f70ede80",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e693f82ffedlHeO5o5Ny6HsL.json",
+      "sha256": "7f3b5cc51fb4310771a214517980599137034c71ae7dac26f94e466a33a585d1",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e693f97ffelxGIQLPvODZzRD.json",
+      "sha256": "fe3339bcd1747411d9406fdff04d771346f865837cca59f3be8cfc76cc286de1",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e693fbcffe3Rz4dncLOOh03C.json",
+      "sha256": "b5184be5f2676c6b191ebcab9487bc84951e1d1b74d46d3c98433a21e1faa7d9",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e694006ffeEi6oteMpXahmVz.json",
+      "sha256": "f7ebc7f17b3d71cb8bfb841d260ac6deb19311fe91368f5c7e713431bdd6dc9a",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01e694106ffeu7qu0e9gdO02sV.json",
+      "sha256": "eb18635e5940ee4a248b632b9e553937c78085d786491c8d6e4b1edc71130670",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01eef15d0ffeKpxUwjjaYjLvB6.json",
+      "sha256": "e1a87ec15accb05ae29fd51d504a59d9d966f5783a7c10cd3d7fcfc34b52a271",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01ef3eed0ffeTL7K31mI6Or6gH.json",
+      "sha256": "ce54b9c79610d3a22a9ebd5c75ec4ec71a83ca16e0503210a7c665e8e4d58778",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01ef8d2f9ffeBEC2qjAg5JtCW8.json",
+      "sha256": "461eb881465e2c06a30d1f18c06a56f9816d8d04048a3d4c0e3d21fd454772c8",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01ef8e435ffeL5lE534XMoy9Dp.json",
+      "sha256": "7bef4f0b0f769755927d92f411fa4f555830629101903b0cd2e1995a1575e727",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01ef92378ffeIm5iu547u5chRT.json",
+      "sha256": "d84d84b96b04a82f354407675bd684d59bd4c5cacbb5d80157093f88563e8ccb",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01ef92381ffecLAfczLnMVfl77.json",
+      "sha256": "410c50f6107e3603789d7f6e8a188367f05129a14cbc48e520cdafdf9cf8f33b",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_01ef9241dffefuU5XHaJmbBlW5.json",
+      "sha256": "bb99077f4e00a9b01ed25ba8f6162a3b1a372b9f1e29c207bb173fb2cff495a0",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023883eb9ffee8VMcz6yAt2OcB.json",
+      "sha256": "11a9be4e1425670526068dfdbafa28dc412798f6facb7ffcda1d12a47ba58065",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_02392f63fffe3ncEIjKEo3PzDF.json",
+      "sha256": "3200b2f761e50a81657dac389ed734305ad099d6aeb3c049c9dfe6d40413bcd8",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_02396b2b7ffefeRV56fjsiegnC.json",
+      "sha256": "fca7fe157dff4fc3378b7728a9d44c8b1d5c0732adbb6ca78a05446d9969cf6d",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023975a90ffeLfwGb5V9qsKyfh.json",
+      "sha256": "c8f5f45ee487b68113b7389bc81799cbe0d4a08ea0711a4d47a01bb6e4c09ebf",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_0239e0945ffexeeQzUgGtFwSLp.json",
+      "sha256": "cca5be4c0def5395ea094bb07449c0226ff766ed6c23482fdb24223c36ced520",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023a15b6fffeGEK82tO01OOspD.json",
+      "sha256": "5494af0652948eb566adfd1c7cd9b320a6d3e5ecd43d6f6a0cd07c40f03cd0ea",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023a1d7f2ffeHNeAXRM7K394H1.json",
+      "sha256": "fdca173a4024253cd2608b82439f530469a767f886097e678795c9cadf6e36e7",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023a1d7f7ffeKrrsWMG42QOQJJ.json",
+      "sha256": "e18ac8bc3e98590857ea45552c661e8719d1ad738b39763b63d43a1efc4834e0",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023a1d887ffeyd51o9tkN6fqup.json",
+      "sha256": "70e56b114997d6eb8c7bbb557d5ef57dbfde40ae8217e22049b6b8693a498482",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023aa3ee1ffeYygdrFmAd4Uoz1.json",
+      "sha256": "f7808c6c9738583f4efa82d575615e18c9a8097bbb023fe43a16f726aad6a0fe",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023af6dbfffeIuBjVXwkgx2UmO.json",
+      "sha256": "7e82920f10aefb4a1592777b135c5bdfa9c8d4dcf8c49348d117ef8d6d6f2a7e",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023af6dc4ffeNcTvvExw9mg83V.json",
+      "sha256": "d560ab7304d112873c265c9ef7aeae60fb1e64c51a7a6f8b677aae2f82067cb4",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023af6de1ffezVoBqgOddDwKfY.json",
+      "sha256": "1475e38c2979c13f1d1b6262197a628dad1537e63cdde77026493f042d2a3db7",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023af6e42ffe0EPFbcMkUrsx91.json",
+      "sha256": "893d966e8c6e6b83a5b492df703136222bca4f6fe3ae899371f2d04a59b0b91a",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023b3b080ffebjlLIDT8vqd2v7.json",
+      "sha256": "f8bfe6c36ac276f8048ce39856ee95b31c49a687f04e5956f6bc4a6bd33e6cc6",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023b8482cffepeRR9foHuDvaTE.json",
+      "sha256": "a19870f2539873c55a6950ff5b549fb7d55d4aa09e179a8e7a624e5491150363",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023bc8650ffe9FP1ine5g55zL8.json",
+      "sha256": "e3461a00d876656316c57ac1ebc7b2a446ac9718a6a46376f4233fcd20bbbabe",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023c44cfeffebrmQPli185T5FD.json",
+      "sha256": "6f818500f89dbf60d5b408cfcd5fc43bd7dbd9673f44749f9f0adc43a7e9c287",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023c4a3c9ffeSvaOK3V40i7PQW.json",
+      "sha256": "b437d4e74cf4b8adbab867a3ac825735334d5fa94f01c2dfb0db8e545f84fb82",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023cb0199ffeJ7y3Ux0a1IfvNk.json",
+      "sha256": "02e4ae285390ffa71ba4436a02b2d86070daa5cb97ff7892281e8669ad78e911",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023cea35dffedrFEcqRfE3Ox2f.json",
+      "sha256": "b7563ae29f1269f8f01223f4ca053088d460d5cdddad31b4bd94fa55ddee19a2",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023cea385ffe4bvxsKhfpPWxxP.json",
+      "sha256": "98df64e8bdc641d1fc9607bf50f67a63efd0758e0d628c96b12df7ba879eac75",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023cea388ffeIN5WfYIFHl1jFq.json",
+      "sha256": "0e50482f330ce84656883812285ba3640fc8299c031baea378c28638ea597d08",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023cea3c7ffe3c9sRozNmiSE45.json",
+      "sha256": "ea6d746f96bfbdda9d165c8f233adc565243237cb57efa9fbf86035423f063e9",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023d447b3ffelE2gq0SaGxYrbV.json",
+      "sha256": "1b3b2aa727c9fa2b4e9bfe8056bc7e999d365afa70e1816105c46ed33ee5bcb5",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023d447cfffeFhqvNNaJz1Wr91.json",
+      "sha256": "4a7ade6add4f7882c9055c1b202f04adf19c4139afb50641f46156a6294b4eca",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023d447ecffeendspa7K1Cu2vK.json",
+      "sha256": "89d38d988df5cf3a126c9ad2d03df5e207a87b63014511e4718f232515c871b1",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023d4480affee3F0NaVNYohL8T.json",
+      "sha256": "79ec8dcd49e78293b6f29285609b79a29332ca9e4ef5ff868e188815d8d9ccf4",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023d6161cffemAqcrRtHq5BToh.json",
+      "sha256": "64770b25ad3403aad555b85a6cc1a696ff20580b9f1ebeb01859d6eba6f13804",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023d6f592ffe71Y2uE16yb45TS.json",
+      "sha256": "1733b2088e04237c171fcbc2fac04cb0635e3e4df5071e708042e8f17462d2ea",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023dbc586ffej0ffwBfZMKntCM.json",
+      "sha256": "1286c8a33be701bee2ced588cdb0354a65b97799fb8c17910965d8d002c52ab0",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023e5fda2ffeZOxFFf3YtoXSFL.json",
+      "sha256": "11622503658df3587661a79428157b901e3ef0a31cfbf0dcccc8605cd80eb456",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023e6acdeffeu6hdsYKzNkebL1.json",
+      "sha256": "dc3cad5fe3eb4ff80206c965e890bc56b798c259b8a646d289d9bacd85885507",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023e6ace1ffe9tRIh7v2cjKhln.json",
+      "sha256": "21bec027930baf1b6e64527eee0bc9ec40a4ca29c08a66c444b780cb1d53c589",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023e6acf2ffe3wYpskC1J2DOlk.json",
+      "sha256": "7531c6ad0aaeb48bfa0d648e9cf8e52fa892c9931b82837b0e426dc033e62a5d",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023e6ad17ffes7e0iHPww5Vvm3.json",
+      "sha256": "910312129b3744380f672e7382611f60d13e3517fa19e5ca64f335552f09bf00",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023e6ad56ffesPwTRtJoJrGnmI.json",
+      "sha256": "5c1b8f88f96713be90bef378c5265dca85b78861e5c49970f31f367d79a336bb",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023edd0e2ffe4d5BysrnF0KsnK.json",
+      "sha256": "2e3b59493838521ceea459ce2b279f9effa34c27243ec291843282700c50528d",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023edd0e6ffeI5TBbZFNYcBTWo.json",
+      "sha256": "1bebc89ba918ef5a52cacf9bed9ac046bfa2f949176afe0462ef256327786857",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023edd0f8ffeOwhRxQz7RU8jB7.json",
+      "sha256": "3e90703bcc121ad296705fcaadf6fab4cdcc5205ffcc66cc42b907d96560226c",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023edd111ffeLkF6hi6sqCDoYE.json",
+      "sha256": "7fecd5495cbc95db692a2f6c40c0c360aa3e3e9932ee228104848411738cb6fa",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023edd14cffe0voFzjqyagAxTR.json",
+      "sha256": "ba2d830903a2a82bb7041ca9bab566e88bec4a046e35de1a90994e43ffedb594",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023ef7443ffek7gV95WDB716ZR.json",
+      "sha256": "023c390cf218570152d630a39e2024f5f1f577397f1afb9307a1b47be7784e78",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023f7c933ffeOifA77Fn8ORn3c.json",
+      "sha256": "0b591f6d3abd6a7dde9ce05850a70e6637bae01ce21873879c59692bf58eeb54",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023f7c939ffe0NzG6d24GfAmfO.json",
+      "sha256": "680292652e249658e4cf83037e55849fc7c50d4f54b1beb2a37e0cc6cf1fe7b6",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023fb5008ffdEmnaZpBw4cxWHH.json",
+      "sha256": "5fe15c23d841432d06a3b56c3fc5e3cf7f5afb3d6230a5cced5a2239f2699718",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_023fb5026ffeaFmyrD8RAlkREi.json",
+      "sha256": "b30acb7752c8b86102e93a029a2688e607d78fece032a7cdac5f49b8c8ee98e3",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_0240043b7ffd5ZAS6uWIwFaLYX.json",
+      "sha256": "544527fb12aac4ab2bacf0b43d6f8b41b187a67b573e66f9ccd6c612c316deef",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_02400761effeuNE88J78Vs33x8.json",
+      "sha256": "9d49b5f7eed544917107b697cd38d49af94f63443b03590a33d16d783514636d",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_02405a88bffenRcbm0EjEcaACG.json",
+      "sha256": "d58905d1f745bafe02cb84f0c71c29ae2de3f999eee1907e7e5bc11eb8df4663",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_024089ed1ffeLlgodUPZH3QI7I.json",
+      "sha256": "b739237723f10d149481dada3beef2e7e040b7e030eb9f8c04e01a237bf0aff5",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_02408cb17ffe38jS4DT4jMv2tt.json",
+      "sha256": "297c7e21b2c4965f3da133d165fe828110896371a39c63f4cc844814d6d8c350",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_02408cb23ffeOclnM3dJid4evM.json",
+      "sha256": "1682f6f4757737d77e0cef73ff7ec05e28ce9739b86d55a54f40ba990f3e9e7e",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_024117f0dffecHFQbIRw9mrSZ3.json",
+      "sha256": "1a5f3294c672bb78e8949718470334614bd5f3dd333f523763506d7f961f1525",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_024140461ffe0hwJiTpxcOBfYN.json",
+      "sha256": "2338fed429c1628b70ce0e135c19732984af340801c9bf42593509d9b4e90500",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_024140468ffeLcEK4nazBagH3h.json",
+      "sha256": "5e4fdf15067170e637a3343311b252fb8cac77de79495e684c803ddb22b2f25b",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_024140484ffemMx3L1AT4kLKze.json",
+      "sha256": "dec7f685ffa1d0a0feae2105b84f4d084a1c834a85818f2b4dd767effba424bf",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_02414a11effe8eTQnkMr7JMero.json",
+      "sha256": "6d1e169bcf24b788ac98b89cd9a3e8aa54fdd9e7398b69b563d0977f33932db4",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_0f518ce66ffePn1wHYHfNNeLY3.json",
+      "sha256": "1f135b7d9ad6cc7fb40bc407f1edaa972423e81d8321b9d75cea48c6180c759a",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/run-continuation/ses_0f51ea361ffe56ob5cfCiSYHT9.json",
+      "sha256": "6c5e56dc9c1c201c94950b65119d026c7c4fa4a759dcebb49f9ea6d0c2e44777",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": ".omo/start-work/ledger.jsonl",
+      "sha256": "932c76f309e012d039a3f673e4a2b07d0e39188a57daf3b5cb72873fda46c22d",
+      "mutableGroup": "C_orchestrator_runtime_mutable"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "2cc07ce4ae20bf7a32c362d25ae47aed1bc7cd269ee1c6e54fe41536f96347ea",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "component-spec.md",
+      "sha256": "717ae1db93181333ba4cad04f67356ae72115e570e1d8dc9bdfd2cdd9237cf08",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "data-schema.md",
+      "sha256": "4312cc73a5f3b85d60266cfe3026035ee859317e9fd505ae87daff8d8fb58484",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "docs/wiki/01-index.md",
+      "sha256": "32e3319c0afa0ea61809ab47fdc510737a2d1144e78be4fc03075292aaf96b36",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/02-governance.md",
+      "sha256": "583bd46db22cceebf9c7330c9ac166ec89dfa07132249ce29d85e1239099aad6",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/03-product.md",
+      "sha256": "2a785e199357ced1b69c7298e2f0138ddd4fb0fa8f9977215c744804cc50d416",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/04-features.md",
+      "sha256": "b4cf47574771570335c24463ac22ccde56e759cf9d2949ac3c45e059262fb252",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/05-architecture.md",
+      "sha256": "74d64505725ebf592890f3136862d0f81b90df711e0dec8f163748d54fd29952",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/06-tdd-qa.md",
+      "sha256": "f3c992a44611da5e7a9102687d08359d144b6eaf3a2fea4af500796446bac129",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/07-reference/01-component-spec.md",
+      "sha256": "a294fac1f1ad35a5459fc234543750e78390431c5595f256570c45e01d92cb61",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/07-reference/02-data-schema.md",
+      "sha256": "b7300a19d5146fdfb719c9a74755d408db0a59357cf6978baca0e87ea630eac5",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/07-reference/03-ui-spec.md",
+      "sha256": "1078ff0e935e451ca89ead200ef50dc28ef19f0f976a71b41e1dfee4a4dd72e9",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/08-harness/01-index.md",
+      "sha256": "ff67c59e7463e2f96eda885aa0bffc8210846f08bc3b8686fe2f05595ab67bef",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/08-harness/02-operating-model.md",
+      "sha256": "eaaba0c4dc5afeee9c2b47ddb237d22bf5e635d9bc90f4fa4ec4d12881fdc5ef",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/08-harness/03-context-isolation.md",
+      "sha256": "1755408b2e1cfcdf06a5bbb487ca842577ced67adbf6a3037fc5be8bb200098c",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/08-harness/04-agent-contracts.md",
+      "sha256": "eba38d9d446d8c2dc423562496a51bf4ccfe5f1e369d9232419ed6b884c35340",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/08-harness/05-worktree-and-ownership.md",
+      "sha256": "337ee6f644bd37294d1269b0df43f537821ae84d89640292f7af0778b49d6c30",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/08-harness/06-quality-and-evolution.md",
+      "sha256": "663697d7a1f6285d7a6d1ca0ec2f7a50bfa9198c5676ec0ba758bf929e0a8205",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "docs/wiki/09-decisions.md",
+      "sha256": "f2c3a3a2938c0f88499eb38c6f7ddae8e3696a4a8625179e563b7244f0095bca",
+      "mutableGroup": "A_wiki_mutable"
+    },
+    {
+      "path": "eslint.config.js",
+      "sha256": "0197d9a843aaae267303c4d1ab1a43afad1afacc7646cdf6cf94a5af6b815fb8",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "index.html",
+      "sha256": "be1e1adb6edac2f000ec79a8d4a1fb32d63ec307e3dcafe3a77851d69b42ddb0",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d35fd38bc280d47df13af8a7e51fae036e1c96d03bfbf4059be0a188e67d4020",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "package.json",
+      "sha256": "14adeaa36ce433961e75148b5f6f71623cfe70afc0c25ef0e4c208dba35bf7e1",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/_redirects",
+      "sha256": "49dbab673306115d5745c7a868b43085e54fa63cccd39a2b5b58f9491ce6f941",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/apple-touch-icon.png",
+      "sha256": "74e6009cbafd027289b83fd26004db5ba34c68817ec896c499f122afaa78ddbf",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/favicon-16x16.png",
+      "sha256": "4de91c6841ff3f5d0af66091616914bca5b58e88ff84ab0d882f74ac1f50a294",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/favicon-32x32.png",
+      "sha256": "6dbd866a4a543dea3ccba22ce99104d734f83ae27ad0845debf934b118819fbe",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/favicon.svg",
+      "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/icons.svg",
+      "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_00.jpg",
+      "sha256": "f0689e7c4a61a5e2c619bc147d657937c9abc11a93bc0d354e7cf65412eb7b60",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_00.png",
+      "sha256": "84376b25521cb40d2a40eb9c501e2b3f916b09040e4965f52c7383c28b034400",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_01.jpg",
+      "sha256": "cfc3cd4ec158b34308ab0a779b50ef536af8fc2672c0d0e39d8007b4f4abb631",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_02.jpg",
+      "sha256": "5e6e62cae9461ac1c5a304282306a64f356cdb764e74c407230e79b0c97dddb7",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_03.jpg",
+      "sha256": "a9ab8276f48d18c3f86db1910fda895cd34b5789e651ed757771529010621220",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_04.jpg",
+      "sha256": "dbf882c5b1f9bb50fb925cbee1fc3347ab4210ec19572feb48972fd1373ff496",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_main.jpg",
+      "sha256": "725ad59bdd641c9a6b85eb1759434e34f8bbc701a368b59837103731f8fafbe4",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_01_main.png",
+      "sha256": "bce3ae0f0a13edcd3050364ca7b9c46f651973a16730f3cfbdf27b08d76bd2ec",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_02_00.png",
+      "sha256": "c8b4233a885926fa39e0fc7f9e5e45d95602f2ee116299e840905d6cfdb0cd20",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_02_01.png",
+      "sha256": "a59e954ec06d43f664811f3029b3d5ef44494de2d84961d48722b7766ef9236c",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_02_02.png",
+      "sha256": "e18b0416ce2b1e7075b103c6f89dab43edddd9bf6abef347a63db61af1eb26c9",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_02_03.png",
+      "sha256": "d5dceb91b0e32723298ca5ce955828d902502b808146bda2c5511524143ffa4f",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_02_04.jpg",
+      "sha256": "05952367408a412d960e1afcb43c3760f1358498dab047e9aaad3d34a17ff9af",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_02_main.png",
+      "sha256": "8d4cac5cc6ec26f293837ffb496188a0a4f0c25899aa7b9abcc90a609af261ce",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_03_00.png",
+      "sha256": "8ce58d3c9eab1252afc5a08aba2f9eb0ea49dc3df32821c1455c4869d776a8b2",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_03_01.jpg",
+      "sha256": "dbcf0865c2e292a1758f1ba846889f6b6e5cc269b9bce55e9d602b46ffa40dbf",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_03_02.jpg",
+      "sha256": "4144eb55889b52315f2ea0c395347b7146b8fe30a22172cab9c8e02b35220f0e",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_03_03.jpg",
+      "sha256": "9030e91b3d826d5a79390f81caa79fee249cfae342e4bf0abf9e0d9b762c41df",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_03_04.jpg",
+      "sha256": "c4815580ba9a8e648a6335c83d69cf69fb07995b961705593ec76b8fa8745d5a",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_03_main.png",
+      "sha256": "aa9e1112423e14d76c32773702c59ea23580b93c5b8de23087a2e84853e8f7e0",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_04_main.jpg",
+      "sha256": "2405ad8f54cdef79db0cd86ccfe271e7fe2f5b94d0ab3d1a6a448e4863665226",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_04_main.png",
+      "sha256": "38a311bcef02ffedd19e634927d0fd9b3ccbf750ea5d8894115e8244c6686579",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_05_main.png",
+      "sha256": "98e82f8fbfab2d5a7c0a4d59f52d5a05563ee93301fcd47ac2b64d80779762a4",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_06_main.jpg",
+      "sha256": "d52778506d23ee2f3a6b200653bf70951b4fe7e0f1bb0354050b49c376c91407",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_07_main.png",
+      "sha256": "aae8a98287e5a34a7711f5bd7126443afc4772239e247c86d3dbb56e2dc56c2b",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_08_main.png",
+      "sha256": "fef412231a1d7a0efe2158ae1424225470a6757e4c3017f9de15183cff06172f",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_09_main.png",
+      "sha256": "99e2f92fb656a9499f9b0784605478b8e1aa9fd71c8add708c1dabe9131ed02c",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_10_main.png",
+      "sha256": "f0a89fc64cdc567a143b424dee45947a2d0a9c8915c3c850e4555058ed6616a1",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/center_11_main.png",
+      "sha256": "394071b7f0a76cc7ff8e58d6a60bea26e8bc90a3afc846dd014eccacb7b75cf7",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/centers/UbiReport4 HTMLViewer.pdf",
+      "sha256": "35302ca680bba344d0a1a4e65a86738394f886fdd86cf1f90026366282e7fe7a",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/hy-climb-og-image.png",
+      "sha256": "bbb19a5778cff98eef4e2a2d103f7da3625f09a15716bbc69ef76c28f161a9e5",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/images/placeholder.svg",
+      "sha256": "4eb2932f9ca457affbf911b23d7cca065302be361e447422182b813cb645bc58",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "public/Screenshot 2026-05-01 at 7.53.06 PM.png",
+      "sha256": "b47d08a9f0ef38fe6153197477f80d6b8812cb3fd9d00157da647422426a0574",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1e0f440de1692e0260ce6a7ff62691a3fdfd96f982917f24422f6c0f677e2adb",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/App.jsx",
+      "sha256": "c75737f743d5c68605345ff23e32924d938675551b840daf8d32a23f9ec8573f",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/assets/hero.png",
+      "sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/assets/react.svg",
+      "sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/assets/vite.svg",
+      "sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/AffiliateBadge.jsx",
+      "sha256": "ff5d5817aa33f6772f688f2509075815426f39718212fc53235410fb17524332",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/CenterCard.jsx",
+      "sha256": "3894c2d4e128d7bf945a9ea44c49d2f99eef600f5710795707a904c2e89f5599",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/CenterDetail.jsx",
+      "sha256": "829fa382dcf9b19baa43f178bf145cf47d1fbeaaed2fc5cd6a006aa3ca1ce576",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/CenterFilter.jsx",
+      "sha256": "31d42d8402720a8fe8da8d7108a739c6ba0fd144bddaaa40d47cb9d289a90b70",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/CenterList.jsx",
+      "sha256": "63fee6eeebed47e06a5c12b8d9538746d32e58ccab34a8f26f6f690ce6103fdc",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/ImageCarousel.jsx",
+      "sha256": "a51e281dc4b51e91fba637dccb1b43940aa9f05805c44edaa81c0e8b2b44fbd8",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/NaverMapButton.jsx",
+      "sha256": "8b9cb0638f418a04a5a93ba434b7b77037dacbc5da0131644d12ab7d189c2b8e",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/ParkingInfo.jsx",
+      "sha256": "95e99c9b8e5101eb0851728371c18ad91faed83a15e5ee5cb141e3b347dd1efb",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/center/SnsLinks.jsx",
+      "sha256": "8683483b2ee597716c55c514c23a251815e16fe2e6313a04e97b5c360f6875b5",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/EventBanner.jsx",
+      "sha256": "464330dfbf2c21daf586b8356a8de0bb3417f8033ea82bf698a2de183873468f",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/layout/Footer.jsx",
+      "sha256": "5e5d419ee9bcd17668c124da2befcf33153e40400bc1ee53dfb6204429ac9347",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/layout/LangToggle.jsx",
+      "sha256": "491cc1eb0cc852adbfd347d21a09dda261f05ad492c41358b9e0c70f05eabf88",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/layout/Navbar.jsx",
+      "sha256": "3d50ecfc0528ddb668ea852df406b9d935cff6163e9e340e845c79b3b2c1fcb8",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/components/MeetingBanner.jsx",
+      "sha256": "02076712249b5a5d8b822940947dae25c903daefb6587898e9f9e193f22b8651",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/contexts/LangContext.jsx",
+      "sha256": "ea6870f848c41d2fb72b67151eae1a271b4807d2993bd4e38a7a2f9aff8f2969",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/data/centers.json",
+      "sha256": "d6b05cd20c031f3a415920310ad82288d0b815efafbefee4ef09685b793682a1",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/data/config.json",
+      "sha256": "1a447f21881e534ab6653bef9852ef36aa8d16c672ab3181fdaa7dc3829665f3",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/i18n/en.json",
+      "sha256": "5f1151a714cac2a72cb53199d9e4480e5dd2a301f6aed2d805f21c7a849336e9",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/i18n/ko.json",
+      "sha256": "5340a2251c879a35f0c7c1ce243d6c94da4aaa6fbee3a6d883d1f06a2c7d871f",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/index.css",
+      "sha256": "83e5d529a19584eef6763191eea0920bac566570d5242e9373a12b2ca44a5e4b",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/main.jsx",
+      "sha256": "4b4b864dbe45253425d0c925337180ec07e204295179f80f59551216f466f618",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/pages/CenterDetailPage.jsx",
+      "sha256": "a4d8db8e3aec19e19af6bf4977b0c34fea042ddcbf4c978ccfa93405f384b948",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/pages/HomePage.jsx",
+      "sha256": "230fd1bff6175c905f4b92852e15788b703ad960dbda83aa3610dcc6755900f5",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/pages/NotFoundPage.jsx",
+      "sha256": "42cb07609cbfab74f45add8ee2ea98f4207b466a5f73b12e5bf01ac9a99168dc",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/utils/formatEventDate.js",
+      "sha256": "9586cd034f318c082149dca9521d4881169c9d17fc10d38677809e302879c149",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "src/utils/naverMap.js",
+      "sha256": "5aca84956c4dcd113edc25c898c0fb547cd366c4fdf0ffff9b0ca391cb1758d2",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "tailwind.config.js",
+      "sha256": "2e648267aa3ab14a572a596088cd78bca7666600e3528fabbb79ea0ca123ea30",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "tasks.md",
+      "sha256": "51a3e86e047d7bac65580099973e49537c5a1bb83b63300fffe10a767b6ca559",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "ui-spec.md",
+      "sha256": "3bf1c077022f9be81501e79138cf5d5399781f1f8ee749ac5d3ac3ae545ceab3",
+      "mutableGroup": "immutable"
+    },
+    {
+      "path": "vite.config.js",
+      "sha256": "3583e5af80b34fcf25bd7bbf5f388cb5394150be9a6a923f6311b64c152022cb",
+      "mutableGroup": "immutable"
+    }
+  ],
+  "projectControlledPathCount": 221,
+  "projectClassificationCounts": {
+    "immutable": 112,
+    "C_orchestrator_runtime_mutable": 93,
+    "A_wiki_mutable": 16
+  },
+  "adversarialClasses": {
+    "applicable": {
+      "malformed_input": "In-memory malformed REQ-999 and commitment strings must be rejected after edits.",
+      "stale_state": "Complete pre-edit hashes make later drift detectable without Git.",
+      "dirty_worktree": "Git is not used as baseline because the Wiki is untracked.",
+      "misleading_success_output": "QA stores binary PASS/FAIL fields, not prose-only success claims.",
+      "generated_manifest_stale_state": "Project manifest SHA-256 values are captured before content edits."
+    },
+    "notApplicable": {
+      "prompt_injection": "No external untrusted content is executed or promoted; only local canonical plan and wiki files are scanned.",
+      "cancel_resume": "Single-turn documentation task with no continuation edits owned here.",
+      "hung": "Scanner is synchronous and finite over local files.",
+      "flaky": "Hash and regex checks are deterministic.",
+      "repeated_interruption": "No long-running subprocess or resumable workflow is used."
+    }
+  },
+  "qaAfterContentEdits": {
+    "generatedAt": "2026-08-08T14:17:53.633Z",
+    "channel": "node -e manifest/status scanner, no temp files, no stdin",
+    "checks": {
+      "evidenceJsonValid": {
+        "pass": true
+      },
+      "baselineIdEquality": {
+        "pass": true,
+        "beforeCount": 58,
+        "afterCount": 58
+      },
+      "legacyAliasEquality": {
+        "pass": true,
+        "beforeCount": 8,
+        "afterCount": 8
+      },
+      "h1Equality": {
+        "pass": true,
+        "failures": []
+      },
+      "localMarkdownLinks": {
+        "pass": true,
+        "failures": []
+      },
+      "statusContractTermsOnEditedPages": {
+        "pass": true,
+        "pages": [
+          {
+            "path": "docs/wiki/01-index.md",
+            "missing": []
+          },
+          {
+            "path": "docs/wiki/02-governance.md",
+            "missing": []
+          }
+        ]
+      },
+      "forbiddenCommitmentLanguage": {
+        "pass": true,
+        "failures": []
+      },
+      "malformedReq999Rejected": {
+        "pass": true
+      },
+      "willBuildCommitmentRejected": {
+        "pass": true
+      },
+      "immutableScope": {
+        "pass": true,
+        "changedExisting": [
+          "docs/wiki/01-index.md",
+          "docs/wiki/02-governance.md"
+        ],
+        "newFiles": [
+          ".omo/evidence/task-1-future-wiki-enrichment.json"
+        ],
+        "scopeViolations": [],
+        "unexpectedNewFiles": []
+      }
+    },
+    "pass": true,
+    "manualQaSurface": "Documentation deliverable read through parsed manifest/status output. Scanner validates the exact user-facing wiki contract and the failure fixtures.",
+    "cleanup": {
+      "scannerMode": "node -e one-off, no temp files, no stdin",
+      "tempFilesCreated": [],
+      "processesLeftRunning": false
+    }
+  },
+  "cleanup": {
+    "scannerMode": "node -e one-off, no temp files, no stdin",
+    "tempFilesCreated": [],
+    "processesLeftRunning": false
+  }
+}

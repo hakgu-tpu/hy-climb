@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "active_work_id": null,
+  "works": {
+    "llm-wiki-methodology-20260807": {
+      "work_id": "llm-wiki-methodology-20260807",
+      "active_plan": ".omo/plans/llm-wiki-methodology.md",
+      "plan_name": "llm-wiki-methodology",
+      "session_ids": ["codex:current"],
+      "status": "completed",
+      "worktree_path": null
+    },
+    "future-wiki-enrichment-20260808": {
+      "work_id": "future-wiki-enrichment-20260808",
+      "active_plan": ".omo/plans/future-wiki-enrichment.md",
+      "plan_name": "future-wiki-enrichment",
+      "session_ids": ["codex:current"],
+      "status": "paused",
+      "worktree_path": null
+    }
+  }
+}
