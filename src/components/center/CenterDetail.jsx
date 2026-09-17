@@ -6,6 +6,7 @@ import ImageCarousel from '@/components/center/ImageCarousel'
 import SnsLinks from '@/components/center/SnsLinks'
 import ParkingInfo from '@/components/center/ParkingInfo'
 import { formatPrice } from '@/utils/naverMap'
+import { centerImageUrl } from '@/utils/centerImageUrl'
 
 const CenterDetail = ({ center, departure }) => {
   const { t, lang } = useLang()
@@ -58,7 +59,7 @@ const CenterDetail = ({ center, departure }) => {
                 }`}
               >
                 <img
-                  src={`/images/centers/${img}`}
+                  src={centerImageUrl(img)}
                   alt=""
                   className="w-[72px] h-[56px] object-cover bg-zinc-100"
                   onError={(e) => {

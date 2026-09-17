@@ -139,6 +139,15 @@ Consequences:
 * This decision authorizes planning and implementation to proceed under the shape recorded in `docs/wiki/05-architecture.md` and `docs/wiki/07-reference/02-data-schema.md`. It does not by itself mark those pages' Supabase sections `Current`; that happens only when the described behavior exists in the repository, per the objective state contract in `docs/wiki/02-governance.md`.
 * This decision is canonical because the Project owner (interactive user) approved the read strategy, phased admin surface, and auth method in this session on 2026-09-16.
 
-Implementation update, 2026-09-17: The data store, RLS/GRANT policies, seed data, and the public runtime read path are implemented and verified live (anon read succeeds, anon write returns `42501 permission denied`). See `docs/wiki/05-architecture.md` Supabase backend section for the Current/Proposed split by item. Phase 2 (separate-domain admin app) and any app-level Supabase Auth sign-in flow remain not started.
+Implementation update, 2026-09-17 (data path): The data store, RLS/GRANT policies, seed data, and the public runtime read path are implemented and verified live (anon read succeeds, anon write returns `42501 permission denied`). See `docs/wiki/05-architecture.md` Supabase backend section for the Current/Proposed split by item.
+
+Phase 2 scoping decision, 2026-09-17: The Project owner approved, for the Phase 2 admin surface named in this decision:
+
+* Repository: a new, separate repository `hy-climb-admin` (not a folder in this repo), its own GitHub remote, and its own Cloudflare Pages project/domain not linked from the public app.
+* Stack: Vite + React + Tailwind, matching this app.
+* Scope: `centers` table CRUD and `app_config` editing (event, meeting, departure, Instagram link). Operator account/role management (`profiles.role`) is explicitly out of scope; that stays a Supabase Studio / Dashboard task.
+* Image handling: uploads go to the new `center-images` Supabase Storage bucket (`supabase/migrations/20260917100000_center_images_storage.sql`), public read, operator-only write. `src/utils/centerImageUrl.js` in this repo resolves both the legacy bundled-file form and the new Storage-URL form so existing centers' images are untouched.
+
+This approval covers this shape only; it doesn't cover `hy-climb-admin`'s internal code, which isn't tracked by this wiki.
 
 Evidence: `docs/wiki/05-architecture.md`, `docs/wiki/07-reference/02-data-schema.md`, `docs/wiki/04-features.md` change notes dated 2026-09-16 and 2026-09-17, `supabase/migrations/20260916100000_init_schema.sql`, `supabase/seed.sql`, `src/lib/supabaseClient.js`, `src/contexts/DataContext.jsx`, this session's conversation record.

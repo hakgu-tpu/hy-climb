@@ -15,7 +15,7 @@ The `centers` table holds one row per center, read through [`src/contexts/DataCo
 | `address` | string | Yes | Korean address. |
 | `region` | string | Yes | Region label used to build filter chips. |
 | `description` | string | Yes | Korean description. |
-| `images` | string array | Yes | File names under [`public/images/centers`](../../../public/images/centers). |
+| `images` | string array | Yes | Either a bare file name under [`public/images/centers`](../../../public/images/centers) (legacy), or an absolute `https://` Supabase Storage URL from the `center-images` bucket (new, uploaded via the admin app). |
 | `isAffiliated` | boolean | Yes | Controls affiliate badge and affiliate filter membership. |
 | `naverPlaceId` | string | Yes | Naver direction segment used by map URL builders. |
 | `phone` | string | No | Detail page phone text. |
@@ -52,7 +52,7 @@ The i18n files contain nested UI copy. `ko.json` and `en.json` must include the 
 
 ## Invariants
 
-Center records must keep `images` non-empty because cards read `images[0]` directly. Image file names are relative to `/images/centers/`. Missing image files are tolerated at render time through `/images/placeholder.svg`.
+Center records must keep `images` non-empty because cards read `images[0]` directly. Each entry is resolved by [`src/utils/centerImageUrl.js`](../../../src/utils/centerImageUrl.js): an `http`-prefixed value is used as-is (Supabase Storage), anything else is treated as a file name relative to `/images/centers/` (legacy bundled images). Missing image files are tolerated at render time through `/images/placeholder.svg`.
 
 Center ids must stay unique, stable, and URL-safe. `meeting.centerId` must refer to a center id when a clickable meeting banner is desired. If no matching center is found, the live banner shows the localized unknown venue copy.
 
@@ -97,7 +97,9 @@ Owner-decision requirement: See `docs/wiki/09-decisions.md` `WIKI-DEC-005`. Appr
 
 ## Code references
 
-[`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql) is the live schema/RLS/GRANT source.
+[`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql) is the live schema/RLS/GRANT source. [`supabase/migrations/20260917100000_center_images_storage.sql`](../../../supabase/migrations/20260917100000_center_images_storage.sql) adds the `center-images` Storage bucket and its RLS policies.
+
+[`src/utils/centerImageUrl.js`](../../../src/utils/centerImageUrl.js) resolves an `images` entry to either an absolute Storage URL or a `/images/centers/`-relative path.
 
 [`src/lib/supabaseClient.js`](../../../src/lib/supabaseClient.js) creates the Supabase client from `VITE_SUPABASE_URL`/`VITE_SUPABASE_PUBLISHABLE_KEY`.
 

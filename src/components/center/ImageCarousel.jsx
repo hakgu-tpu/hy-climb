@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { centerImageUrl } from '@/utils/centerImageUrl'
 
 const ImageCarousel = ({ images, centerName, current, onChange }) => {
   const total = images.length
@@ -58,7 +59,7 @@ const ImageCarousel = ({ images, centerName, current, onChange }) => {
         {images.map((img, i) => (
           <div key={img} style={{ width: `${100 / total}%` }} className="h-full flex-shrink-0">
             <img
-              src={`/images/centers/${img}`}
+              src={centerImageUrl(img)}
               alt={`${centerName} ${i + 1}`}
               className="w-full h-full object-cover"
               onError={(e) => {

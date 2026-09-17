@@ -28,6 +28,10 @@ Create a Supabase project, then run `supabase/migrations/20260916100000_init_sch
 
 Every later account is invited the same way in Authentication → Users; there is no public sign-up route in the app.
 
+## Storage (center images)
+
+`supabase/migrations/20260917100000_center_images_storage.sql` creates a public `center-images` Storage bucket and matching `storage.objects` RLS policies (public read, operator-only write via `is_operator()`), for the `hy-climb-admin` app's image upload. Run it in the SQL Editor the same way as the schema migration. It doesn't touch any existing image files; `public/images/centers/` in this repo is untouched and still serves the 11 seeded centers' images.
+
 ## Seed existing data
 
 `supabase/seed.sql` is generated from the current `src/data/centers.json` / `src/data/config.json` and inserts the same 11 centers plus the singleton `app_config` row. Run it once in the SQL Editor after the migration. It drops the `naverMapUrl` field from `centers.json`: that field isn't in the documented data contract (`docs/wiki/07-reference/02-data-schema.md`) and nothing in `src/` reads it (`src/utils/naverMap.js` builds URLs from `naverPlaceId` instead).

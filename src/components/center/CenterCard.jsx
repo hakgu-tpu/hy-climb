@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useLang } from '@/contexts/LangContext'
 import NaverMapButton from '@/components/center/NaverMapButton'
 import AffiliateBadge from '@/components/center/AffiliateBadge'
+import { centerImageUrl } from '@/utils/centerImageUrl'
 
 const CenterCard = ({ center, departure }) => {
   const navigate = useNavigate()
@@ -16,7 +17,7 @@ const CenterCard = ({ center, departure }) => {
       onClick={() => navigate(`/center/${center.id}`)}
     >
       <img
-        src={`/images/centers/${center.images[0]}`}
+        src={centerImageUrl(center.images[0])}
         alt={name}
         className="w-full h-[160px] object-cover bg-zinc-100"
         onError={(e) => {
