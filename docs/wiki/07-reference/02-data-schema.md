@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This page defines the canonical data contracts for Hy-Climb. The live source is a Supabase Postgres database, per [`supabase/migrations/`](../../../supabase/migrations/) (`docs/wiki/09-decisions.md` `WIKI-DEC-005`, `WIKI-DEC-006`, `docs/wiki/05-architecture.md` Supabase backend). [`src/i18n/ko.json`](../../../src/i18n/ko.json) and [`src/i18n/en.json`](../../../src/i18n/en.json) remain live UI-copy sources. [`src/data/centers.json`](../../../src/data/centers.json) and [`src/data/config.json`](../../../src/data/config.json) are no longer imported by app code; they exist only as the source [`supabase/seed.sql`](../../../supabase/seed.sql) was generated from.
+This page defines the canonical data contracts for Hy-Climb. The live source is a Supabase Postgres database, per [`supabase/migrations/`](../../../supabase/migrations/) (`docs/wiki/09-decisions.md` `WIKI-DEC-005`, `WIKI-DEC-006`, `docs/wiki/05-architecture.md` Supabase backend). [`src/i18n/ko.json`](../../../src/i18n/ko.json) and [`src/i18n/en.json`](../../../src/i18n/en.json) remain live UI-copy sources. [`src/data/centers.json`](../../../src/data/centers.json) and [`src/data/config.json`](../../../src/data/config.json) are an untouched historical snapshot of the original data; no app code or script references them anymore (the seed script generated from them was removed once the schema it targeted no longer existed).
 
 Two shapes now matter, and this page describes both:
 
@@ -77,7 +77,7 @@ Check event expiry with an `endDate` earlier than the current date and with no `
 
 ## Supabase table contracts
 
-Status: `Current` for `hy-climb` (this repo). Implemented by [`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql), [`20260919100000_normalize_schema.sql`](../../../supabase/migrations/20260919100000_normalize_schema.sql), and [`20260919100100_normalize_data_backfill.sql`](../../../supabase/migrations/20260919100100_normalize_data_backfill.sql). Linked to `docs/wiki/05-architecture.md` Supabase backend and `docs/wiki/09-decisions.md` `WIKI-DEC-005`, `WIKI-DEC-006`.
+Status: `Current`, and this is now the only shape — the legacy jsonb columns it replaced were dropped 2026-09-19. Implemented by [`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql), [`20260919100000_normalize_schema.sql`](../../../supabase/migrations/20260919100000_normalize_schema.sql), [`20260919100100_normalize_data_backfill.sql`](../../../supabase/migrations/20260919100100_normalize_data_backfill.sql), and [`20260919100200_drop_legacy_jsonb_columns.sql`](../../../supabase/migrations/20260919100200_drop_legacy_jsonb_columns.sql). Linked to `docs/wiki/05-architecture.md` Supabase backend and `docs/wiki/09-decisions.md` `WIKI-DEC-005`, `WIKI-DEC-006`.
 
 Evidence: [`src/contexts/DataContext.jsx`](../../../src/contexts/DataContext.jsx) queries every table below and reshapes the result into the Contract section above. Verified live 2026-09-19: row counts across the normalized tables match the original jsonb data exactly (52 `center_prices`, 6 `center_sns_links`, 11 `center_translations`, 1 `events`, 1 `meetings`), and the public site renders correctly from them (home list, center detail, EN translations, departure name).
 
@@ -95,7 +95,7 @@ Evidence: [`src/contexts/DataContext.jsx`](../../../src/contexts/DataContext.jsx
 | `meetings` | `id`, `active`, `center_id` (FK), `meeting_date`, `meeting_time` | `app_config.meeting` | Same history + one-active pattern as `events`. |
 | `profiles` | `id` (uuid, references `auth.users`), `role` (text) | new | Operator/admin identity for RLS; not exposed to public reads. |
 
-The old jsonb columns (`centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`; `app_config.departure`, `event`, `meeting`) still exist in the database — `hy-climb-admin` reads and writes them until its own cutover to the tables above, tracked separately (not in this wiki, per `WIKI-DEC-005`'s scope note). They will be dropped in a later migration once that cutover is verified; see `supabase/README.md`.
+The old jsonb columns (`centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`; `app_config.departure`, `event`, `meeting`) no longer exist: `hy-climb-admin` (tracked separately, not in this wiki, per `WIKI-DEC-005`'s scope note) was switched over to the tables above, the Project owner verified its write flows end-to-end, and `20260919100200_drop_legacy_jsonb_columns.sql` dropped them. Verified live: `select id, prices from centers` now returns Postgres error `42703 column centers.prices does not exist`.
 
 Row Level Security: every table above allows `SELECT` for `anon` and `authenticated` roles. `INSERT`/`UPDATE`/`DELETE` require `auth.uid()` to match a `profiles` row with an operator/admin role, checked through the `SECURITY DEFINER` functions `is_operator()`/`is_admin()` (avoids the self-referencing-policy recursion a direct subquery on `profiles` would hit). `profiles` itself is not publicly readable. Verified live: an anon `PATCH` on `centers` returns `42501 permission denied`.
 
@@ -103,11 +103,11 @@ Affected existing concepts/IDs: Same list as `docs/wiki/05-architecture.md` Supa
 
 Non-goal: This does not select a migration tool, ORM, or Phase 2 admin UI framework. It does not change `FEAT-001` through `FEAT-010` acceptance criteria.
 
-Owner-decision requirement: See `docs/wiki/09-decisions.md` `WIKI-DEC-005` (approved and implemented, 2026-09-16/17) and `WIKI-DEC-006` (approved 2026-09-19, `hy-climb` side implemented and verified 2026-09-19; `hy-climb-admin` side pending).
+Owner-decision requirement: See `docs/wiki/09-decisions.md` `WIKI-DEC-005` (approved and implemented, 2026-09-16/17) and `WIKI-DEC-006` (approved and fully implemented, 2026-09-19).
 
 ## Code references
 
-[`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql) is the original schema/RLS/GRANT source. [`supabase/migrations/20260917100000_center_images_storage.sql`](../../../supabase/migrations/20260917100000_center_images_storage.sql) adds the `center-images` Storage bucket and its RLS policies. [`supabase/migrations/20260919100000_normalize_schema.sql`](../../../supabase/migrations/20260919100000_normalize_schema.sql) and [`20260919100100_normalize_data_backfill.sql`](../../../supabase/migrations/20260919100100_normalize_data_backfill.sql) add the normalized tables/columns and backfill them from the old jsonb columns.
+[`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql) is the original schema/RLS/GRANT source. [`supabase/migrations/20260917100000_center_images_storage.sql`](../../../supabase/migrations/20260917100000_center_images_storage.sql) adds the `center-images` Storage bucket and its RLS policies. [`supabase/migrations/20260919100000_normalize_schema.sql`](../../../supabase/migrations/20260919100000_normalize_schema.sql) and [`20260919100100_normalize_data_backfill.sql`](../../../supabase/migrations/20260919100100_normalize_data_backfill.sql) add the normalized tables/columns and backfill them from the old jsonb columns. [`20260919100200_drop_legacy_jsonb_columns.sql`](../../../supabase/migrations/20260919100200_drop_legacy_jsonb_columns.sql) drops those old columns.
 
 [`src/utils/centerImageUrl.js`](../../../src/utils/centerImageUrl.js) resolves an `images` entry to either an absolute Storage URL or a `/images/centers/`-relative path.
 
@@ -115,7 +115,7 @@ Owner-decision requirement: See `docs/wiki/09-decisions.md` `WIKI-DEC-005` (appr
 
 [`src/contexts/DataContext.jsx`](../../../src/contexts/DataContext.jsx) is the live center/config data source; it queries Supabase and maps rows to the field names in the Contract section above.
 
-[`src/data/centers.json`](../../../src/data/centers.json) and [`src/data/config.json`](../../../src/data/config.json) are the source [`supabase/seed.sql`](../../../supabase/seed.sql) was generated from; no app code imports them.
+[`src/data/centers.json`](../../../src/data/centers.json) and [`src/data/config.json`](../../../src/data/config.json) are an untouched historical snapshot of the original data; no app code or script references them.
 
 [`src/i18n/ko.json`](../../../src/i18n/ko.json) and [`src/i18n/en.json`](../../../src/i18n/en.json) contain UI strings.
 

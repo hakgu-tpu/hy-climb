@@ -150,7 +150,7 @@ Phase 2 scoping decision, 2026-09-17: The Project owner approved, for the Phase 
 
 This approval covers this shape only; it doesn't cover `hy-climb-admin`'s internal code, which isn't tracked by this wiki.
 
-Evidence: `docs/wiki/05-architecture.md`, `docs/wiki/07-reference/02-data-schema.md`, `docs/wiki/04-features.md` change notes dated 2026-09-16 and 2026-09-17, `supabase/migrations/20260916100000_init_schema.sql`, `supabase/seed.sql`, `src/lib/supabaseClient.js`, `src/contexts/DataContext.jsx`, this session's conversation record.
+Evidence: `docs/wiki/05-architecture.md`, `docs/wiki/07-reference/02-data-schema.md`, `docs/wiki/04-features.md` change notes dated 2026-09-16 and 2026-09-17, `supabase/migrations/20260916100000_init_schema.sql`, `src/lib/supabaseClient.js`, `src/contexts/DataContext.jsx`, this session's conversation record. (The original `supabase/seed.sql` generated from `src/data/centers.json`/`config.json` was removed 2026-09-19 once `WIKI-DEC-006` dropped the columns it targeted; see that entry.)
 
 ## WIKI-DEC-006, Normalize JSONB Columns into Relational Tables
 
