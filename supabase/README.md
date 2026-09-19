@@ -46,17 +46,16 @@ Per `WIKI-DEC-005` Phase 1, operators edit `centers` and `app_config` rows direc
 
 `src/lib/supabaseClient.js` reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` from the environment (see `.env.example`; the real `.env` is gitignored). The publishable key is the client-safe anon-equivalent key — it's meant to ship in the built bundle and relies on RLS, not secrecy, for protection. Never put the `service_role`/secret key here.
 
-## Schema normalization (in progress)
+## Schema normalization
 
-Per [`docs/wiki/09-decisions.md`](../docs/wiki/09-decisions.md) `WIKI-DEC-006`, the jsonb columns (`centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`, and `app_config.departure`, `event`, `meeting`) are being replaced by relational tables/flat columns, because editing them as raw JSON in `hy-climb-admin` was bad enough to trigger this rewrite.
+Per [`docs/wiki/09-decisions.md`](../docs/wiki/09-decisions.md) `WIKI-DEC-006`, the jsonb columns (`centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`, and `app_config.departure`, `event`, `meeting`) were replaced by relational tables/flat columns, because editing them as raw JSON in `hy-climb-admin` was bad enough to trigger this rewrite.
 
 Run, in order, after `20260916100000_init_schema.sql`:
 
-1. `supabase/migrations/20260919100000_normalize_schema.sql` — creates `center_translations`, `center_prices`, `center_sns_links`, `events`, `meetings`, and adds `centers.parking_type`/`parking_description` and `app_config.departure_name`/`departure_name_en`/`departure_naver_place_id`. Additive only; the old jsonb columns stay.
-2. `supabase/migrations/20260919100100_normalize_data_backfill.sql` — copies the current jsonb contents into the new tables/columns. Run this once, right after step 1, before any operator edits happen through the old jsonb columns or via `hy-climb-admin` — re-running it duplicates rows.
-
-**Do not drop the old jsonb columns yet.** `src/contexts/DataContext.jsx` (this repo) and `hy-climb-admin`'s forms still read/write them; that cutover is a separate, later change, followed by a migration that drops `centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n` and `app_config.departure`, `event`, `meeting`.
+1. `supabase/migrations/20260919100000_normalize_schema.sql` — creates `center_translations`, `center_prices`, `center_sns_links`, `events`, `meetings`, and adds `centers.parking_type`/`parking_description` and `app_config.departure_name`/`departure_name_en`/`departure_naver_place_id`. Additive only; the old jsonb columns stay. **Done, 2026-09-19.**
+2. `supabase/migrations/20260919100100_normalize_data_backfill.sql` — copies the jsonb contents into the new tables/columns. Only run once (re-running duplicates rows). **Done, 2026-09-19.**
+3. `supabase/migrations/20260919100200_drop_legacy_jsonb_columns.sql` — drops `centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n` and `app_config.departure`, `event`, `meeting`. **Not run yet.** `src/contexts/DataContext.jsx` (this repo) was switched over and verified live on 2026-09-19. `hy-climb-admin` was rewritten to use the normalized tables the same day, but its authenticated save/create/delete flows (center edit, price/SNS-link rows, event/meeting activation) haven't been verified end-to-end yet — do that first, in the deployed admin app, logged in as an operator. Once confirmed, run step 3; it's irreversible.
 
 ## Not included yet
 
-The `hy-climb` public SPA and `hy-climb-admin` haven't been switched to read/write the new normalized tables above; both still use the old jsonb columns until that follow-up lands.
+Nothing — both `hy-climb` and `hy-climb-admin` read/write the normalized tables. Only the legacy-column drop (step 3 above) is pending, gated on manual verification of the admin app's write flows.
