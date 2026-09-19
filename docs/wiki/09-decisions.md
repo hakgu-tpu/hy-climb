@@ -151,3 +151,38 @@ Phase 2 scoping decision, 2026-09-17: The Project owner approved, for the Phase 
 This approval covers this shape only; it doesn't cover `hy-climb-admin`'s internal code, which isn't tracked by this wiki.
 
 Evidence: `docs/wiki/05-architecture.md`, `docs/wiki/07-reference/02-data-schema.md`, `docs/wiki/04-features.md` change notes dated 2026-09-16 and 2026-09-17, `supabase/migrations/20260916100000_init_schema.sql`, `supabase/seed.sql`, `src/lib/supabaseClient.js`, `src/contexts/DataContext.jsx`, this session's conversation record.
+
+## WIKI-DEC-006, Normalize JSONB Columns into Relational Tables
+
+Status: approved
+
+Owner: Project owner (interactive user)
+
+Approval basis: Direct instruction in session, 2026-09-19: "이 요구사항 wiki에 기록해, 지금부터 DB schema 재정립에 들어간다" (record this requirement in the wiki, starting now we begin re-establishing the DB schema).
+
+Date: 2026-09-19
+
+Decision: Replace the jsonb list/object columns introduced by `WIKI-DEC-005` — `centers.prices`, `centers.affiliate_prices`, `centers.sns_links`, `centers.parking`, `centers.i18n`, and `app_config.departure`, `app_config.event`, `app_config.meeting` — with relational tables and flat columns, so operator editing doesn't require raw JSON for any field.
+
+Context: `hy-climb-admin`'s first version had to expose `prices`, `affiliate_prices`, `sns_links`, `parking`, and `i18n` on centers, and originally `departure`, `event`, `meeting` on `app_config`, as raw-JSON textareas (`docs/wiki/09-decisions.md` `WIKI-DEC-005` Phase 2 evidence: `hy-climb-admin`'s `JsonField` component). `event` and `meeting` were already split into dedicated form fields in `hy-climb-admin` on 2026-09-19 because they're the fields edited most often, but the underlying `app_config.event`/`app_config.meeting` jsonb columns stayed. The Project owner judged the whole jsonb-blob pattern unacceptable and decided to normalize it instead of continuing to patch individual admin forms around it.
+
+Normalized shape:
+
+* `center_prices` (`center_id` FK, `is_affiliate` bool, `name`, `name_en`, `price`, `sort_order`) replaces `centers.prices` and `centers.affiliate_prices` — one table, distinguished by `is_affiliate`, instead of two near-identical jsonb arrays.
+* `center_sns_links` (`center_id` FK, `type`, `url`, `sort_order`) replaces `centers.sns_links`.
+* `centers.parking_type` / `centers.parking_description` (flat columns on `centers`) replace the `parking` object. It's one-to-one per center, not a list, so it becomes columns, not a table.
+* `center_translations` (`center_id` FK, `locale`, `name`, `address`, `description`, `parking_description`) replaces `centers.i18n`, keyed by locale so it extends past English without a schema change later.
+* `events` (`active`, `title`, `title_en`, `description`, `description_en`, `event_date`, `end_date`, `link_url`, `link_label`, `link_label_en`) replaces `app_config.event`. Multiple rows are allowed so event history is kept instead of overwritten; a partial unique index allows only one `active = true` row at a time.
+* `meetings` (`active`, `center_id` FK, `meeting_date`, `meeting_time`) replaces `app_config.meeting`, same one-active-row constraint and history-keeping rationale.
+* `app_config` keeps `instagram` and gains flat `departure_name` / `departure_name_en` / `departure_naver_place_id` columns, replacing the `departure` object — also one-to-one, so columns, not a table.
+
+Consequences:
+
+* Supersedes the Supabase table contracts in `docs/wiki/07-reference/02-data-schema.md` and the `centers`/`app_config` shape described in `docs/wiki/05-architecture.md`. Those pages keep describing the current jsonb-column shape as `Current` until the new tables are live and the data-access code is switched over; this entry does not itself change what's `Current`, per the objective state contract in `docs/wiki/02-governance.md`.
+* `src/contexts/DataContext.jsx` (`hy-climb`) must reshape the joined query results back into the existing in-app camelCase shape (`prices`, `affiliatePrices`, `snsLinks`, `parking`, `i18n`) so `HomePage`, `CenterDetailPage`, `CenterCard`, `EventBanner`, and `MeetingBanner` don't need to change.
+* `hy-climb-admin`'s `CenterFormPage` and `ConfigPage` need real add/remove-row UI for prices, SNS links, and translations, and an events/meetings table UI, replacing the `JsonField` usages `WIKI-DEC-005` introduced.
+* The 11 existing centers' jsonb data must be migrated into the new tables, not dropped, before the old columns are removed.
+* This is a durable, breaking schema change. No product stable ID changes; `FEAT-001` through `FEAT-010` behavior in the public app stays the same, only the data path underneath it does.
+* This decision is canonical because the Project owner (interactive user) approved starting this work directly in this session on 2026-09-19.
+
+Evidence: This entry; `hy-climb-admin`'s `src/components/JsonField.jsx`, `CenterFormPage.jsx`, and pre-2026-09-19 `ConfigPage.jsx` (raw-JSON evidence); `supabase/migrations/20260916100000_init_schema.sql` (schema being superseded); this session's conversation record.

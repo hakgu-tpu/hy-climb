@@ -72,6 +72,8 @@ Check event expiry with an `endDate` earlier than the current date and with no `
 
 ## Supabase table contracts
 
+In progress, `docs/wiki/09-decisions.md` `WIKI-DEC-006`: `centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`, and `app_config.departure`, `event`, `meeting` (documented as jsonb below) are being replaced by relational tables and flat columns — `supabase/migrations/20260919100000_normalize_schema.sql` and `20260919100100_normalize_data_backfill.sql` exist, but `src/contexts/DataContext.jsx` and `hy-climb-admin` haven't switched over yet, so the jsonb shape below remains `Current` until that cutover lands.
+
 Status: `Current`. Implemented by [`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql), linked to `docs/wiki/05-architecture.md` Supabase backend and `docs/wiki/09-decisions.md` `WIKI-DEC-005`.
 
 Evidence: This maps the Contract section above onto the live Postgres tables; no field was renamed or dropped when storage moved from JSON to Supabase.

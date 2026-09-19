@@ -46,6 +46,17 @@ Per `WIKI-DEC-005` Phase 1, operators edit `centers` and `app_config` rows direc
 
 `src/lib/supabaseClient.js` reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` from the environment (see `.env.example`; the real `.env` is gitignored). The publishable key is the client-safe anon-equivalent key — it's meant to ship in the built bundle and relies on RLS, not secrecy, for protection. Never put the `service_role`/secret key here.
 
+## Schema normalization (in progress)
+
+Per [`docs/wiki/09-decisions.md`](../docs/wiki/09-decisions.md) `WIKI-DEC-006`, the jsonb columns (`centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`, and `app_config.departure`, `event`, `meeting`) are being replaced by relational tables/flat columns, because editing them as raw JSON in `hy-climb-admin` was bad enough to trigger this rewrite.
+
+Run, in order, after `20260916100000_init_schema.sql`:
+
+1. `supabase/migrations/20260919100000_normalize_schema.sql` — creates `center_translations`, `center_prices`, `center_sns_links`, `events`, `meetings`, and adds `centers.parking_type`/`parking_description` and `app_config.departure_name`/`departure_name_en`/`departure_naver_place_id`. Additive only; the old jsonb columns stay.
+2. `supabase/migrations/20260919100100_normalize_data_backfill.sql` — copies the current jsonb contents into the new tables/columns. Run this once, right after step 1, before any operator edits happen through the old jsonb columns or via `hy-climb-admin` — re-running it duplicates rows.
+
+**Do not drop the old jsonb columns yet.** `src/contexts/DataContext.jsx` (this repo) and `hy-climb-admin`'s forms still read/write them; that cutover is a separate, later change, followed by a migration that drops `centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n` and `app_config.departure`, `event`, `meeting`.
+
 ## Not included yet
 
-The public SPA's data-loading code (`HomePage`, `CenterDetailPage`, `EventBanner`, `MeetingBanner`) still imports the static JSON files; it hasn't been switched to query Supabase through `src/lib/supabaseClient.js` yet. That's a separate follow-up step.
+The `hy-climb` public SPA and `hy-climb-admin` haven't been switched to read/write the new normalized tables above; both still use the old jsonb columns until that follow-up lands.
