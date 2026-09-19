@@ -2,11 +2,16 @@
 
 ## Purpose
 
-This page defines the canonical data contracts for Hy-Climb. The live source is a Supabase Postgres database: the `centers` table and the single-row `app_config` table, per [`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql) (`docs/wiki/09-decisions.md` `WIKI-DEC-005`, `docs/wiki/05-architecture.md` Supabase backend). [`src/i18n/ko.json`](../../../src/i18n/ko.json) and [`src/i18n/en.json`](../../../src/i18n/en.json) remain live UI-copy sources. [`src/data/centers.json`](../../../src/data/centers.json) and [`src/data/config.json`](../../../src/data/config.json) are no longer imported by app code; they exist only as the source [`supabase/seed.sql`](../../../supabase/seed.sql) was generated from. The field-level contract below is unchanged from that JSON shape, only the storage moved. Center records are not copied here, so this page stays stable while data changes.
+This page defines the canonical data contracts for Hy-Climb. The live source is a Supabase Postgres database, per [`supabase/migrations/`](../../../supabase/migrations/) (`docs/wiki/09-decisions.md` `WIKI-DEC-005`, `WIKI-DEC-006`, `docs/wiki/05-architecture.md` Supabase backend). [`src/i18n/ko.json`](../../../src/i18n/ko.json) and [`src/i18n/en.json`](../../../src/i18n/en.json) remain live UI-copy sources. [`src/data/centers.json`](../../../src/data/centers.json) and [`src/data/config.json`](../../../src/data/config.json) are no longer imported by app code; they exist only as the source [`supabase/seed.sql`](../../../supabase/seed.sql) was generated from.
+
+Two shapes now matter, and this page describes both:
+
+* **Contract, below**: the in-app JS object shape [`src/contexts/DataContext.jsx`](../../../src/contexts/DataContext.jsx) hands to `HomePage`, `CenterDetailPage`, `CenterCard`, `EventBanner`, `MeetingBanner`, etc. Unchanged since `WIKI-DEC-005`; this is what component code reads.
+* **Supabase table contracts, further down**: the physical Postgres storage shape `DataContext.jsx` reads and reshapes into the Contract above. Changed by `WIKI-DEC-006` from single jsonb columns to normalized tables/flat columns.
 
 ## Contract
 
-The `centers` table holds one row per center, read through [`src/contexts/DataContext.jsx`](../../../src/contexts/DataContext.jsx), which maps these Postgres columns back to the camelCase field names below (for example `is_affiliated` → `isAffiliated`, `naver_place_id` → `naverPlaceId`, `affiliate_prices` → `affiliatePrices`, `sns_links` → `snsLinks`).
+Field-level shape of the JS object each center resolves to, after `DataContext.jsx` maps Postgres columns/rows (for example `is_affiliated` → `isAffiliated`, `center_prices` rows → the `prices`/`affiliatePrices` arrays, `center_sns_links` rows → `snsLinks`).
 
 | Field | Type | Required | Contract |
 |---|---|---|---|
@@ -72,34 +77,37 @@ Check event expiry with an `endDate` earlier than the current date and with no `
 
 ## Supabase table contracts
 
-In progress, `docs/wiki/09-decisions.md` `WIKI-DEC-006`: `centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`, and `app_config.departure`, `event`, `meeting` (documented as jsonb below) are being replaced by relational tables and flat columns — `supabase/migrations/20260919100000_normalize_schema.sql` and `20260919100100_normalize_data_backfill.sql` exist, but `src/contexts/DataContext.jsx` and `hy-climb-admin` haven't switched over yet, so the jsonb shape below remains `Current` until that cutover lands.
+Status: `Current` for `hy-climb` (this repo). Implemented by [`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql), [`20260919100000_normalize_schema.sql`](../../../supabase/migrations/20260919100000_normalize_schema.sql), and [`20260919100100_normalize_data_backfill.sql`](../../../supabase/migrations/20260919100100_normalize_data_backfill.sql). Linked to `docs/wiki/05-architecture.md` Supabase backend and `docs/wiki/09-decisions.md` `WIKI-DEC-005`, `WIKI-DEC-006`.
 
-Status: `Current`. Implemented by [`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql), linked to `docs/wiki/05-architecture.md` Supabase backend and `docs/wiki/09-decisions.md` `WIKI-DEC-005`.
+Evidence: [`src/contexts/DataContext.jsx`](../../../src/contexts/DataContext.jsx) queries every table below and reshapes the result into the Contract section above. Verified live 2026-09-19: row counts across the normalized tables match the original jsonb data exactly (52 `center_prices`, 6 `center_sns_links`, 11 `center_translations`, 1 `events`, 1 `meetings`), and the public site renders correctly from them (home list, center detail, EN translations, departure name).
 
-Evidence: This maps the Contract section above onto the live Postgres tables; no field was renamed or dropped when storage moved from JSON to Supabase.
-
-| Table | Column | Source field | Notes |
+| Table | Column | Source field (old jsonb shape) | Notes |
 |---|---|---|---|
-| `centers` | `id` (text, PK) | `id` | Same URL-safe id contract. |
-| `centers` | `name`, `address`, `region`, `description` | same names | Required Korean text, unchanged. |
-| `centers` | `images` (text[]) | `images` | Same non-empty invariant, enforced by a `check (cardinality(images) >= 1)` constraint. |
-| `centers` | `is_affiliated` (bool) | `isAffiliated` | Same badge/filter behavior. |
-| `centers` | `naver_place_id` (text) | `naverPlaceId` | Same map URL contract, same known `isValidPlaceId()` discrepancy. |
-| `centers` | `phone`, `prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n` (jsonb where structured) | same names | Nullable, same optional contract as today. |
-| `app_config` | `departure`, `instagram`, `event`, `meeting` (jsonb) | same names | One row, `id boolean primary key default true check (id)` singleton pattern. |
+| `centers` | `id` (text, PK), `name`, `address`, `region`, `description` | same | Unchanged since `WIKI-DEC-005`. |
+| `centers` | `images` (text[]) | `images` | Unchanged; still a Postgres array, not normalized into a table — `hy-climb-admin`'s image list UI already treats it as a list and only sends the array at save time. |
+| `centers` | `is_affiliated`, `naver_place_id`, `phone` | `isAffiliated`, `naverPlaceId`, `phone` | Unchanged. |
+| `centers` | `parking_type`, `parking_description` | `parking.type`, `parking.description` | New flat columns (`WIKI-DEC-006`); `parking` is 1:1 per center, not a list, so it's columns, not a table. |
+| `center_prices` | `center_id` (FK), `is_affiliate` (bool), `name`, `name_en`, `price`, `sort_order` | `prices[]` (`is_affiliate=false`) / `affiliate_prices[]` (`is_affiliate=true`) | One table for both lists, distinguished by `is_affiliate`. |
+| `center_sns_links` | `center_id` (FK), `type`, `url`, `sort_order` | `sns_links[]` | `type` constrained to `instagram`/`blog`/`youtube`/`website`. |
+| `center_translations` | `center_id` (FK), `locale`, `name`, `address`, `description`, `parking_description` | `i18n` | Keyed by `locale` (`'en'` today) instead of a single English-only object. |
+| `app_config` | `id` (singleton PK), `instagram`, `departure_name`, `departure_name_en`, `departure_naver_place_id` | `instagram`, `departure.*` | `departure` flattened to columns; 1:1, not a list. |
+| `events` | `id`, `active`, `title`, `title_en`, `description`, `description_en`, `event_date`, `end_date`, `link_url`, `link_label`, `link_label_en` | `app_config.event` | Multiple rows allowed (event history); a partial unique index (`where active`) allows at most one `active = true` row. |
+| `meetings` | `id`, `active`, `center_id` (FK), `meeting_date`, `meeting_time` | `app_config.meeting` | Same history + one-active pattern as `events`. |
 | `profiles` | `id` (uuid, references `auth.users`), `role` (text) | new | Operator/admin identity for RLS; not exposed to public reads. |
 
-Row Level Security: `centers` and `app_config` allow `SELECT` for `anon` and `authenticated` roles. `INSERT`/`UPDATE`/`DELETE` on `centers` and `app_config` require `auth.uid()` to match a `profiles` row with an operator/admin role, checked through the `SECURITY DEFINER` functions `is_operator()`/`is_admin()` (avoids the self-referencing-policy recursion a direct subquery on `profiles` would hit). `profiles` itself is not publicly readable. Verified live: an anon `PATCH` on `centers` returns `42501 permission denied`.
+The old jsonb columns (`centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n`; `app_config.departure`, `event`, `meeting`) still exist in the database — `hy-climb-admin` reads and writes them until its own cutover to the tables above, tracked separately (not in this wiki, per `WIKI-DEC-005`'s scope note). They will be dropped in a later migration once that cutover is verified; see `supabase/README.md`.
+
+Row Level Security: every table above allows `SELECT` for `anon` and `authenticated` roles. `INSERT`/`UPDATE`/`DELETE` require `auth.uid()` to match a `profiles` row with an operator/admin role, checked through the `SECURITY DEFINER` functions `is_operator()`/`is_admin()` (avoids the self-referencing-policy recursion a direct subquery on `profiles` would hit). `profiles` itself is not publicly readable. Verified live: an anon `PATCH` on `centers` returns `42501 permission denied`.
 
 Affected existing concepts/IDs: Same list as `docs/wiki/05-architecture.md` Supabase backend section.
 
-Non-goal: This does not select a migration tool, ORM, or Phase 2 admin UI framework. It does not add schema fields beyond mirroring the original JSON contract.
+Non-goal: This does not select a migration tool, ORM, or Phase 2 admin UI framework. It does not change `FEAT-001` through `FEAT-010` acceptance criteria.
 
-Owner-decision requirement: See `docs/wiki/09-decisions.md` `WIKI-DEC-005`. Approved and implemented, 2026-09-16/17.
+Owner-decision requirement: See `docs/wiki/09-decisions.md` `WIKI-DEC-005` (approved and implemented, 2026-09-16/17) and `WIKI-DEC-006` (approved 2026-09-19, `hy-climb` side implemented and verified 2026-09-19; `hy-climb-admin` side pending).
 
 ## Code references
 
-[`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql) is the live schema/RLS/GRANT source. [`supabase/migrations/20260917100000_center_images_storage.sql`](../../../supabase/migrations/20260917100000_center_images_storage.sql) adds the `center-images` Storage bucket and its RLS policies.
+[`supabase/migrations/20260916100000_init_schema.sql`](../../../supabase/migrations/20260916100000_init_schema.sql) is the original schema/RLS/GRANT source. [`supabase/migrations/20260917100000_center_images_storage.sql`](../../../supabase/migrations/20260917100000_center_images_storage.sql) adds the `center-images` Storage bucket and its RLS policies. [`supabase/migrations/20260919100000_normalize_schema.sql`](../../../supabase/migrations/20260919100000_normalize_schema.sql) and [`20260919100100_normalize_data_backfill.sql`](../../../supabase/migrations/20260919100100_normalize_data_backfill.sql) add the normalized tables/columns and backfill them from the old jsonb columns.
 
 [`src/utils/centerImageUrl.js`](../../../src/utils/centerImageUrl.js) resolves an `images` entry to either an absolute Storage URL or a `/images/centers/`-relative path.
 
