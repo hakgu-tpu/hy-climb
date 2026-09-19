@@ -54,8 +54,8 @@ Run, in order, after `20260916100000_init_schema.sql`:
 
 1. `supabase/migrations/20260919100000_normalize_schema.sql` — creates `center_translations`, `center_prices`, `center_sns_links`, `events`, `meetings`, and adds `centers.parking_type`/`parking_description` and `app_config.departure_name`/`departure_name_en`/`departure_naver_place_id`. Additive only; the old jsonb columns stay. **Done, 2026-09-19.**
 2. `supabase/migrations/20260919100100_normalize_data_backfill.sql` — copies the jsonb contents into the new tables/columns. Only run once (re-running duplicates rows). **Done, 2026-09-19.**
-3. `supabase/migrations/20260919100200_drop_legacy_jsonb_columns.sql` — drops `centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n` and `app_config.departure`, `event`, `meeting`. **Not run yet.** `src/contexts/DataContext.jsx` (this repo) was switched over and verified live on 2026-09-19. `hy-climb-admin` was rewritten to use the normalized tables the same day, but its authenticated save/create/delete flows (center edit, price/SNS-link rows, event/meeting activation) haven't been verified end-to-end yet — do that first, in the deployed admin app, logged in as an operator. Once confirmed, run step 3; it's irreversible.
+3. `supabase/migrations/20260919100200_drop_legacy_jsonb_columns.sql` — drops `centers.prices`, `affiliate_prices`, `sns_links`, `parking`, `i18n` and `app_config.departure`, `event`, `meeting`. Cleared to run: `src/contexts/DataContext.jsx` (this repo) was verified live 2026-09-19, and the Project owner confirmed `hy-climb-admin`'s authenticated save/create/delete flows (center edit, price/SNS-link rows, event/meeting activation) work end-to-end the same day. Irreversible once run.
 
 ## Not included yet
 
-Nothing — both `hy-climb` and `hy-climb-admin` read/write the normalized tables. Only the legacy-column drop (step 3 above) is pending, gated on manual verification of the admin app's write flows.
+Nothing outstanding. Both `hy-climb` and `hy-climb-admin` read/write the normalized tables; step 3 above is the last cleanup step.

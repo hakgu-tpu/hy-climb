@@ -2,13 +2,12 @@
 -- and backfilled by 20260919100100_normalize_data_backfill.sql, per
 -- docs/wiki/09-decisions.md WIKI-DEC-006.
 --
--- DO NOT RUN until both hy-climb (src/contexts/DataContext.jsx) and
--- hy-climb-admin are confirmed working end-to-end against the normalized
--- tables (center_prices, center_sns_links, center_translations, events,
--- meetings) — hy-climb was verified live 2026-09-19; hy-climb-admin's
--- authenticated save/create/delete flows were not. This is irreversible:
--- the data already lives in the normalized tables, but nothing restores
--- these columns once dropped.
+-- Cleared to run: hy-climb (src/contexts/DataContext.jsx) was verified
+-- live 2026-09-19; the Project owner confirmed hy-climb-admin's
+-- authenticated save/create/delete flows (center edit, price/SNS-link
+-- rows, event/meeting activation) work end-to-end against the normalized
+-- tables the same day. This is irreversible: the data already lives in
+-- the normalized tables, but nothing restores these columns once dropped.
 
 alter table public.centers
   drop column prices,
